@@ -29,9 +29,9 @@
 - Zsindelytetős Hintaágy
 
 ## Navigáció (minden oldalon)
+- Kezdőlap → index.html
 - Játszóterek → termekek.html
 - Kerti bútorok → termekek.html
-- Kiülők → termekek.html
 - Munkáink → rolunk.html
 - Rólunk → rolunk.html
 - Kapcsolat → kapcsolat.html
@@ -62,6 +62,8 @@
 
 ## Szerkesztési irányelvek
 - Minden oldalon azonos navigáció és footer legyen
+- Ha a navigációt módosítod, azt MINDEN html fájlban egyszerre kell elvégezni: index.html, termekek.html, termek-reszlet.html, rolunk.html, kapcsolat.html
+- Navigációt mindig desktop és mobil menüben egyaránt módosítani kell
 - A zöld (#2D5016) szín következetesen használatos gombokhoz és kiemelésekhez
 - Képek helyőrzőként egyelőre gradient-es div elemek
 - Mobilbarát (responsive) kialakítás Tailwind segítségével
