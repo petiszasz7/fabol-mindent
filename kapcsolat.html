@@ -1,0 +1,193 @@
+<html lang="hu"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árajánlat kérése – Fából Mindent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+<body style="font-family: 'DM Sans', sans-serif; background-color: #F5F0EB; color: #2C1810;">
+    <!-- NAVIGATION -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 flex items-center" style="background: white; height: 70px; box-shadow: 0 1px 8px rgba(44,24,16,0.06); border-bottom: 1px solid rgba(44,24,16,0.04);">
+      <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+          <iconify-icon icon="solar:tree-linear" width="24" height="24" style="color: #2D5016;"></iconify-icon>
+          <span style="font-family: 'Playfair Display', serif; color: #2D5016; letter-spacing: -0.03em;" class="text-lg font-medium tracking-tight">Fából Mindent</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+          <a href="termekek.html" class="text-sm font-medium px-3 py-2 rounded-lg transition-colors" style="color: rgba(44,24,16,0.6);" onmouseover="this.style.color='#2D5016'; this.style.background='rgba(45,80,22,0.06)'" onmouseout="this.style.color='rgba(44,24,16,0.6)'; this.style.background='transparent'">Játszóterek</a>
+          <a href="termekek.html" class="text-sm font-medium px-3 py-2 rounded-lg transition-colors" style="color: rgba(44,24,16,0.6);" onmouseover="this.style.color='#2D5016'; this.style.background='rgba(45,80,22,0.06)'" onmouseout="this.style.color='rgba(44,24,16,0.6)'; this.style.background='transparent'">Kiülők</a>
+          <a href="rolunk.html" class="text-sm font-medium px-3 py-2 rounded-lg transition-colors" style="color: rgba(44,24,16,0.6);" onmouseover="this.style.color='#2D5016'; this.style.background='rgba(45,80,22,0.06)'" onmouseout="this.style.color='rgba(44,24,16,0.6)'; this.style.background='transparent'">Munkáink</a>
+          <a href="rolunk.html" class="text-sm font-medium px-3 py-2 rounded-lg transition-colors" style="color: rgba(44,24,16,0.6);" onmouseover="this.style.color='#2D5016'; this.style.background='rgba(45,80,22,0.06)'" onmouseout="this.style.color='rgba(44,24,16,0.6)'; this.style.background='transparent'">Rólunk</a>
+          <a href="kapcsolat.html" class="text-sm font-medium px-3 py-2 rounded-lg" style="color: #2D5016; background: rgba(45,80,22,0.06);">Kapcsolat</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-4 flex-shrink-0">
+          <a href="tel:+36206128116" class="flex items-center gap-1.5 text-sm font-medium transition-colors" style="color: rgba(44,24,16,0.55);"><iconify-icon icon="solar:phone-linear" width="16" height="16"></iconify-icon><span class="hidden lg:inline">+36 20 612 8116</span></a>
+          <a href="#form-section" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-xl transition-all" style="background: #2D5016; color: white; box-shadow: 0 2px 8px rgba(45,80,22,0.25);" onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform='translateY(0)'"><iconify-icon icon="solar:document-text-linear" width="16" height="16"></iconify-icon>Árajánlat</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg" style="color: #2C1810;" onclick="toggleMobileMenu()">
+          <iconify-icon id="hamburger-icon" icon="solar:hamburger-menu-linear" width="24" height="24"></iconify-icon>
+          <iconify-icon id="close-icon" icon="solar:close-circle-linear" width="24" height="24" style="display:none;"></iconify-icon>
+        </button>
+      </div>
+      <div id="mobile-menu" class="md:hidden absolute top-full left-0 right-0 overflow-hidden transition-all" style="max-height: 0; background: white; box-shadow: 0 4px 20px rgba(44,24,16,0.08); border-top: 1px solid rgba(44,24,16,0.06);">
+        <nav class="flex flex-col px-4 py-4 gap-1">
+          <a href="termekek.html" class="text-sm font-medium px-4 py-3 rounded-lg" style="color: rgba(44,24,16,0.7);">Játszóterek</a>
+          <a href="termekek.html" class="text-sm font-medium px-4 py-3 rounded-lg" style="color: rgba(44,24,16,0.7);">Kiülők</a>
+          <a href="rolunk.html" class="text-sm font-medium px-4 py-3 rounded-lg" style="color: rgba(44,24,16,0.7);">Munkáink</a>
+          <a href="rolunk.html" class="text-sm font-medium px-4 py-3 rounded-lg" style="color: rgba(44,24,16,0.7);">Rólunk</a>
+          <a href="kapcsolat.html" class="text-sm font-medium px-4 py-3 rounded-lg" style="color: #2D5016; background: rgba(45,80,22,0.06);">Kapcsolat</a>
+          <div style="border-top: 1px solid rgba(44,24,16,0.06);" class="mt-2 pt-3 flex flex-col gap-3">
+            <a href="tel:+36206128116" class="flex items-center gap-2 text-sm font-medium px-4 py-2" style="color: rgba(44,24,16,0.6);"><iconify-icon icon="solar:phone-linear" width="16" height="16"></iconify-icon>+36 20 612 8116</a>
+            <a href="#form-section" class="inline-flex items-center justify-center gap-2 text-sm font-semibold px-5 py-3 rounded-xl" style="background: #2D5016; color: white;"><iconify-icon icon="solar:document-text-linear" width="16" height="16"></iconify-icon>Árajánlat kérése</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="relative overflow-hidden" style="padding-top: 70px;">
+      <div class="relative py-16 sm:py-20 lg:py-24" style="background: linear-gradient(170deg, #2D5016 0%, #1f3b0f 50%, #162c0a 100%);">
+        <div class="absolute inset-0 opacity-[0.04]" style="background: repeating-linear-gradient(90deg, white 0px, transparent 1px, transparent 80px), repeating-linear-gradient(0deg, white 0px, transparent 1px, transparent 80px);"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-up">
+          <div class="flex items-center justify-center gap-2.5 mb-4"><div class="w-8 h-[2px] rounded-full" style="background: rgba(255,255,255,0.3);"></div><span class="text-xs font-semibold uppercase tracking-widest" style="color: rgba(255,255,255,0.5);">Kapcsolat</span><div class="w-8 h-[2px] rounded-full" style="background: rgba(255,255,255,0.3);"></div></div>
+          <h1 style="font-family: 'Playfair Display', serif; color: white; font-size: clamp(1.75rem, 4.5vw, 3rem);" class="tracking-tight font-medium mb-3">Árajánlat kérése</h1>
+          <p class="text-sm sm:text-base" style="color: rgba(255,255,255,0.55); max-width: 520px; margin: 0 auto;">Töltsd ki az alábbi űrlapot, és 24 órán belül személyre szabott árajánlatot küldünk!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM + CONTACT -->
+    <section id="form-section" class="relative py-16 sm:py-20 lg:py-24" style="background-color: #F5F0EB;">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16">
+          <!-- FORM -->
+          <div class="w-full lg:w-7/12 fade-up">
+            <div class="rounded-2xl p-6 sm:p-8 lg:p-10" style="background: white; border: 1px solid rgba(44,24,16,0.06); box-shadow: 0 4px 24px rgba(44,24,16,0.04);">
+              <div class="flex items-center gap-3 mb-2"><div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: rgba(45,80,22,0.08);"><iconify-icon icon="solar:document-text-linear" width="20" height="20" style="color: #2D5016;"></iconify-icon></div><h2 style="font-family: 'Playfair Display', serif; color: #2C1810;" class="text-xl sm:text-2xl tracking-tight font-medium">Árajánlat kérése</h2></div>
+              <p class="text-sm mb-8" style="color: rgba(44,24,16,0.5); padding-left: 52px; margin-top: -2px;">Minden mező kitöltése segít a pontos árajánlat elkészítésében.</p>
+
+              <form id="quote-form" class="space-y-5" onsubmit="handleFormSubmit(event)">
+                <div><label class="block text-sm font-medium mb-1.5" style="color: #2C1810;">Teljes név <span style="color: #C4652A;">*</span></label><div class="relative"><div class="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"><iconify-icon icon="solar:user-linear" width="18" height="18" style="color: rgba(44,24,16,0.3);"></iconify-icon></div><input type="text" name="name" required placeholder="pl. Kovács Anikó" class="w-full rounded-xl text-sm outline-none transition-all" style="padding: 12px 14px 12px 42px; border: 1.5px solid rgba(44,24,16,0.1); background: #FAFAF8; color: #2C1810;" onfocus="this.style.borderColor='#2D5016'; this.style.boxShadow='0 0 0 3px rgba(45,80,22,0.08)'; this.style.background='white'" onblur="this.style.borderColor='rgba(44,24,16,0.1)'; this.style.boxShadow='none'; this.style.background='#FAFAF8'"></div></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div><label class="block text-sm font-medium mb-1.5" style="color: #2C1810;">E-mail cím <span style="color: #C4652A;">*</span></label><div class="relative"><div class="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"><iconify-icon icon="solar:letter-linear" width="18" height="18" style="color: rgba(44,24,16,0.3);"></iconify-icon></div><input type="email" name="email" required placeholder="pelda@email.com" class="w-full rounded-xl text-sm outline-none transition-all" style="padding: 12px 14px 12px 42px; border: 1.5px solid rgba(44,24,16,0.1); background: #FAFAF8; color: #2C1810;" onfocus="this.style.borderColor='#2D5016'; this.style.boxShadow='0 0 0 3px rgba(45,80,22,0.08)'; this.style.background='white'" onblur="this.style.borderColor='rgba(44,24,16,0.1)'; this.style.boxShadow='none'; this.style.background='#FAFAF8'"></div></div>
+                  <div><label class="block text-sm font-medium mb-1.5" style="color: #2C1810;">Telefonszám <span style="color: #C4652A;">*</span></label><div class="relative"><div class="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"><iconify-icon icon="solar:phone-linear" width="18" height="18" style="color: rgba(44,24,16,0.3);"></iconify-icon></div><input type="tel" name="phone" required placeholder="+36 20 123 4567" class="w-full rounded-xl text-sm outline-none transition-all" style="padding: 12px 14px 12px 42px; border: 1.5px solid rgba(44,24,16,0.1); background: #FAFAF8; color: #2C1810;" onfocus="this.style.borderColor='#2D5016'; this.style.boxShadow='0 0 0 3px rgba(45,80,22,0.08)'; this.style.background='white'" onblur="this.style.borderColor='rgba(44,24,16,0.1)'; this.style.boxShadow='none'; this.style.background='#FAFAF8'"></div></div>
+                </div>
+                <div><label class="block text-sm font-medium mb-1.5" style="color: #2C1810;">Melyik termék érdekli? <span style="color: #C4652A;">*</span></label><div class="relative"><div class="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none z-10"><iconify-icon icon="solar:box-linear" width="18" height="18" style="color: rgba(44,24,16,0.3);"></iconify-icon></div><select name="product" required class="w-full rounded-xl text-sm outline-none transition-all appearance-none cursor-pointer" style="padding: 12px 40px 12px 42px; border: 1.5px solid rgba(44,24,16,0.1); background: #FAFAF8; color: #2C1810;" onfocus="this.style.borderColor='#2D5016'; this.style.boxShadow='0 0 0 3px rgba(45,80,22,0.08)'; this.style.background='white'" onblur="this.style.borderColor='rgba(44,24,16,0.1)'; this.style.boxShadow='none'; this.style.background='#FAFAF8'"><option value="" disabled selected>Válassz terméket...</option><option value="nagy-jatszter">Nagy Játszótér</option><option value="kis-jatszter">Kis Játszótér</option><option value="kerti-kiulo">Kerti Kiülő – Nádtetős</option><option value="korisfa-garnitura">Kőrisfa Garnitúra 2+2+1</option><option value="osszecsukhato">Összecsukható Garnitúra</option><option value="5-pozicios">5 Pozíciós Garnitúra</option><option value="pillango">Pillangó Csavaros Garnitúra</option><option value="hintaagy">Zsindelytetős Hintaágy</option><option value="egyeb">Egyéb</option></select><div class="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none"><iconify-icon icon="solar:alt-arrow-down-linear" width="18" height="18" style="color: rgba(44,24,16,0.3);"></iconify-icon></div></div></div>
+                <div><label class="block text-sm font-medium mb-1.5" style="color: #2C1810;">Üzenet</label><div class="relative"><div class="absolute left-3.5 top-3.5 pointer-events-none"><iconify-icon icon="solar:chat-round-line-linear" width="18" height="18" style="color: rgba(44,24,16,0.3);"></iconify-icon></div><textarea name="message" rows="4" placeholder="Írja le kérését, különleges igényeit..." class="w-full rounded-xl text-sm outline-none transition-all resize-none" style="padding: 12px 14px 12px 42px; border: 1.5px solid rgba(44,24,16,0.1); background: #FAFAF8; color: #2C1810;" onfocus="this.style.borderColor='#2D5016'; this.style.boxShadow='0 0 0 3px rgba(45,80,22,0.08)'; this.style.background='white'" onblur="this.style.borderColor='rgba(44,24,16,0.1)'; this.style.boxShadow='none'; this.style.background='#FAFAF8'"></textarea></div></div>
+                <div class="flex items-start gap-3"><div class="relative flex-shrink-0 mt-0.5"><input type="checkbox" id="privacy-check" name="privacy" required class="sr-only peer"><label for="privacy-check" class="block w-5 h-5 rounded-md cursor-pointer transition-all peer-checked:border-transparent" style="border: 1.5px solid rgba(44,24,16,0.15); background: #FAFAF8;"></label><div class="absolute inset-0 rounded-md items-center justify-center pointer-events-none hidden peer-checked:flex" style="background: #2D5016;"><iconify-icon icon="solar:check-read-linear" width="14" height="14" style="color: white;"></iconify-icon></div></div><label for="privacy-check" class="text-sm cursor-pointer leading-relaxed" style="color: rgba(44,24,16,0.6);">Elfogadom az <a href="#" class="font-medium underline underline-offset-2" style="color: #2D5016;">adatkezelési tájékoztatót</a> <span style="color: #C4652A;">*</span></label></div>
+                <button type="submit" id="submit-btn" class="w-full flex items-center justify-center gap-2.5 text-base font-semibold rounded-xl transition-all cursor-pointer" style="padding: 14px 24px; background: #2D5016; color: white; box-shadow: 0 2px 12px rgba(45,80,22,0.25); border: none;" onmouseover="this.style.background='#244212'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#2D5016'; this.style.transform='translateY(0)'"><iconify-icon icon="solar:letter-linear" width="20" height="20"></iconify-icon>Árajánlat kérése</button>
+              </form>
+              <div id="success-message" class="hidden"><div class="text-center py-10"><div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5" style="background: rgba(45,80,22,0.1);"><iconify-icon icon="solar:check-circle-bold" width="36" height="36" style="color: #2D5016;"></iconify-icon></div><h3 style="font-family: 'Playfair Display', serif; color: #2C1810;" class="text-xl tracking-tight font-medium mb-2">Köszönjük!</h3><p class="text-sm" style="color: rgba(44,24,16,0.55); max-width: 320px; margin: 0 auto;">Üzenetét megkaptuk, 24 órán belül felvesszük Önnel a kapcsolatot.</p></div></div>
+            </div>
+          </div>
+
+          <!-- CONTACT INFO -->
+          <div class="w-full lg:w-5/12 fade-up" style="animation-delay: 0.15s;">
+            <div class="space-y-6">
+              <div class="rounded-2xl p-6 sm:p-8" style="background: white; border: 1px solid rgba(44,24,16,0.06); box-shadow: 0 4px 24px rgba(44,24,16,0.04);">
+                <div class="flex items-center gap-3 mb-6"><div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: rgba(139,105,20,0.08);"><iconify-icon icon="solar:chat-round-call-linear" width="20" height="20" style="color: #8B6914;"></iconify-icon></div><h3 style="font-family: 'Playfair Display', serif; color: #2C1810;" class="text-lg tracking-tight font-medium">Közvetlen elérhetőségeink</h3></div>
+                <div class="space-y-5">
+                  <a href="tel:+36206128116" class="flex items-start gap-4 p-4 rounded-xl transition-all" style="background: rgba(45,80,22,0.03); border: 1px solid transparent;" onmouseover="this.style.background='rgba(45,80,22,0.06)'; this.style.borderColor='rgba(45,80,22,0.1)'" onmouseout="this.style.background='rgba(45,80,22,0.03)'; this.style.borderColor='transparent'"><div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(45,80,22,0.08);"><iconify-icon icon="solar:phone-calling-linear" width="20" height="20" style="color: #2D5016;"></iconify-icon></div><div><p class="text-sm font-semibold mb-0.5" style="color: #2C1810;">+36 20 612 8116</p><p class="text-xs leading-relaxed" style="color: rgba(44,24,16,0.45);">Hétfő–Péntek: 8:00–18:00<br>Szombat: 8:00–14:00</p></div></a>
+                  <a href="mailto:fabolmindent.hu@gmail.com" class="flex items-start gap-4 p-4 rounded-xl transition-all" style="background: rgba(139,105,20,0.03); border: 1px solid transparent;" onmouseover="this.style.background='rgba(139,105,20,0.06)'" onmouseout="this.style.background='rgba(139,105,20,0.03)'"><div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(139,105,20,0.08);"><iconify-icon icon="solar:letter-linear" width="20" height="20" style="color: #8B6914;"></iconify-icon></div><div><p class="text-sm font-semibold mb-0.5" style="color: #2C1810;">fabolmindent.hu@gmail.com</p><p class="text-xs" style="color: rgba(44,24,16,0.45);">24 órán belül válaszolunk</p></div></a>
+                  <a href="https://www.facebook.com/profile.php?id=100089913262225" target="_blank" class="flex items-start gap-4 p-4 rounded-xl transition-all" style="background: rgba(196,101,42,0.03); border: 1px solid transparent;" onmouseover="this.style.background='rgba(196,101,42,0.06)'" onmouseout="this.style.background='rgba(196,101,42,0.03)'"><div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(196,101,42,0.08);"><iconify-icon icon="mdi:facebook" width="20" height="20" style="color: #C4652A;"></iconify-icon></div><div><p class="text-sm font-semibold mb-0.5" style="color: #2C1810;">Fából Mindent</p><p class="text-xs flex items-center gap-1" style="color: rgba(44,24,16,0.45);">Facebook oldal <iconify-icon icon="solar:arrow-right-up-linear" width="12" height="12"></iconify-icon></p></div></a>
+                </div>
+              </div>
+              <div class="rounded-2xl p-6 relative overflow-hidden" style="background: linear-gradient(135deg, rgba(139,105,20,0.08) 0%, rgba(196,101,42,0.06) 100%); border: 1px solid rgba(139,105,20,0.1);">
+                <div class="relative flex items-start gap-3.5"><div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(139,105,20,0.12);"><iconify-icon icon="solar:lightbulb-linear" width="20" height="20" style="color: #8B6914;"></iconify-icon></div><div><p class="text-sm font-semibold mb-1" style="color: #2C1810;">Hasznos tipp!</p><p class="text-sm leading-relaxed" style="color: rgba(44,24,16,0.6);">Ha telefonon rendel, átvételkor fizet – <strong style="color: #2D5016;">előleget nem kérünk!</strong></p></div></div>
+              </div>
+              <div class="rounded-2xl p-6" style="background: white; border: 1px solid rgba(44,24,16,0.06);"><div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: rgba(44,24,16,0.04);"><iconify-icon icon="solar:buildings-2-linear" width="20" height="20" style="color: rgba(44,24,16,0.4);"></iconify-icon></div><h4 class="text-sm font-semibold" style="color: #2C1810;">Vállalkozói adatok</h4></div><div class="space-y-2.5"><div class="flex items-center justify-between"><span class="text-xs" style="color: rgba(44,24,16,0.4);">Név</span><span class="text-xs font-medium" style="color: rgba(44,24,16,0.7);">TUDOR E.V.</span></div><div style="border-top: 1px solid rgba(44,24,16,0.04);"></div><div class="flex items-center justify-between"><span class="text-xs" style="color: rgba(44,24,16,0.4);">Adószám</span><span class="text-xs font-medium" style="color: rgba(44,24,16,0.7);">68709950-1-39</span></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RENDELÉS MENETE -->
+    <section class="relative py-16 sm:py-20 lg:py-24 overflow-hidden" style="background: linear-gradient(170deg, #2D5016 0%, #1f3b0f 50%, #162c0a 100%);">
+      <div class="absolute inset-0 opacity-[0.04]" style="background: repeating-linear-gradient(90deg, white 0px, transparent 1px, transparent 80px), repeating-linear-gradient(0deg, white 0px, transparent 1px, transparent 80px);"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14 sm:mb-16 fade-up">
+          <div class="flex items-center justify-center gap-2.5 mb-4"><div class="w-8 h-[2px] rounded-full" style="background: rgba(255,255,255,0.3);"></div><span class="text-xs font-semibold uppercase tracking-widest" style="color: rgba(255,255,255,0.5);">Hogyan működik?</span><div class="w-8 h-[2px] rounded-full" style="background: rgba(255,255,255,0.3);"></div></div>
+          <h2 style="font-family: 'Playfair Display', serif; color: white; font-size: clamp(1.65rem, 4vw, 2.5rem);" class="tracking-tight font-medium mb-3">A rendelés menete</h2>
+          <p class="text-sm" style="color: rgba(255,255,255,0.45); max-width: 480px; margin: 0 auto;">Egyszerű, átlátható folyamat – a rendeléstől a helyszíni összeszerelésig</p>
+        </div>
+        <div class="fade-up" style="animation-delay: 0.15s;">
+          <div class="hidden lg:flex items-start justify-between relative">
+            <div class="absolute top-8 left-[10%] right-[10%] h-[2px]" style="background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.12), rgba(255,255,255,0.06));"></div>
+            <div class="absolute top-8 left-[10%] h-[2px] step-progress" style="background: linear-gradient(90deg, #8B6914, #C4652A); width: 0%; box-shadow: 0 0 12px rgba(139,105,20,0.3);"></div>
+            <div class="flex flex-col items-center text-center relative z-10 w-1/5 step-item" style="opacity: 0; transform: translateY(20px);"><div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-4" style="background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.1);"><iconify-icon icon="solar:clipboard-text-linear" width="28" height="28" style="color: rgba(255,255,255,0.7);"></iconify-icon></div><div class="text-xs font-semibold mb-1.5 tracking-wide" style="color: #C4952A;">01</div><h4 class="text-sm font-semibold mb-1" style="color: white;">Rendelés leadása</h4><p class="text-xs" style="color: rgba(255,255,255,0.4);">Weboldalon vagy telefonon</p></div>
+            <div class="flex flex-col items-center text-center relative z-10 w-1/5 step-item" style="opacity: 0; transform: translateY(20px);"><div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-4" style="background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.1);"><iconify-icon icon="solar:phone-calling-rounded-linear" width="28" height="28" style="color: rgba(255,255,255,0.7);"></iconify-icon></div><div class="text-xs font-semibold mb-1.5 tracking-wide" style="color: #C4952A;">02</div><h4 class="text-sm font-semibold mb-1" style="color: white;">Visszahívás</h4><p class="text-xs" style="color: rgba(255,255,255,0.4);">Egyeztetjük a részleteket</p></div>
+            <div class="flex flex-col items-center text-center relative z-10 w-1/5 step-item" style="opacity: 0; transform: translateY(20px);"><div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-4" style="background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.1);"><iconify-icon icon="solar:delivery-linear" width="28" height="28" style="color: rgba(255,255,255,0.7);"></iconify-icon></div><div class="text-xs font-semibold mb-1.5 tracking-wide" style="color: #C4952A;">03</div><h4 class="text-sm font-semibold mb-1" style="color: white;">Szállítás</h4><p class="text-xs" style="color: rgba(255,255,255,0.4);">Ingyenesen, országosan</p></div>
+            <div class="flex flex-col items-center text-center relative z-10 w-1/5 step-item" style="opacity: 0; transform: translateY(20px);"><div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-4" style="background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.1);"><iconify-icon icon="solar:wrench-linear" width="28" height="28" style="color: rgba(255,255,255,0.7);"></iconify-icon></div><div class="text-xs font-semibold mb-1.5 tracking-wide" style="color: #C4952A;">04</div><h4 class="text-sm font-semibold mb-1" style="color: white;">Összeszerelés</h4><p class="text-xs" style="color: rgba(255,255,255,0.4);">Helyszínen, profi csapattal</p></div>
+            <div class="flex flex-col items-center text-center relative z-10 w-1/5 step-item" style="opacity: 0; transform: translateY(20px);"><div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-4" style="background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.1);"><iconify-icon icon="solar:wallet-money-linear" width="28" height="28" style="color: rgba(255,255,255,0.7);"></iconify-icon></div><div class="text-xs font-semibold mb-1.5 tracking-wide" style="color: #C4952A;">05</div><h4 class="text-sm font-semibold mb-1" style="color: white;">Fizetés</h4><p class="text-xs" style="color: rgba(255,255,255,0.4);">Csak átvétel után!</p></div>
+          </div>
+          <!-- Mobile -->
+          <div class="lg:hidden flex flex-col relative">
+            <div class="absolute top-0 bottom-0 left-8 w-[2px]" style="background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.12), rgba(255,255,255,0.06));"></div>
+            <div class="flex items-start gap-5 relative z-10 pb-8 step-item-mobile" style="opacity: 0; transform: translateX(-20px);"><div class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0" style="background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.1);"><iconify-icon icon="solar:clipboard-text-linear" width="26" height="26" style="color: rgba(255,255,255,0.7);"></iconify-icon></div><div class="pt-2"><div class="text-xs font-semibold mb-1 tracking-wide" style="color: #C4952A;">01. lépés</div><h4 class="text-sm font-semibold mb-1" style="color: white;">Rendelés leadása</h4><p class="text-xs" style="color: rgba(255,255,255,0.4);">Weboldalon vagy telefonon</p></div></div>
+            <div class="flex items-start gap-5 relative z-10 pb-8 step-item-mobile" style="opacity: 0; transform: translateX(-20px);"><div class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0" style="background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.1);"><iconify-icon icon="solar:phone-calling-rounded-linear" width="26" height="26" style="color: rgba(255,255,255,0.7);"></iconify-icon></div><div class="pt-2"><div class="text-xs font-semibold mb-1 tracking-wide" style="color: #C4952A;">02. lépés</div><h4 class="text-sm font-semibold mb-1" style="color: white;">Visszahívás</h4><p class="text-xs" style="color: rgba(255,255,255,0.4);">Egyeztetjük a részleteket</p></div></div>
+            <div class="flex items-start gap-5 relative z-10 pb-8 step-item-mobile" style="opacity: 0; transform: translateX(-20px);"><div class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0" style="background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.1);"><iconify-icon icon="solar:delivery-linear" width="26" height="26" style="color: rgba(255,255,255,0.7);"></iconify-icon></div><div class="pt-2"><div class="text-xs font-semibold mb-1 tracking-wide" style="color: #C4952A;">03. lépés</div><h4 class="text-sm font-semibold mb-1" style="color: white;">Szállítás</h4><p class="text-xs" style="color: rgba(255,255,255,0.4);">Ingyenesen, országosan</p></div></div>
+            <div class="flex items-start gap-5 relative z-10 pb-8 step-item-mobile" style="opacity: 0; transform: translateX(-20px);"><div class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0" style="background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.1);"><iconify-icon icon="solar:wrench-linear" width="26" height="26" style="color: rgba(255,255,255,0.7);"></iconify-icon></div><div class="pt-2"><div class="text-xs font-semibold mb-1 tracking-wide" style="color: #C4952A;">04. lépés</div><h4 class="text-sm font-semibold mb-1" style="color: white;">Összeszerelés</h4><p class="text-xs" style="color: rgba(255,255,255,0.4);">Helyszínen, profi csapattal</p></div></div>
+            <div class="flex items-start gap-5 relative z-10 step-item-mobile" style="opacity: 0; transform: translateX(-20px);"><div class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0" style="background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.1);"><iconify-icon icon="solar:wallet-money-linear" width="26" height="26" style="color: rgba(255,255,255,0.7);"></iconify-icon></div><div class="pt-2"><div class="text-xs font-semibold mb-1 tracking-wide" style="color: #C4952A;">05. lépés</div><h4 class="text-sm font-semibold mb-1" style="color: white;">Fizetés</h4><p class="text-xs" style="color: rgba(255,255,255,0.4);">Csak átvétel után!</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background: #2C1810;" class="pt-14 sm:pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12">
+          <div class="sm:col-span-2 lg:col-span-1"><div class="flex items-center gap-2 mb-4"><iconify-icon icon="solar:tree-linear" width="24" height="24" style="color: #7a9e5a;"></iconify-icon><span style="font-family: 'Playfair Display', serif; color: white;" class="text-lg font-normal">Fából Mindent</span></div><p class="text-sm leading-relaxed mb-5" style="color: rgba(255,255,255,0.4); max-width: 280px;">Prémium minőségű kézműves fa játszóterek, kerti bútorok és kiülők gyártása Erdélyben.</p><a href="https://www.facebook.com/profile.php?id=100089913262225" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center transition-all" style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.4);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.4)'"><iconify-icon icon="mdi:facebook" width="18" height="18"></iconify-icon></a></div>
+          <div><h4 class="text-sm font-semibold mb-5" style="color: white;">Termékeink</h4><ul class="space-y-3"><li><a href="termekek.html" class="text-sm" style="color: rgba(255,255,255,0.4);">Játszóterek</a></li><li><a href="termekek.html" class="text-sm" style="color: rgba(255,255,255,0.4);">Kerti bútorok</a></li><li><a href="termekek.html" class="text-sm" style="color: rgba(255,255,255,0.4);">Kiülők</a></li><li><a href="termekek.html" class="text-sm" style="color: rgba(255,255,255,0.4);">Hintaágyak</a></li></ul></div>
+          <div><h4 class="text-sm font-semibold mb-5" style="color: white;">Információk</h4><ul class="space-y-3"><li><a href="rolunk.html" class="text-sm" style="color: rgba(255,255,255,0.4);">Rólunk</a></li><li><a href="kapcsolat.html" class="text-sm" style="color: rgba(255,255,255,0.4);">Szállítás</a></li><li><a href="kapcsolat.html" class="text-sm" style="color: rgba(255,255,255,0.4);">Garancia</a></li><li><a href="kapcsolat.html" class="text-sm" style="color: rgba(255,255,255,0.4);">ÁSZF</a></li></ul></div>
+          <div><h4 class="text-sm font-semibold mb-5" style="color: white;">Kapcsolat</h4><ul class="space-y-3.5"><li><a href="tel:+36206128116" class="flex items-center gap-2.5 text-sm" style="color: rgba(255,255,255,0.4);"><iconify-icon icon="solar:phone-linear" width="16" height="16" style="color: #7a9e5a;"></iconify-icon>+36 20 612 8116</a></li><li><a href="mailto:fabolmindent.hu@gmail.com" class="flex items-center gap-2.5 text-sm" style="color: rgba(255,255,255,0.4);"><iconify-icon icon="solar:letter-linear" width="16" height="16" style="color: #7a9e5a;"></iconify-icon>fabolmindent.hu@gmail.com</a></li><li class="flex items-start gap-2.5 text-sm" style="color: rgba(255,255,255,0.4);"><iconify-icon icon="solar:buildings-2-linear" width="16" height="16" style="color: #7a9e5a;" class="flex-shrink-0 mt-0.5"></iconify-icon><span>TUDOR E.V.<br>Adószám: 68709950-1-39</span></li></ul></div>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.06);" class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p class="text-xs" style="color: rgba(255,255,255,0.25);">© 2025 Fából Mindent – Minden jog fenntartva</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      let mobileMenuOpen = false;
+      function toggleMobileMenu() {
+          mobileMenuOpen = !mobileMenuOpen;
+          const menu = document.getElementById('mobile-menu');
+          const h = document.getElementById('hamburger-icon');
+          const c = document.getElementById('close-icon');
+          if (mobileMenuOpen) { menu.style.maxHeight = menu.scrollHeight + 'px'; h.style.display = 'none'; c.style.display = 'block'; }
+          else { menu.style.maxHeight = '0'; h.style.display = 'block'; c.style.display = 'none'; }
+      }
+      document.querySelectorAll('#mobile-menu a').forEach(link => { link.addEventListener('click', () => { if (mobileMenuOpen) toggleMobileMenu(); }); });
+
+      function handleFormSubmit(e) {
+          e.preventDefault();
+          const form = document.getElementById('quote-form');
+          const success = document.getElementById('success-message');
+          const btn = document.getElementById('submit-btn');
+          btn.innerHTML = '<iconify-icon icon="solar:refresh-linear" width="20" height="20" style="animation: spin 1s linear infinite;"></iconify-icon> Küldés...';
+          btn.style.opacity = '0.7'; btn.style.pointerEvents = 'none';
+          setTimeout(() => { form.style.display = 'none'; success.classList.remove('hidden'); success.style.animation = 'fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards'; }, 1500);
+      }
+
+      const animStyle = document.createElement('style');
+      animStyle.textContent = `.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); } .fade-up.visible { opacity: 1; transform: translateY(0); } #mobile-menu { transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1); } @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } } @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } } input::placeholder, textarea::placeholder { color: rgba(44,24,16,0.3); }`;
+      document.head.appendChild(animStyle);
+
+      const fadeUpObserver = new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) { const ms = parseFloat(entry.target.style.animationDelay || '0') * 1000; setTimeout(() => entry.target.classList.add('visible'), ms); fadeUpObserver.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.fade-up').forEach(el => fadeUpObserver.observe(el));
+
+      const stepObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.querySelectorAll('.step-item').forEach((s, i) => { setTimeout(() => { s.style.transition = 'opacity 0.6s ease, transform 0.6s ease'; s.style.opacity = '1'; s.style.transform = 'translateY(0)'; const b = s.querySelector('div[class*="w-16"]'); if(b) setTimeout(() => { b.style.borderColor = 'rgba(196,149,42,0.4)'; b.style.background = 'rgba(255,255,255,0.12)'; }, 300); }, i * 200); }); const p = entry.target.querySelector('.step-progress'); if(p) setTimeout(() => { p.style.transition = 'width 2s ease'; p.style.width = '100%'; }, 400); entry.target.querySelectorAll('.step-item-mobile').forEach((s, i) => { setTimeout(() => { s.style.transition = 'opacity 0.6s ease, transform 0.6s ease'; s.style.opacity = '1'; s.style.transform = 'translateX(0)'; const b = s.querySelector('div[class*="w-16"]'); if(b) setTimeout(() => { b.style.borderColor = 'rgba(196,149,42,0.4)'; b.style.background = 'rgba(255,255,255,0.12)'; }, 300); }, i * 180); }); stepObserver.unobserve(entry.target); } }); }, { threshold: 0.2 });
+      const sc = document.querySelector('.step-item, .step-item-mobile');
+      if (sc) stepObserver.observe(sc.closest('.fade-up') || sc.parentElement);
+
+      const cb = document.getElementById('privacy-check');
+      if (cb) cb.addEventListener('change', function() { const cm = this.nextElementSibling.nextElementSibling; cm.style.display = this.checked ? 'flex' : 'none'; });
+
+      document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', function(e) { const h = this.getAttribute('href'); if (h === '#') return; e.preventDefault(); const t = document.querySelector(h); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
+    </script>
+</body></html>
