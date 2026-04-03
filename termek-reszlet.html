@@ -331,7 +331,7 @@
         const prices = { '150': '245.000 Ft', '200': '295.000 Ft' };
         function selectSize(size, el) {
             selectedSize = size;
-            document.querySelectorAll('.size-btn').forEach(btn => { btn.style.borderColor = 'rgba(44,24,16,0.1)'; btn.style.background = 'white'; btn.querySelector('span:first-child').style.color = '#2C1810'; btn.querySelector('span:last-child').style.color = 'rgba(44,24,16,0.45)'; const c = btn.querySelector('.absolute'); if(c) c.remove(); });
+            document.querySelectorAll('.size-btn').forEach(btn => { const c = btn.querySelector('.absolute'); if(c) c.remove(); btn.style.borderColor = 'rgba(44,24,16,0.1)'; btn.style.background = 'white'; btn.querySelector('span:first-child').style.color = '#2C1810'; btn.querySelector('span:last-child').style.color = 'rgba(44,24,16,0.45)'; });
             el.style.borderColor = '#2D5016'; el.style.background = 'rgba(45,80,22,0.04)'; el.querySelector('span:first-child').style.color = '#2D5016'; el.querySelector('span:last-child').style.color = 'rgba(45,80,22,0.7)';
             const checkDiv = document.createElement('div'); checkDiv.className = 'absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center'; checkDiv.style.background = '#2D5016'; checkDiv.innerHTML = '<iconify-icon icon="solar:check-read-linear" width="12" height="12" style="color: white;"></iconify-icon>'; el.appendChild(checkDiv);
             const priceEl = document.getElementById('currentPrice'); priceEl.style.opacity = '0'; priceEl.style.transform = 'translateY(5px)';
