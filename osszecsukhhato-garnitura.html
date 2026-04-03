@@ -114,7 +114,7 @@
                             <button id="size150" onclick="selectSize('150', this)" class="size-btn relative px-4 py-3.5 rounded-xl text-left transition-all" style="border: 2px solid #2D5016; background: rgba(45,80,22,0.04);">
                                 <span class="block text-sm font-semibold" style="color: #2D5016;">150 cm</span>
                                 <span class="block text-xs mt-0.5" style="color: rgba(45,80,22,0.7);">6 személyes</span>
-                                <div class="absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center" style="background: #2D5016;"><iconify-icon icon="solar:check-read-linear" width="12" height="12" style="color: white;"></iconify-icon></div>
+                                <div class="absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center" style="background: #2D5016;"><iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon></div>
                             </button>
                             <button id="size200" onclick="selectSize('200', this)" class="size-btn relative px-4 py-3.5 rounded-xl text-left transition-all" style="border: 2px solid rgba(44,24,16,0.1); background: white;">
                                 <span class="block text-sm font-semibold" style="color: #2C1810;">200 cm</span>
@@ -127,7 +127,7 @@
                     <div class="mb-7">
                         <p class="text-sm font-semibold mb-3" style="color: #2C1810;">Szín: <span id="colorLabel" class="font-normal" style="color: rgba(44,24,16,0.5);">Cseresznye</span></p>
                         <div class="flex items-center gap-3">
-                            <button onclick="selectColor('Cseresznye', '#8B4513', this)" class="color-swatch active-color w-11 h-11 rounded-full transition-all flex items-center justify-center" style="background: #8B4513; border: 3px solid #2D5016; box-shadow: 0 0 0 2px white inset;"><iconify-icon icon="solar:check-read-linear" width="16" height="16" style="color: white;"></iconify-icon></button>
+                            <button onclick="selectColor('Cseresznye', '#8B4513', this)" class="color-swatch active-color w-11 h-11 rounded-full transition-all flex items-center justify-center" style="background: #8B4513; border: 3px solid #2D5016; box-shadow: 0 0 0 2px white inset;"><iconify-icon icon="solar:check-linear" width="16" height="16" style="color: white;"></iconify-icon></button>
                             <button onclick="selectColor('Tölgy', '#C4952A', this)" class="color-swatch w-11 h-11 rounded-full transition-all flex items-center justify-center" style="background: #C4952A; border: 3px solid transparent; box-shadow: 0 0 0 1px rgba(44,24,16,0.15);"></button>
                         </div>
                     </div>
@@ -305,13 +305,13 @@
             selectedSize = size;
             document.querySelectorAll('.size-btn').forEach(btn => { const c = btn.querySelector('.absolute'); if(c) c.remove(); btn.style.borderColor = 'rgba(44,24,16,0.1)'; btn.style.background = 'white'; btn.querySelector('span:first-child').style.color = '#2C1810'; btn.querySelector('span:last-child').style.color = 'rgba(44,24,16,0.45)'; });
             el.style.borderColor = '#2D5016'; el.style.background = 'rgba(45,80,22,0.04)'; el.querySelector('span:first-child').style.color = '#2D5016'; el.querySelector('span:last-child').style.color = 'rgba(45,80,22,0.7)';
-            const checkDiv = document.createElement('div'); checkDiv.className = 'absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center'; checkDiv.style.background = '#2D5016'; checkDiv.innerHTML = '<iconify-icon icon="solar:check-read-linear" width="12" height="12" style="color: white;"></iconify-icon>'; el.appendChild(checkDiv);
+            const checkDiv = document.createElement('div'); checkDiv.className = 'absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center'; checkDiv.style.background = '#2D5016'; checkDiv.innerHTML = '<iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>'; el.appendChild(checkDiv);
             const priceEl = document.getElementById('currentPrice'); priceEl.style.opacity = '0'; priceEl.style.transform = 'translateY(5px)';
             setTimeout(() => { priceEl.textContent = prices[size]; priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
         }
         function selectColor(name, hex, el) {
             document.querySelectorAll('.color-swatch').forEach(s => { s.style.borderColor = 'transparent'; s.style.boxShadow = '0 0 0 1px rgba(44,24,16,0.15)'; s.innerHTML = ''; });
-            el.style.borderColor = '#2D5016'; el.style.boxShadow = '0 0 0 2px white inset'; el.innerHTML = '<iconify-icon icon="solar:check-read-linear" width="16" height="16" style="color: white;"></iconify-icon>';
+            el.style.borderColor = '#2D5016'; el.style.boxShadow = '0 0 0 2px white inset'; el.innerHTML = '<iconify-icon icon="solar:check-linear" width="16" height="16" style="color: white;"></iconify-icon>';
             document.getElementById('colorLabel').textContent = name;
         }
         function switchTab(tabName) {

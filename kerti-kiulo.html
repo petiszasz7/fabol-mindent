@@ -132,7 +132,7 @@
                                 <span class="block text-sm font-semibold" style="color: #2D5016;">Nádtetős</span>
                                 <span class="block text-xs mt-0.5" style="color: rgba(45,80,22,0.7);">225.000 Ft</span>
                                 <div class="check-icon absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center" style="background: #2D5016;">
-                                    <iconify-icon icon="solar:check-read-linear" width="12" height="12" style="color: white;"></iconify-icon>
+                                    <iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>
                                 </div>
                             </button>
                             <button id="roofLemez" onclick="selectRoof('lemez', this)" class="roof-btn relative px-4 py-3.5 rounded-xl text-left transition-all" style="border: 2px solid rgba(44,24,16,0.1); background: white;">
@@ -346,7 +346,7 @@
                 const icon = document.createElement('div');
                 icon.className = 'check-icon absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center';
                 icon.style.background = '#2D5016';
-                icon.innerHTML = '<iconify-icon icon="solar:check-read-linear" width="12" height="12" style="color: white;"></iconify-icon>';
+                icon.innerHTML = '<iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>';
                 el.appendChild(icon);
             }
             document.getElementById('currentPrice').textContent = roofPrices[type];
