@@ -107,6 +107,24 @@
 
                     <div class="mb-6" style="border-top: 1px solid rgba(44,24,16,0.08);"></div>
 
+                    <!-- SIZE SELECTOR -->
+                    <div class="mb-6">
+                        <p class="text-sm font-semibold mb-3" style="color: #2C1810;">Méret</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button id="size150" onclick="selectSize('150', this)" class="size-btn active-size relative px-4 py-3.5 rounded-xl text-left transition-all" style="border: 2px solid #2D5016; background: rgba(45,80,22,0.04);">
+                                <span class="block text-sm font-semibold" style="color: #2D5016;">150 cm</span>
+                                <span class="block text-xs mt-0.5" style="color: rgba(45,80,22,0.7);">6 személyes</span>
+                                <div class="absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center" style="background: #2D5016;"><iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon></div>
+                            </button>
+                            <button id="size200" onclick="selectSize('200', this)" class="size-btn relative px-4 py-3.5 rounded-xl text-left transition-all" style="border: 2px solid rgba(44,24,16,0.1); background: white;">
+                                <span class="block text-sm font-semibold" style="color: #2C1810;">200 cm</span>
+                                <span class="block text-xs mt-0.5" style="color: rgba(44,24,16,0.45);">8 személyes</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mb-6" style="border-top: 1px solid rgba(44,24,16,0.08);"></div>
+
                     <!-- COLOR SELECTOR -->
                     <div class="mb-6">
                         <p class="text-sm font-semibold mb-3" style="color: #2C1810;">Szín: <span id="colorLabel" class="font-normal" style="color: rgba(44,24,16,0.5);">Cseresznye</span></p>
@@ -121,8 +139,7 @@
                     <!-- PRICE -->
                     <div class="mb-4">
                         <div class="flex items-baseline gap-3 mb-2">
-                            <span style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">295.000 Ft</span>
-                            <span class="text-sm font-medium" style="color: rgba(44,24,16,0.45);">6 személyes (150 cm)</span>
+                            <span id="currentPrice" style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">295.000 Ft</span>
                         </div>
                         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg" style="background: linear-gradient(135deg, rgba(196,101,42,0.08), rgba(139,105,20,0.08));">
                             <iconify-icon icon="solar:tag-price-linear" width="14" height="14" style="color: #C4652A;"></iconify-icon>
@@ -289,6 +306,16 @@
             mainImg.style.opacity = '0'; mainImg.style.transform = 'scale(0.98)';
             setTimeout(() => { mainImg.querySelector('div').style.background = mainImageGradients[index]; mainImg.querySelector('span').textContent = '5 Pozíciós Garnitúra – ' + mainImageLabels[index]; mainImg.style.opacity = '1'; mainImg.style.transform = 'scale(1)'; }, 200);
         }
+        let selectedSize = '150';
+        const prices = { '150': '295.000 Ft', '200': '355.000 Ft' };
+        function selectSize(size, el) {
+            selectedSize = size;
+            document.querySelectorAll('.size-btn').forEach(btn => { const c = btn.querySelector('.absolute'); if(c) c.remove(); btn.style.borderColor = 'rgba(44,24,16,0.1)'; btn.style.background = 'white'; btn.querySelector('span:first-child').style.color = '#2C1810'; btn.querySelector('span:last-child').style.color = 'rgba(44,24,16,0.45)'; });
+            el.style.borderColor = '#2D5016'; el.style.background = 'rgba(45,80,22,0.04)'; el.querySelector('span:first-child').style.color = '#2D5016'; el.querySelector('span:last-child').style.color = 'rgba(45,80,22,0.7)';
+            const checkDiv = document.createElement('div'); checkDiv.className = 'absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center'; checkDiv.style.background = '#2D5016'; checkDiv.innerHTML = '<iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>'; el.appendChild(checkDiv);
+            const priceEl = document.getElementById('currentPrice'); priceEl.style.opacity = '0'; priceEl.style.transform = 'translateY(5px)';
+            setTimeout(() => { priceEl.textContent = prices[size]; priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
+        }
         function selectColor(name, hex, el) {
             document.querySelectorAll('.color-swatch').forEach(s => { s.style.borderColor = 'transparent'; s.style.boxShadow = '0 0 0 1px rgba(44,24,16,0.15)'; s.innerHTML = ''; });
             el.style.borderColor = '#2D5016'; el.style.boxShadow = '0 0 0 2px white inset'; el.innerHTML = '<iconify-icon icon="solar:check-linear" width="16" height="16" style="color: white;"></iconify-icon>';
@@ -305,6 +332,7 @@
         document.querySelectorAll('.tab-content').forEach(c => { c.style.transition = 'opacity 0.4s ease, transform 0.4s ease'; });
         document.getElementById('content-reszletek').style.opacity = '1'; document.getElementById('content-reszletek').style.transform = 'translateY(0)';
         const mainImg = document.getElementById('mainImage'); mainImg.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        const priceEl = document.getElementById('currentPrice'); priceEl.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
         function handleOrder() {
             const btn = document.getElementById('orderBtn'); const orig = btn.innerHTML;
             btn.innerHTML = '<iconify-icon icon="solar:check-circle-linear" width="22" height="22"></iconify-icon> Köszönjük! Hamarosan hívjuk!'; btn.style.backgroundColor = '#1e3a0e'; btn.disabled = true;
