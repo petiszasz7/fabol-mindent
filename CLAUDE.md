@@ -64,8 +64,12 @@
 - **CSS framework:** Tailwind CSS (CDN)
 
 ## Technikai tudnivalók
-- Tiszta HTML fájlok, nincs külső backend
-- A weboldal GitHub Pages-en fut
+- Tiszta HTML fájlok
+- A weboldal Vercelen fut, GitHub repoval összekapcsolva (petiszasz7/fabol-mindent)
+- Vercel automatikusan deployol minden git push után
+- Email küldés: Resend API, a végpont: /api/send-email.js
+- Resend API kulcs Vercelben van tárolva: RESEND_API_KEY environment variable
+- Célzott email cím: fabolmindent.hu@gmail.com
 - Szerkesztés után feltöltés:
   ```
   git add .
