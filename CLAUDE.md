@@ -19,20 +19,34 @@
 - `kapcsolat.html` – Kapcsolat és árajánlat kérő űrlap
 
 ## Termékek
-- Nagy Játszótér
-- Kis Játszótér
-- Kerti Kiülő – Nádtetős
-- Kőrisfa Garnitúra 2+2+1
-- Összecsukható Garnitúra
-- 5 Pozíciós Garnitúra
-- Pillangó Csavaros Garnitúra
-- Zsindelytetős Hintaágy
+
+### Játszóterek
+- **Nagy Játszótér** — raktárról, gyors szállítás + helyszíni összeszerelés
+- **Kis Játszótér** — kisebb kertekbe, fiatalabb gyerekeknek, raktárról
+
+### Kerti bútorok
+- **Kerti Kiülő – Nádtetős** — 225.000 Ft, fenyő 10x10-es oszlopok, 5cm ülőfelület, 2m-es padok, + 2db ajándék grill sütő-fatál szett
+- **Kőrisfa Garnitúra 2+2+1** — kőrisfa, lazúrozott + lakkozott, 3 szín (cseresznye, tölgy, dió)
+  - 8 személyes (150 cm-es asztal): 245.000 Ft
+  - 10 személyes (200 cm-es asztal): 295.000 Ft
+- **Összecsukható Garnitúra** — borovi fenyő, lazúrozott, 2 szín (cseresznye, tölgy)
+  - 6 személyes (150 cm-es asztal): 185.000 Ft
+  - 8 személyes (200 cm-es asztal): 215.000 Ft
+- **5 Pozíciós Garnitúra** — borovi fenyő, lazúrozott, állítható háttámla, 2 szín (cseresznye, tölgy)
+  - 6 személyes (150 cm-es asztal): 295.000 Ft
+  - Párna: 5.500 Ft/db
+- **Pillangó Csavaros Garnitúra** — borovi fenyő, lazúrozott, 2 szín (cseresznye, tölgy)
+  - 8 személyes (150 cm-es asztal): 195.000 Ft
+  - 10 személyes (200 cm-es asztal): 225.000 Ft
+- **Zsindelytetős Hintaágy** — borovi fenyő, 3 személyes, 500 kg teherbírás, párna ajándék: 235.000 Ft
+
+### Minden terméknél
+- Ingyenes országos szállítás + összeszerelés
+- Előleg nélkül, fizetés csak átvételkor
 
 ## Navigáció (minden oldalon)
-- Kezdőlap → index.html
-- Játszóterek → termekek.html
-- Kerti bútorok → termekek.html
-- Munkáink → rolunk.html
+- Főoldal → index.html
+- Termékek → termekek.html
 - Rólunk → rolunk.html
 - Kapcsolat → kapcsolat.html
 - Árajánlat gomb → kapcsolat.html
