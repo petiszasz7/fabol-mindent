@@ -269,127 +269,325 @@
       </div>
     </section>
 
-    <!-- TERMÉKKATEGÓRIA SZEKCIÓ -->
+    <!-- TERMÉKEINK SZEKCIÓ -->
     <section id="termekeink" class="pt-6 sm:pt-10 pb-16 sm:pb-24" style="background-color: #F5F0EB;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="text-center mb-12 sm:mb-16">
           <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4" style="background: rgba(45,80,22,0.08); color: #2D5016;">
-            <span class="text-xs font-medium tracking-wide uppercase">
-              Kategóriák
-            </span>
+            <iconify-icon icon="solar:shop-linear" width="16" height="16"></iconify-icon>
+            <span class="text-xs font-medium tracking-wide uppercase">Termékkatalógus</span>
           </div>
           <h2 style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(1.75rem, 4vw, 2.75rem);" class="tracking-tight mb-4">
             Termékeink
           </h2>
           <p class="text-base max-w-2xl mx-auto" style="color: rgba(44,24,16,0.6);">
-            Fedezze fel kézműves termékeink széles választékát, amelyeket a
-            legfinomabb faanyagokból készítünk.
+            Fedezze fel kézműves termékeink széles választékát, amelyeket a legfinomabb faanyagokból készítünk.
           </p>
         </div>
 
         <!-- Product Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          <!-- Card 1: Játszóterek -->
-          <a href="termekek.html" class="product-card group bg-white rounded-2xl overflow-hidden shadow-sm block" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1); text-decoration: none; color: inherit;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 50px -12px rgba(44,24,16,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 3px 0 rgba(0,0,0,0.1)'">
-            <!-- Image -->
-            <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
-              <img src="jatszter-4.webp" alt="Játszóterek" style="width:100%;height:100%;object-fit:cover;display:block;">
-              <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.4) 0%, transparent 50%);"></div>
-              <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg text-xs font-medium" style="background: rgba(196,101,42,0.9); color: white;">
-                Népszerű
-              </div>
-            </div>
-            <!-- Content -->
-            <div class="p-6">
-              <div class="flex items-center gap-2 mb-2">
-                <iconify-icon icon="solar:home-smile-linear" width="18" height="18" style="color: #2D5016;"></iconify-icon>
-                <span class="text-xs font-medium uppercase tracking-wider" style="color: #2D5016;">
-                  Gyerekeknek
-                </span>
-              </div>
-              <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-3">
-                Játszóterek
-              </h3>
-              <p class="text-sm leading-relaxed mb-5" style="color: rgba(44,24,16,0.6);">
-                Masszív, biztonságos játszóterek gyerekeknek. Antracit-fehér
-                vagy tölgy-fehér kivitelben.
-              </p>
-              <span class="inline-flex items-center gap-1.5 text-sm font-medium" style="color: #2D5016;">
-                Részletek
-                <iconify-icon icon="solar:arrow-right-linear" width="16" height="16"></iconify-icon>
-              </span>
-            </div>
-          </a>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
 
-          <!-- Card 2: Kerti bútor garnitúrák -->
-          <a href="termekek.html" class="product-card group bg-white rounded-2xl overflow-hidden shadow-sm block" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1); text-decoration: none; color: inherit;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 50px -12px rgba(44,24,16,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 3px 0 rgba(0,0,0,0.1)'">
-            <!-- Image -->
-            <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
-              <div class="w-full h-full" style="background: linear-gradient(135deg, #b8973f 0%, #8B6914 60%, #5a4410 100%);">
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-white/70">
-                  <iconify-icon icon="solar:gallery-minimalistic-linear" width="40" height="40" style="opacity: 0.4;"></iconify-icon>
-                  <span class="text-xs mt-2 opacity-50">Kerti bútor fotó</span>
+          <!-- Card 1: Nagy Játszótér -->
+          <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+                <img src="jatszter-4.webp" alt="Nagy Játszótér" class="w-full h-full" style="object-fit: cover; display: block;">
+                <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
+                <div class="absolute top-3 right-3 px-2.5 py-1 rounded-lg text-xs font-semibold tracking-wide" style="background-color: #C4652A; color: white;">AKCIÓ</div>
+              </div>
+              <div class="p-5 sm:p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <iconify-icon icon="solar:home-smile-linear" width="16" height="16" style="color: #2D5016;"></iconify-icon>
+                  <span class="text-xs font-medium uppercase tracking-wider" style="color: #2D5016;">Játszótér</span>
+                </div>
+                <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">Nagy Játszótér</h3>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">430×440 cm, csúszda + hinta + mászófal + homokozó</p>
+                <div class="flex items-center mb-4">
+                  <span class="text-base font-semibold" style="color: #C4652A;">Árajánlat alapján</span>
+                </div>
+                <a href="nagy-jatszter.html" class="details-btn w-full inline-flex items-center justify-center gap-2 text-sm font-medium px-5 py-2.5 rounded-xl transition-colors" style="background-color: #2D5016; color: white;">
+                  Részletek <iconify-icon icon="solar:arrow-right-linear" width="16" height="16"></iconify-icon>
+                </a>
+                <div class="flex items-center gap-4 mt-4 pt-4" style="border-top: 1px solid rgba(44,24,16,0.06);">
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:delivery-linear" width="14" height="14" style="color: #2D5016;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">Ingyenes szállítás</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:wrench-linear" width="14" height="14" style="color: #8B6914;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">Összeszerelés</span>
+                  </div>
                 </div>
               </div>
-              <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.4) 0%, transparent 50%);"></div>
-              <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg text-xs font-medium" style="background: rgba(139,105,20,0.9); color: white;">
-                Új kollekció
-              </div>
             </div>
-            <!-- Content -->
-            <div class="p-6">
-              <div class="flex items-center gap-2 mb-2">
-                <iconify-icon icon="solar:chair-linear" width="18" height="18" style="color: #8B6914;"></iconify-icon>
-                <span class="text-xs font-medium uppercase tracking-wider" style="color: #8B6914;">
-                  Garnitúrák
-                </span>
-              </div>
-              <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-3">
-                Kerti bútor garnitúrák
-              </h3>
-              <p class="text-sm leading-relaxed mb-5" style="color: rgba(44,24,16,0.6);">
-                Kőris- és fenyőfa garnitúrák 6-10 személyre. Több stílus és szín
-                elérhető.
-              </p>
-              <span class="inline-flex items-center gap-1.5 text-sm font-medium" style="color: #8B6914;">
-                Részletek
-                <iconify-icon icon="solar:arrow-right-linear" width="16" height="16"></iconify-icon>
-              </span>
-            </div>
-          </a>
+          </div>
 
-          <!-- Card 3: Kerti kiülők -->
-          <a href="termekek.html" class="product-card group bg-white rounded-2xl overflow-hidden shadow-sm md:col-span-2 lg:col-span-1 block" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1); text-decoration: none; color: inherit;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 50px -12px rgba(44,24,16,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 3px 0 rgba(0,0,0,0.1)'">
-            <!-- Image -->
-            <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
-              <img src="kiulo-1.jpg.jpg" alt="Kerti kiülő" class="w-full h-full" style="object-fit: cover; object-position: center; display: block;">
-              <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.4) 0%, transparent 50%);"></div>
-              <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg text-xs font-medium" style="background: rgba(196,101,42,0.9); color: white;">
-                Kedvenc
+          <!-- Card 2: Kis Játszótér -->
+          <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+                <img src="jatszter-5.webp" alt="Kis Játszótér" class="w-full h-full" style="object-fit: cover; display: block;">
+                <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
+              </div>
+              <div class="p-5 sm:p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <iconify-icon icon="solar:home-smile-linear" width="16" height="16" style="color: #2D5016;"></iconify-icon>
+                  <span class="text-xs font-medium uppercase tracking-wider" style="color: #2D5016;">Játszótér</span>
+                </div>
+                <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">Kis Játszótér</h3>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">Kisebb kertekbe ideális, fiatalabb gyerekeknek</p>
+                <div class="flex items-center mb-4">
+                  <span class="text-base font-semibold" style="color: #C4652A;">Árajánlat alapján</span>
+                </div>
+                <a href="kis-jatszter.html" class="details-btn w-full inline-flex items-center justify-center gap-2 text-sm font-medium px-5 py-2.5 rounded-xl transition-colors" style="background-color: #2D5016; color: white;">
+                  Részletek <iconify-icon icon="solar:arrow-right-linear" width="16" height="16"></iconify-icon>
+                </a>
+                <div class="flex items-center gap-4 mt-4 pt-4" style="border-top: 1px solid rgba(44,24,16,0.06);">
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:delivery-linear" width="14" height="14" style="color: #2D5016;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">Ingyenes szállítás</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:wrench-linear" width="14" height="14" style="color: #8B6914;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">Összeszerelés</span>
+                  </div>
+                </div>
               </div>
             </div>
-            <!-- Content -->
-            <div class="p-6">
-              <div class="flex items-center gap-2 mb-2">
-                <iconify-icon icon="solar:buildings-linear" width="18" height="18" style="color: #C4652A;"></iconify-icon>
-                <span class="text-xs font-medium uppercase tracking-wider" style="color: #C4652A;">
-                  Pihenőhely
-                </span>
+          </div>
+
+          <!-- Card 3: Kerti Kiülő – Nádtetős -->
+          <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+                <img src="kiulo-1.jpg" alt="Kerti Kiülő – Nádtetős" class="w-full h-full" style="object-fit: cover; display: block;">
+                <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
+                <div class="absolute top-3 right-3 px-2.5 py-1 rounded-lg text-xs font-semibold tracking-wide" style="background-color: #2D5016; color: white;">INGYENES SZÁLLÍTÁS</div>
               </div>
-              <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-3">
-                Kerti kiülők
-              </h3>
-              <p class="text-sm leading-relaxed mb-5" style="color: rgba(44,24,16,0.6);">
-                Nádtetős kiülő masszív fenyőfából. A tökéletes kerti pihenőhely
-                az egész család számára.
-              </p>
-              <span class="inline-flex items-center gap-1.5 text-sm font-medium" style="color: #C4652A;">
-                Részletek
-                <iconify-icon icon="solar:arrow-right-linear" width="16" height="16"></iconify-icon>
-              </span>
+              <div class="p-5 sm:p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <iconify-icon icon="solar:buildings-linear" width="16" height="16" style="color: #C4652A;"></iconify-icon>
+                  <span class="text-xs font-medium uppercase tracking-wider" style="color: #C4652A;">Kiülő</span>
+                </div>
+                <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">Kerti Kiülő – Nádtetős</h3>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">2 méteres padok, 10×10 oszlopok, nádtető + 2 db ajándék grill szett</p>
+                <div class="flex items-center mb-4">
+                  <span class="text-base font-semibold" style="color: #2C1810;">225.000 Ft</span>
+                </div>
+                <a href="kerti-kiulo.html" class="details-btn w-full inline-flex items-center justify-center gap-2 text-sm font-medium px-5 py-2.5 rounded-xl transition-colors" style="background-color: #2D5016; color: white;">
+                  Részletek <iconify-icon icon="solar:arrow-right-linear" width="16" height="16"></iconify-icon>
+                </a>
+                <div class="flex items-center gap-4 mt-4 pt-4" style="border-top: 1px solid rgba(44,24,16,0.06);">
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:delivery-linear" width="14" height="14" style="color: #2D5016;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">Ingyenes szállítás</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:wrench-linear" width="14" height="14" style="color: #8B6914;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">Összeszerelés</span>
+                  </div>
+                </div>
+              </div>
             </div>
-          </a>
+          </div>
+
+          <!-- Card 4: Kőrisfa Garnitúra 2+2+1 -->
+          <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+                <div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(135deg, #c4a85a 0%, #8B6914 50%, #5a4410 100%);">
+                  <div class="flex flex-col items-center text-white/60">
+                    <iconify-icon icon="solar:gallery-minimalistic-linear" width="36" height="36" style="opacity: 0.4;"></iconify-icon>
+                    <span class="text-xs mt-2 opacity-40">Kőrisfa Garnitúra</span>
+                  </div>
+                </div>
+                <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
+              </div>
+              <div class="p-5 sm:p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <iconify-icon icon="solar:chair-linear" width="16" height="16" style="color: #8B6914;"></iconify-icon>
+                  <span class="text-xs font-medium uppercase tracking-wider" style="color: #8B6914;">Garnitúra</span>
+                </div>
+                <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">Kőrisfa Garnitúra 2+2+1</h3>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">8 vagy 10 személyes, 3 színben: cseresznye, tölgy, dió</p>
+                <div class="flex items-center mb-4">
+                  <span class="text-base font-semibold" style="color: #2C1810;">245.000 Ft-tól</span>
+                </div>
+                <a href="korisfa-garnitura.html" class="details-btn w-full inline-flex items-center justify-center gap-2 text-sm font-medium px-5 py-2.5 rounded-xl transition-colors" style="background-color: #2D5016; color: white;">
+                  Részletek <iconify-icon icon="solar:arrow-right-linear" width="16" height="16"></iconify-icon>
+                </a>
+                <div class="flex items-center gap-4 mt-4 pt-4" style="border-top: 1px solid rgba(44,24,16,0.06);">
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:delivery-linear" width="14" height="14" style="color: #2D5016;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">Ingyenes szállítás</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:colour-tuneing-linear" width="14" height="14" style="color: #8B6914;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">3 szín</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Összecsukható Garnitúra -->
+          <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+                <div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(135deg, #b8973f 0%, #9a7a18 50%, #6b5410 100%);">
+                  <div class="flex flex-col items-center text-white/60">
+                    <iconify-icon icon="solar:gallery-minimalistic-linear" width="36" height="36" style="opacity: 0.4;"></iconify-icon>
+                    <span class="text-xs mt-2 opacity-40">Összecsukható</span>
+                  </div>
+                </div>
+                <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
+              </div>
+              <div class="p-5 sm:p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <iconify-icon icon="solar:chair-linear" width="16" height="16" style="color: #8B6914;"></iconify-icon>
+                  <span class="text-xs font-medium uppercase tracking-wider" style="color: #8B6914;">Garnitúra</span>
+                </div>
+                <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">Összecsukható Garnitúra</h3>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">Praktikus, helytakarékos, 6-8 személyes, 2 szín</p>
+                <div class="flex items-center mb-4">
+                  <span class="text-base font-semibold" style="color: #2C1810;">185.000 Ft-tól</span>
+                </div>
+                <a href="osszecsukhhato-garnitura.html" class="details-btn w-full inline-flex items-center justify-center gap-2 text-sm font-medium px-5 py-2.5 rounded-xl transition-colors" style="background-color: #2D5016; color: white;">
+                  Részletek <iconify-icon icon="solar:arrow-right-linear" width="16" height="16"></iconify-icon>
+                </a>
+                <div class="flex items-center gap-4 mt-4 pt-4" style="border-top: 1px solid rgba(44,24,16,0.06);">
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:delivery-linear" width="14" height="14" style="color: #2D5016;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">Ingyenes szállítás</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:minimize-square-linear" width="14" height="14" style="color: #8B6914;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">Összecsukható</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: 5 Pozíciós Garnitúra -->
+          <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+                <div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(135deg, #d4b05a 0%, #a08020 50%, #7a6018 100%);">
+                  <div class="flex flex-col items-center text-white/60">
+                    <iconify-icon icon="solar:gallery-minimalistic-linear" width="36" height="36" style="opacity: 0.4;"></iconify-icon>
+                    <span class="text-xs mt-2 opacity-40">5 Pozíciós</span>
+                  </div>
+                </div>
+                <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
+              </div>
+              <div class="p-5 sm:p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <iconify-icon icon="solar:chair-linear" width="16" height="16" style="color: #8B6914;"></iconify-icon>
+                  <span class="text-xs font-medium uppercase tracking-wider" style="color: #8B6914;">Garnitúra</span>
+                </div>
+                <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">5 Pozíciós Garnitúra</h3>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">Állítható háttámlás székek, 6 személyes, 2 szín</p>
+                <div class="flex items-center mb-4">
+                  <span class="text-base font-semibold" style="color: #2C1810;">295.000 Ft</span>
+                </div>
+                <a href="5-pozicios-garnitura.html" class="details-btn w-full inline-flex items-center justify-center gap-2 text-sm font-medium px-5 py-2.5 rounded-xl transition-colors" style="background-color: #2D5016; color: white;">
+                  Részletek <iconify-icon icon="solar:arrow-right-linear" width="16" height="16"></iconify-icon>
+                </a>
+                <div class="flex items-center gap-4 mt-4 pt-4" style="border-top: 1px solid rgba(44,24,16,0.06);">
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:delivery-linear" width="14" height="14" style="color: #2D5016;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">Ingyenes szállítás</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:settings-linear" width="14" height="14" style="color: #8B6914;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">5 pozíció</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7: Pillangó Csavaros Garnitúra -->
+          <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+                <div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(135deg, #c49e5a 0%, #8B6914 50%, #6a5010 100%);">
+                  <div class="flex flex-col items-center text-white/60">
+                    <iconify-icon icon="solar:gallery-minimalistic-linear" width="36" height="36" style="opacity: 0.4;"></iconify-icon>
+                    <span class="text-xs mt-2 opacity-40">Pillangó Garnitúra</span>
+                  </div>
+                </div>
+                <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
+              </div>
+              <div class="p-5 sm:p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <iconify-icon icon="solar:chair-linear" width="16" height="16" style="color: #8B6914;"></iconify-icon>
+                  <span class="text-xs font-medium uppercase tracking-wider" style="color: #8B6914;">Garnitúra</span>
+                </div>
+                <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">Pillangó Csavaros Garnitúra</h3>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">Masszív borovi fenyő, 8-10 személyes, 2 szín</p>
+                <div class="flex items-center mb-4">
+                  <span class="text-base font-semibold" style="color: #2C1810;">195.000 Ft-tól</span>
+                </div>
+                <a href="pillango-garnitura.html" class="details-btn w-full inline-flex items-center justify-center gap-2 text-sm font-medium px-5 py-2.5 rounded-xl transition-colors" style="background-color: #2D5016; color: white;">
+                  Részletek <iconify-icon icon="solar:arrow-right-linear" width="16" height="16"></iconify-icon>
+                </a>
+                <div class="flex items-center gap-4 mt-4 pt-4" style="border-top: 1px solid rgba(44,24,16,0.06);">
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:delivery-linear" width="14" height="14" style="color: #2D5016;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">Ingyenes szállítás</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:shield-check-linear" width="14" height="14" style="color: #8B6914;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">Masszív kivitel</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8: Zsindelytetős Hintaágy -->
+          <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+                <div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(135deg, #a07848 0%, #7a5830 50%, #5a3e20 100%);">
+                  <div class="flex flex-col items-center text-white/60">
+                    <iconify-icon icon="solar:gallery-minimalistic-linear" width="36" height="36" style="opacity: 0.4;"></iconify-icon>
+                    <span class="text-xs mt-2 opacity-40">Hintaágy</span>
+                  </div>
+                </div>
+                <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
+              </div>
+              <div class="p-5 sm:p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <iconify-icon icon="solar:sofa-2-linear" width="16" height="16" style="color: #8B6914;"></iconify-icon>
+                  <span class="text-xs font-medium uppercase tracking-wider" style="color: #8B6914;">Hintaágy</span>
+                </div>
+                <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">Zsindelytetős Hintaágy</h3>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">3 személyes, 500 kg teherbírás, párna ajándék</p>
+                <div class="flex items-center mb-4">
+                  <span class="text-base font-semibold" style="color: #2C1810;">235.000 Ft</span>
+                </div>
+                <a href="hintaagy.html" class="details-btn w-full inline-flex items-center justify-center gap-2 text-sm font-medium px-5 py-2.5 rounded-xl transition-colors" style="background-color: #2D5016; color: white;">
+                  Részletek <iconify-icon icon="solar:arrow-right-linear" width="16" height="16"></iconify-icon>
+                </a>
+                <div class="flex items-center gap-4 mt-4 pt-4" style="border-top: 1px solid rgba(44,24,16,0.06);">
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:delivery-linear" width="14" height="14" style="color: #2D5016;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">Ingyenes szállítás</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <iconify-icon icon="solar:shield-check-linear" width="14" height="14" style="color: #8B6914;"></iconify-icon>
+                    <span class="text-xs" style="color: rgba(44,24,16,0.5);">500 kg teherbírás</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
