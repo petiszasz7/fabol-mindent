@@ -692,7 +692,17 @@
             }
           </style>
 
-          <div class="bg-white rounded-2xl overflow-hidden shadow-xl" style="border: 1px solid rgba(44,24,16,0.08);">
+          <div class="relative bg-white rounded-2xl overflow-hidden shadow-xl" style="border: 1px solid rgba(44,24,16,0.08);">
+
+            <!-- Left arrow -->
+            <button onclick="refBoxPrev()" class="absolute left-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-9 h-9 rounded-full" style="background: rgba(255,255,255,0.25); backdrop-filter: blur(8px); color: white; z-index:10; border: none; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.45)'" onmouseout="this.style.background='rgba(255,255,255,0.25)'">
+              <iconify-icon icon="solar:arrow-left-linear" width="20" height="20"></iconify-icon>
+            </button>
+
+            <!-- Right arrow -->
+            <button onclick="refBoxNext()" class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-9 h-9 rounded-full" style="background: rgba(255,255,255,0.25); backdrop-filter: blur(8px); color: white; z-index:10; border: none; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.45)'" onmouseout="this.style.background='rgba(255,255,255,0.25)'">
+              <iconify-icon icon="solar:arrow-right-linear" width="20" height="20"></iconify-icon>
+            </button>
 
             <!-- Slide 1: jatszter-1.jpg + Játszótér vélemény -->
             <div class="ref-box-slide active flex-row">
@@ -849,6 +859,8 @@
             clearInterval(timer);
             timer = setInterval(function() { window.refBoxGoTo(cur + 1); }, 4000);
           };
+          window.refBoxNext = function() { window.refBoxGoTo(cur + 1); };
+          window.refBoxPrev = function() { window.refBoxGoTo(cur - 1); };
 
           timer = setInterval(function() { window.refBoxGoTo(cur + 1); }, 4000);
         })();
