@@ -3,7 +3,10 @@
     "allow": [
       "Bash(grep -iE \"\\\\.\\(jpg|jpeg|png|webp|gif|svg|avif\\)$\")",
       "Bash(mv \"pillango-1.jpg.webp\" \"pillango-1.webp\")",
-      "Bash(mv \"5pozicios-1.jpg.webp\" \"5pozicios-1.webp\")"
+      "Bash(mv \"5pozicios-1.jpg.webp\" \"5pozicios-1.webp\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }
