@@ -855,12 +855,12 @@
             cur = (idx + total) % total;
             updateRefBox();
             clearInterval(timer);
-            timer = setInterval(function() { window.refBoxGoTo(cur + 1); }, 4000);
+            timer = setInterval(function() { window.refBoxGoTo(cur + 1); }, 6000);
           };
           window.refBoxNext = function() { window.refBoxGoTo(cur + 1); };
           window.refBoxPrev = function() { window.refBoxGoTo(cur - 1); };
 
-          timer = setInterval(function() { window.refBoxGoTo(cur + 1); }, 4000);
+          timer = setInterval(function() { window.refBoxGoTo(cur + 1); }, 6000);
         })();
       </script>
     </section>
