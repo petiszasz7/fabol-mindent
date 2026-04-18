@@ -282,19 +282,19 @@
 
           <!-- Card 1: Nagy Játszótér -->
           <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
-            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
-              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease; display: flex; flex-direction: column; height: 100%;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="height: 220px;">
                 <img src="jatszter-4.webp" alt="Nagy Játszótér" class="w-full h-full" style="object-fit: cover; display: block;">
                 <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
                 <div class="absolute top-3 right-3 px-2.5 py-1 rounded-lg text-xs font-semibold tracking-wide" style="background-color: #C4652A; color: white;">AKCIÓ</div>
               </div>
-              <div class="p-5 sm:p-6">
+              <div class="p-5 sm:p-6" style="flex: 1; display: flex; flex-direction: column;">
                 <div class="flex items-center gap-2 mb-2">
                   <iconify-icon icon="solar:home-smile-linear" width="16" height="16" style="color: #2D5016;"></iconify-icon>
                   <span class="text-xs font-medium uppercase tracking-wider" style="color: #2D5016;">Játszótér</span>
                 </div>
                 <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">Nagy Játszótér</h3>
-                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">Helyigény: 5×5 m – A játszótér elemei fix méretűek, de az elrendezés összeszereléskor variálható</p>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55); flex: 1;">Helyigény: 5×5 m – A játszótér elemei fix méretűek, de az elrendezés összeszereléskor variálható</p>
                 <div class="flex items-center mb-4">
                   <span class="text-base font-semibold" style="color: #2C1810;">425.000 Ft</span>
                 </div>
@@ -317,18 +317,18 @@
 
           <!-- Card 2: Kis Játszótér -->
           <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
-            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
-              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease; display: flex; flex-direction: column; height: 100%;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="height: 220px;">
                 <img src="jatszter-3.jpg" alt="Kis Játszótér" class="w-full h-full" style="object-fit: cover; display: block;">
                 <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
               </div>
-              <div class="p-5 sm:p-6">
+              <div class="p-5 sm:p-6" style="flex: 1; display: flex; flex-direction: column;">
                 <div class="flex items-center gap-2 mb-2">
                   <iconify-icon icon="solar:home-smile-linear" width="16" height="16" style="color: #2D5016;"></iconify-icon>
                   <span class="text-xs font-medium uppercase tracking-wider" style="color: #2D5016;">Játszótér</span>
                 </div>
                 <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">Kis Játszótér</h3>
-                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">Kisebb kertekbe ideális, fiatalabb gyerekeknek</p>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55); flex: 1;">Kisebb kertekbe ideális, fiatalabb gyerekeknek</p>
                 <div class="flex items-center mb-4">
                   <span class="text-base font-semibold" style="color: #2C1810;">285.000 Ft</span>
                 </div>
@@ -351,19 +351,19 @@
 
           <!-- Card 3: Kerti Kiülő – Nádtetős -->
           <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
-            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
-              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease; display: flex; flex-direction: column; height: 100%;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="height: 220px;">
                 <img src="kiulo-1.jpg" alt="Kerti Kiülő – Nádtetős" class="w-full h-full" style="object-fit: cover; display: block;">
                 <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
                 <div class="absolute top-3 right-3 px-2.5 py-1 rounded-lg text-xs font-semibold tracking-wide" style="background-color: #2D5016; color: white;">INGYENES SZÁLLÍTÁS</div>
               </div>
-              <div class="p-5 sm:p-6">
+              <div class="p-5 sm:p-6" style="flex: 1; display: flex; flex-direction: column;">
                 <div class="flex items-center gap-2 mb-2">
                   <iconify-icon icon="solar:buildings-linear" width="16" height="16" style="color: #C4652A;"></iconify-icon>
                   <span class="text-xs font-medium uppercase tracking-wider" style="color: #C4652A;">Kiülő</span>
                 </div>
                 <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">Kerti Kiülő – Nádtetős</h3>
-                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">2 méteres padok, 10×10 oszlopok, nádtető</p>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55); flex: 1;">2 méteres padok, 10×10 oszlopok, nádtető</p>
                 <div class="flex items-center mb-4">
                   <span class="text-base font-semibold" style="color: #2C1810;">225.000 Ft</span>
                 </div>
@@ -386,18 +386,18 @@
 
           <!-- Card 4: Kőrisfa Garnitúra 2+2+1 -->
           <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
-            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
-              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease; display: flex; flex-direction: column; height: 100%;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="height: 220px;">
                 <img src="kert-4.jpg" alt="Kőrisfa Garnitúra" class="w-full h-full" style="object-fit: cover; display: block;">
                 <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
               </div>
-              <div class="p-5 sm:p-6">
+              <div class="p-5 sm:p-6" style="flex: 1; display: flex; flex-direction: column;">
                 <div class="flex items-center gap-2 mb-2">
                   <iconify-icon icon="solar:chair-linear" width="16" height="16" style="color: #8B6914;"></iconify-icon>
                   <span class="text-xs font-medium uppercase tracking-wider" style="color: #8B6914;">Garnitúra</span>
                 </div>
                 <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">Kőrisfa Garnitúra 2+2+1</h3>
-                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">8 vagy 10 személyes, 3 színben: cseresznye, tölgy, dió</p>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55); flex: 1;">8 vagy 10 személyes, 3 színben: cseresznye, tölgy, dió</p>
                 <div class="flex items-center mb-4">
                   <span class="text-base font-semibold" style="color: #2C1810;">245.000 Ft-tól</span>
                 </div>
@@ -420,18 +420,18 @@
 
           <!-- Card 5: Összecsukható Garnitúra -->
           <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
-            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
-              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease; display: flex; flex-direction: column; height: 100%;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="height: 220px;">
                 <img src="kert-3.jpg" alt="Összecsukható Garnitúra" class="w-full h-full" style="object-fit: cover; display: block;">
                 <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
               </div>
-              <div class="p-5 sm:p-6">
+              <div class="p-5 sm:p-6" style="flex: 1; display: flex; flex-direction: column;">
                 <div class="flex items-center gap-2 mb-2">
                   <iconify-icon icon="solar:chair-linear" width="16" height="16" style="color: #8B6914;"></iconify-icon>
                   <span class="text-xs font-medium uppercase tracking-wider" style="color: #8B6914;">Garnitúra</span>
                 </div>
                 <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">Összecsukható Garnitúra</h3>
-                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">Praktikus, helytakarékos, 6-8 személyes, 2 szín</p>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55); flex: 1;">Praktikus, helytakarékos, 6-8 személyes, 2 szín</p>
                 <div class="flex items-center mb-4">
                   <span class="text-base font-semibold" style="color: #2C1810;">185.000 Ft-tól</span>
                 </div>
@@ -454,18 +454,18 @@
 
           <!-- Card 6: 5 Pozíciós Garnitúra -->
           <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
-            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
-              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease; display: flex; flex-direction: column; height: 100%;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="height: 220px;">
                 <img src="5pozicios-1.webp" alt="5 Pozíciós Garnitúra" style="width:100%;height:100%;object-fit:cover;display:block;">
                 <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
               </div>
-              <div class="p-5 sm:p-6">
+              <div class="p-5 sm:p-6" style="flex: 1; display: flex; flex-direction: column;">
                 <div class="flex items-center gap-2 mb-2">
                   <iconify-icon icon="solar:chair-linear" width="16" height="16" style="color: #8B6914;"></iconify-icon>
                   <span class="text-xs font-medium uppercase tracking-wider" style="color: #8B6914;">Garnitúra</span>
                 </div>
                 <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">5 Pozíciós Garnitúra</h3>
-                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">Állítható háttámlás székek, 6 személyes, 2 szín</p>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55); flex: 1;">Állítható háttámlás székek, 6 személyes, 2 szín</p>
                 <div class="flex items-center mb-4">
                   <span class="text-base font-semibold" style="color: #2C1810;">295.000 Ft</span>
                 </div>
@@ -488,18 +488,18 @@
 
           <!-- Card 7: Pillangó Csavaros Garnitúra -->
           <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
-            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
-              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease; display: flex; flex-direction: column; height: 100%;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="height: 220px;">
                 <img src="pillango-1.webp" alt="Pillangó Csavaros Garnitúra" style="width:100%;height:100%;object-fit:cover;display:block;">
                 <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
               </div>
-              <div class="p-5 sm:p-6">
+              <div class="p-5 sm:p-6" style="flex: 1; display: flex; flex-direction: column;">
                 <div class="flex items-center gap-2 mb-2">
                   <iconify-icon icon="solar:chair-linear" width="16" height="16" style="color: #8B6914;"></iconify-icon>
                   <span class="text-xs font-medium uppercase tracking-wider" style="color: #8B6914;">Garnitúra</span>
                 </div>
                 <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">Pillangó Csavaros Garnitúra</h3>
-                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">Masszív borovi fenyő, 8-10 személyes, 2 szín</p>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55); flex: 1;">Masszív borovi fenyő, 8-10 személyes, 2 szín</p>
                 <div class="flex items-center mb-4">
                   <span class="text-base font-semibold" style="color: #2C1810;">195.000 Ft-tól</span>
                 </div>
@@ -522,18 +522,18 @@
 
           <!-- Card 8: Zsindelytetős Hintaágy -->
           <div class="product-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);">
-            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
-              <div class="relative overflow-hidden" style="aspect-ratio: 16/10;">
+            <div class="bg-white rounded-2xl overflow-hidden" style="border: 1px solid rgba(44,24,16,0.06); transition: transform 0.4s ease, box-shadow 0.4s ease; display: flex; flex-direction: column; height: 100%;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 25px 60px -12px rgba(44,24,16,0.18)'; this.querySelector('.details-btn').style.backgroundColor='#1e3a0e';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'; this.querySelector('.details-btn').style.backgroundColor='#2D5016';">
+              <div class="relative overflow-hidden" style="height: 220px;">
                 <img src="kert-2.jpg" alt="Zsindelytetős Hintaágy" style="width:100%;height:100%;object-fit:cover;display:block;">
                 <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(44,24,16,0.3) 0%, transparent 40%);"></div>
               </div>
-              <div class="p-5 sm:p-6">
+              <div class="p-5 sm:p-6" style="flex: 1; display: flex; flex-direction: column;">
                 <div class="flex items-center gap-2 mb-2">
                   <iconify-icon icon="solar:sofa-2-linear" width="16" height="16" style="color: #8B6914;"></iconify-icon>
                   <span class="text-xs font-medium uppercase tracking-wider" style="color: #8B6914;">Hintaágy</span>
                 </div>
                 <h3 style="font-family: 'DM Serif Display', serif; color: #2C1810;" class="text-xl tracking-tight mb-2">Zsindelytetős Hintaágy</h3>
-                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55);">3 személyes, 500 kg teherbírás, párna ajándék</p>
+                <p class="text-sm leading-relaxed mb-4" style="color: rgba(44,24,16,0.55); flex: 1;">3 személyes, 500 kg teherbírás, párna ajándék</p>
                 <div class="flex items-center mb-4">
                   <span class="text-base font-semibold" style="color: #2C1810;">235.000 Ft</span>
                 </div>
