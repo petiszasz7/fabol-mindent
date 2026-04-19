@@ -14,9 +14,23 @@
 ## Fájlok és oldalak
 - `index.html` – Főoldal (hero, termék kártyák, előnyök, referenciák)
 - `termekek.html` – Termékek listaoldal
-- `termek-reszlet.html` – Egyedi termék részletes oldal
+- `korisfa-garnitura.html` – Kőrisfa Garnitúra részletes oldal
+- `nagy-jatszter.html` – Nagy Játszótér részletes oldal
+- `kis-jatszter.html` – Kis Játszótér részletes oldal
+- `kerti-kiulo.html` – Kerti Kiülő részletes oldal
+- `osszecsukhhato-garnitura.html` – Összecsukható Garnitúra részletes oldal
+- `5-pozicios-garnitura.html` – 5 Pozíciós Garnitúra részletes oldal
+- `pillango-garnitura.html` – Pillangó Csavaros Garnitúra részletes oldal
+- `hintaagy.html` – Zsindelytetős Hintaágy részletes oldal
+- `hintaagy-2.html` – Hintaágy Lehajtható háttámlás részletes oldal
 - `rolunk.html` – Rólunk és munkáink oldal
-- `kapcsolat.html` – Kapcsolat és árajánlat kérő űrlap
+- `kapcsolat.html` – Rendelés és kapcsolat oldal
+
+## Képek mappa struktúra
+- `jatszoterek/` → jatszter-1.jpg, jatszter-2.jpg, jatszter-3.jpg, jatszter-4.webp, jatszter-5.webp
+- `kerti-garniturak/` → kert-1.jpg, kert-2.jpg, kert-3.jpg, kert-4.jpg, pillango-1.webp, 5pozicios-1.webp
+- `kiulok/` → kiulo-1.jpg
+- `hintaagyak/` → hintaagy-2.jpg
 
 ## Termékek
 
