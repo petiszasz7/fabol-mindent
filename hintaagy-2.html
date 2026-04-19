@@ -64,7 +64,10 @@
                 <!-- LEFT COLUMN -->
                 <div class="w-full lg:w-[55%]">
                     <div id="mainImage" class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio: 4/3; border: 1px solid rgba(44,24,16,0.06); transition: all 0.4s ease; cursor: pointer;" onclick="openLightbox()">
-                        <img src="hintaagy-2.jpg" alt="Hintaágy – Lehajtható háttámlás" class="w-full h-full" style="object-fit: cover; display: block;">
+                        <img src="hintaagy-2.jpg" alt="Hintaágy – Lehajtható háttámlás" id="mainImgEl" style="width:100%;height:100%;object-fit:cover;display:block;">
+                        <div class="w-full h-full items-center justify-center" id="mainGradEl" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg, #7a5910 0%, #5a4008 50%, #342408 100%);">
+                            <iconify-icon icon="solar:gallery-wide-linear" width="56" height="56" style="color: rgba(255,255,255,0.3);"></iconify-icon>
+                        </div>
                         <div class="absolute top-4 right-4 w-10 h-10 rounded-xl flex items-center justify-center" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);">
                             <iconify-icon icon="solar:magnifer-zoom-in-linear" width="20" height="20" style="color: white;"></iconify-icon>
                         </div>
@@ -265,10 +268,21 @@
         }
         document.querySelectorAll('.tab-content').forEach(c => { c.style.transition = 'opacity 0.4s ease, transform 0.4s ease'; });
         document.getElementById('content-reszletek').style.opacity = '1'; document.getElementById('content-reszletek').style.transform = 'translateY(0)';
+        const mainImgContainer = document.getElementById('mainImage'); mainImgContainer.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
 
+        const mainImageGradients = [null,'linear-gradient(135deg, #7a5910 0%, #5a4008 50%, #342408 100%)','linear-gradient(135deg, #9a7920 0%, #785e14 50%, #4a3a0c 100%)','linear-gradient(135deg, #8B6914 0%, #6a4e10 50%, #3e2e08 100%)'];
         function selectThumb(index, el) {
             document.querySelectorAll('.thumb-btn').forEach(btn => { btn.style.borderColor = 'rgba(44,24,16,0.1)'; });
             el.style.borderColor = '#2D5016';
+            const mainImg = document.getElementById('mainImage');
+            mainImg.style.opacity = '0'; mainImg.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                const imgEl = document.getElementById('mainImgEl');
+                const gradEl = document.getElementById('mainGradEl');
+                if (index === 0) { imgEl.style.display = 'block'; gradEl.style.display = 'none'; }
+                else { imgEl.style.display = 'none'; gradEl.style.display = 'flex'; gradEl.style.background = mainImageGradients[index]; }
+                mainImg.style.opacity = '1'; mainImg.style.transform = 'scale(1)';
+            }, 200);
         }
     </script>
 
