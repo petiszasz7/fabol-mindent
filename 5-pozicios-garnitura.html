@@ -157,9 +157,9 @@
                             <input type="checkbox" id="cushionCheck" onchange="updateCushion()" style="width: 18px; height: 18px; accent-color: #2D5016; cursor: pointer; flex-shrink: 0;">
                             <iconify-icon icon="solar:sofa-linear" width="18" height="18" style="color: #2D5016; flex-shrink: 0;"></iconify-icon>
                             <div class="flex-1">
-                                <span class="text-sm font-medium" style="color: #2C1810;">Párna szett <span id="cushionCount" style="color: rgba(44,24,16,0.5);">(5 db)</span></span>
+                                <span class="text-sm font-medium" style="color: #2C1810;">Párna szett <span id="cushionCount" style="color: rgba(44,24,16,0.5);">(6 db)</span></span>
                             </div>
-                            <span class="text-sm font-semibold" style="color: #2D5016;" id="cushionPrice">+27.500 Ft</span>
+                            <span class="text-sm font-semibold" style="color: #2D5016;" id="cushionPrice">+36.000 Ft</span>
                         </label>
                     </div>
 
@@ -322,8 +322,8 @@
         }
         let selectedSize = '150';
         const basePrices = { '150': 295000, '200': 355000 };
-        const cushionPrices = { '150': 27500, '200': 44000 };
-        const cushionCounts = { '150': '5 db', '200': '8 db' };
+        const cushionPrices = { '150': 36000, '200': 48000 };
+        const cushionCounts = { '150': '6 db', '200': '8 db' };
         const sizeImages = { '150': 'kerti-garniturak/5pozicios-1.webp', '200': 'kerti-garniturak/5pozicos-8szek.jpg' };
         function formatPrice(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' Ft'; }
         function updateTotalPrice() {
