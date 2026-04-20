@@ -72,6 +72,11 @@
               <p class="text-sm mb-8" style="color: rgba(44,24,16,0.5); padding-left: 52px; margin-top: -2px;">Rendelés leadása után 24 órán belül visszahívjuk, hogy egyeztessük a szállítás időpontját.</p>
 
               <form id="quote-form" class="space-y-5" onsubmit="handleFormSubmit(event)">
+                <input type="hidden" name="szin">
+                <input type="hidden" name="meret">
+                <input type="hidden" name="tetotipus">
+                <input type="hidden" name="kiegeszitok">
+                <input type="hidden" name="ar">
                 <div><label class="block text-sm font-medium mb-1.5" style="color: #2C1810;">Teljes név <span style="color: #C4652A;">*</span></label><div class="relative"><div class="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"><iconify-icon icon="solar:user-linear" width="18" height="18" style="color: rgba(44,24,16,0.3);"></iconify-icon></div><input type="text" name="name" required placeholder="pl. Kovács Anikó" class="w-full rounded-xl text-sm outline-none transition-all" style="padding: 12px 14px 12px 42px; border: 1.5px solid rgba(44,24,16,0.1); background: #FAFAF8; color: #2C1810;" onfocus="this.style.borderColor='#2D5016'; this.style.boxShadow='0 0 0 3px rgba(45,80,22,0.08)'; this.style.background='white'" onblur="this.style.borderColor='rgba(44,24,16,0.1)'; this.style.boxShadow='none'; this.style.background='#FAFAF8'"></div></div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div><label class="block text-sm font-medium mb-1.5" style="color: #2C1810;">E-mail cím <span style="color: #C4652A;">*</span></label><div class="relative"><div class="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"><iconify-icon icon="solar:letter-linear" width="18" height="18" style="color: rgba(44,24,16,0.3);"></iconify-icon></div><input type="email" name="email" required placeholder="pelda@email.com" class="w-full rounded-xl text-sm outline-none transition-all" style="padding: 12px 14px 12px 42px; border: 1.5px solid rgba(44,24,16,0.1); background: #FAFAF8; color: #2C1810;" onfocus="this.style.borderColor='#2D5016'; this.style.boxShadow='0 0 0 3px rgba(45,80,22,0.08)'; this.style.background='white'" onblur="this.style.borderColor='rgba(44,24,16,0.1)'; this.style.boxShadow='none'; this.style.background='#FAFAF8'"></div></div>
@@ -171,15 +176,15 @@
           };
           const productSelect = document.querySelector('[name="product"]');
           if (productSelect && termekMap[termek]) productSelect.value = termekMap[termek];
-          const lines = [];
-          if (termek) lines.push('Termék: ' + termek);
-          if (params.get('meret')) lines.push('Méret: ' + params.get('meret'));
-          if (params.get('szin')) lines.push('Szín: ' + params.get('szin'));
-          if (params.get('tetotipus')) lines.push('Tetőtípus: ' + params.get('tetotipus'));
-          if (params.get('kiegeszitok')) lines.push('Kiegészítők: ' + params.get('kiegeszitok'));
-          if (params.get('ar')) lines.push('Ár: ' + params.get('ar'));
-          const messageField = document.querySelector('[name="message"]');
-          if (messageField && lines.length > 0) messageField.value = lines.join('\n');
+          const setHidden = (name, value) => {
+              const el = document.querySelector(`[name="${name}"]`);
+              if (el && value) el.value = value;
+          };
+          setHidden('szin', params.get('szin'));
+          setHidden('meret', params.get('meret'));
+          setHidden('tetotipus', params.get('tetotipus'));
+          setHidden('kiegeszitok', params.get('kiegeszitok'));
+          setHidden('ar', params.get('ar'));
           setTimeout(() => {
               const formSection = document.getElementById('form-section');
               if (formSection) formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -207,12 +212,18 @@
           btn.innerHTML = '<iconify-icon icon="solar:refresh-linear" width="20" height="20" style="animation: spin 1s linear infinite;"></iconify-icon> Küldés...';
           btn.style.opacity = '0.7'; btn.style.pointerEvents = 'none';
 
+          const getVal = (name) => form.querySelector(`[name="${name}"]`)?.value || '';
           const data = {
-              name: form.querySelector('[name="name"]').value,
-              email: form.querySelector('[name="email"]').value,
-              phone: form.querySelector('[name="phone"]').value,
-              product: form.querySelector('[name="product"]').value,
-              message: form.querySelector('[name="message"]').value,
+              name: getVal('name'),
+              email: getVal('email'),
+              phone: getVal('phone'),
+              product: getVal('product'),
+              message: getVal('message'),
+              color: getVal('szin'),
+              size: getVal('meret'),
+              roofType: getVal('tetotipus'),
+              extras: getVal('kiegeszitok'),
+              finalPrice: getVal('ar'),
           };
 
           try {
