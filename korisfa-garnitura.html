@@ -77,13 +77,13 @@
                             <img src="kerti-garniturak/kert-4.jpg" alt="Főkép" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </button>
                         <button onclick="selectThumb(1, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
-                            <div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(135deg, #b8973f 0%, #9a7a18 50%, #6b5410 100%);"><iconify-icon icon="solar:gallery-minimalistic-linear" width="20" height="20" style="color: rgba(255,255,255,0.35);"></iconify-icon></div>
+                            <img src="kerti-garniturak/koris-cseresznye-150.jpg" alt="Kőrisfa cseresznye 150cm" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </button>
                         <button onclick="selectThumb(2, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
-                            <div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(135deg, #d4b05a 0%, #a08020 50%, #7a6018 100%);"><iconify-icon icon="solar:gallery-minimalistic-linear" width="20" height="20" style="color: rgba(255,255,255,0.35);"></iconify-icon></div>
+                            <img src="kerti-garniturak/koris-cseresznye-200.jpg" alt="Kőrisfa cseresznye 200cm" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </button>
                         <button onclick="selectThumb(3, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
-                            <div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(135deg, #c49e5a 0%, #8B6914 50%, #6a5010 100%);"><iconify-icon icon="solar:gallery-minimalistic-linear" width="20" height="20" style="color: rgba(255,255,255,0.35);"></iconify-icon></div>
+                            <img src="kerti-garniturak/koris-tolgy-150.jpg" alt="Kőrisfa tölgy 150cm" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </button>
                     </div>
                 </div>
@@ -330,7 +330,7 @@
         let menuOpen = false;
         mobileMenuBtn.addEventListener('click', () => { menuOpen = !menuOpen; mobileMenu.classList.toggle('hidden'); if (menuOpen) { navbar.style.backgroundColor = 'rgba(255,255,255,0.98)'; navbar.style.backdropFilter = 'blur(20px)'; } });
 
-        const mainImageGradients = [null,'linear-gradient(135deg, #b8973f 0%, #9a7a18 50%, #6b5410 100%)','linear-gradient(135deg, #d4b05a 0%, #a08020 50%, #7a6018 100%)','linear-gradient(135deg, #c49e5a 0%, #8B6914 50%, #6a5010 100%)'];
+        const mainImageSrcs = ['kerti-garniturak/kert-4.jpg','kerti-garniturak/koris-cseresznye-150.jpg','kerti-garniturak/koris-cseresznye-200.jpg','kerti-garniturak/koris-tolgy-150.jpg'];
         function selectThumb(index, el) {
             document.querySelectorAll('.thumb-btn').forEach(btn => { btn.style.borderColor = 'rgba(44,24,16,0.1)'; });
             el.style.borderColor = '#2D5016';
@@ -339,8 +339,7 @@
             setTimeout(() => {
                 const imgEl = document.getElementById('mainImgEl');
                 const gradEl = document.getElementById('mainGradEl');
-                if (index === 0) { imgEl.style.display = 'block'; gradEl.style.display = 'none'; }
-                else { imgEl.style.display = 'none'; gradEl.style.display = 'flex'; gradEl.style.background = mainImageGradients[index]; }
+                imgEl.src = mainImageSrcs[index]; imgEl.style.display = 'block'; gradEl.style.display = 'none';
                 mainImg.style.opacity = '1'; mainImg.style.transform = 'scale(1)';
             }, 200);
         }
