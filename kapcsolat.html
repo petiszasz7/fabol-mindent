@@ -226,6 +226,8 @@
               finalPrice: getVal('ar'),
           };
 
+          console.log('Form data küldés előtt:', data);
+
           try {
               const res = await fetch('https://fabol-mindent.vercel.app/api/send-email', {
                   method: 'POST',
