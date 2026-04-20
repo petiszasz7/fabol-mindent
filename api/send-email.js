@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, phone, product, message } = req.body;
+  const { name, email, phone, product, color, size, roofType, extras, finalPrice, message } = req.body;
 
   if (!name || !email || !phone || !product) {
     return res.status(400).json({ error: 'Hiányzó kötelező mezők' });
@@ -62,6 +62,56 @@ export default async function handler(req, res) {
               <span style="font-size: 15px; font-weight: 600; color: #2D5016;">${productLabel}</span>
             </td>
           </tr>
+          ${color ? `
+          <tr>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <strong style="color: rgba(44,24,16,0.5); font-size: 13px;">Szín</strong>
+            </td>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <span style="font-size: 15px;">${color}</span>
+            </td>
+          </tr>
+          ` : ''}
+          ${size ? `
+          <tr>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <strong style="color: rgba(44,24,16,0.5); font-size: 13px;">Méret</strong>
+            </td>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <span style="font-size: 15px;">${size}</span>
+            </td>
+          </tr>
+          ` : ''}
+          ${roofType ? `
+          <tr>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <strong style="color: rgba(44,24,16,0.5); font-size: 13px;">Tetőtípus</strong>
+            </td>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <span style="font-size: 15px;">${roofType}</span>
+            </td>
+          </tr>
+          ` : ''}
+          ${extras ? `
+          <tr>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <strong style="color: rgba(44,24,16,0.5); font-size: 13px;">Kiegészítők</strong>
+            </td>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <span style="font-size: 15px;">${extras}</span>
+            </td>
+          </tr>
+          ` : ''}
+          ${finalPrice ? `
+          <tr>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <strong style="color: rgba(44,24,16,0.5); font-size: 13px;">Végső ár</strong>
+            </td>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <span style="font-size: 15px; font-weight: 600; color: #2D5016;">${finalPrice}</span>
+            </td>
+          </tr>
+          ` : ''}
           ${message ? `
           <tr>
             <td style="padding: 10px 0; vertical-align: top;">
