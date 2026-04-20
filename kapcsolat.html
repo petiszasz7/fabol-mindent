@@ -170,7 +170,6 @@
           });
           const params = new URLSearchParams(window.location.search);
           const termek = params.get('termek');
-          if (!termek) return;
           const termekMap = {
               'Kőrisfa Garnitúra 2+2+1': 'korisfa-garnitura',
               'Kis Játszótér': 'kis-jatszter',
@@ -182,7 +181,7 @@
               'Hintaágy – Lehajtható háttámlás': 'hintaagy',
           };
           const productSelect = document.querySelector('[name="product"]');
-          if (productSelect && termekMap[termek]) productSelect.value = termekMap[termek];
+          if (productSelect && termek && termekMap[termek]) productSelect.value = termekMap[termek];
           const hiddenSzin = document.querySelector('input[name="szin"]');
           const hiddenMeret = document.querySelector('input[name="meret"]');
           const hiddenTetotipus = document.querySelector('input[name="tetotipus"]');
