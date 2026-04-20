@@ -183,15 +183,17 @@
           };
           const productSelect = document.querySelector('[name="product"]');
           if (productSelect && termekMap[termek]) productSelect.value = termekMap[termek];
-          const setHidden = (name, value) => {
-              const el = document.querySelector(`[name="${name}"]`);
-              if (el && value) el.value = value;
-          };
-          setHidden('szin', params.get('szin'));
-          setHidden('meret', params.get('meret'));
-          setHidden('tetotipus', params.get('tetotipus'));
-          setHidden('kiegeszitok', params.get('kiegeszitok'));
-          setHidden('ar', params.get('ar'));
+          const hiddenSzin = document.querySelector('input[name="szin"]');
+          const hiddenMeret = document.querySelector('input[name="meret"]');
+          const hiddenTetotipus = document.querySelector('input[name="tetotipus"]');
+          const hiddenKiegeszitok = document.querySelector('input[name="kiegeszitok"]');
+          const hiddenAr = document.querySelector('input[name="ar"]');
+
+          if (hiddenSzin) hiddenSzin.value = params.get('szin') || '';
+          if (hiddenMeret) hiddenMeret.value = params.get('meret') || '';
+          if (hiddenTetotipus) hiddenTetotipus.value = params.get('tetotipus') || '';
+          if (hiddenKiegeszitok) hiddenKiegeszitok.value = params.get('kiegeszitok') || '';
+          if (hiddenAr) hiddenAr.value = params.get('ar') || '';
           setTimeout(() => {
               const formSection = document.getElementById('form-section');
               if (formSection) formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
