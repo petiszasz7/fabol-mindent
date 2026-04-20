@@ -74,8 +74,8 @@
                     </div>
                     <div class="grid grid-cols-4 gap-3">
                         <button onclick="selectThumb(0, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid #2D5016; transition: all 0.3s ease;"><img src="kerti-garniturak/kert-3.jpg" alt="Főkép" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
-                        <button onclick="selectThumb(1, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;"><div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(135deg, #906830 0%, #6a4810 50%, #3a2808 100%);"><iconify-icon icon="solar:gallery-minimalistic-linear" width="20" height="20" style="color: rgba(255,255,255,0.35);"></iconify-icon></div></button>
-                        <button onclick="selectThumb(2, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;"><div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(135deg, #b08850 0%, #8a6830 50%, #5a4418 100%);"><iconify-icon icon="solar:gallery-minimalistic-linear" width="20" height="20" style="color: rgba(255,255,255,0.35);"></iconify-icon></div></button>
+                        <button onclick="selectThumb(1, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;"><img src="kerti-garniturak/osszecsukhato-6.jpg" alt="Összecsukható Garnitúra 6" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
+                        <button onclick="selectThumb(2, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;"><img src="kerti-garniturak/osszecsukhato-8.jpg" alt="Összecsukható Garnitúra 8" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
                         <button onclick="selectThumb(3, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;"><div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(135deg, #a07840 0%, #7a5820 50%, #4a3410 100%);"><iconify-icon icon="solar:gallery-minimalistic-linear" width="20" height="20" style="color: rgba(255,255,255,0.35);"></iconify-icon></div></button>
                     </div>
                 </div>
@@ -309,7 +309,8 @@
         let menuOpen = false;
         mobileMenuBtn.addEventListener('click', () => { menuOpen = !menuOpen; mobileMenu.classList.toggle('hidden'); if (menuOpen) { navbar.style.backgroundColor = 'rgba(255,255,255,0.98)'; navbar.style.backdropFilter = 'blur(20px)'; } });
 
-        const mainImageGradients = [null,'linear-gradient(135deg, #906830 0%, #6a4810 50%, #3a2808 100%)','linear-gradient(135deg, #b08850 0%, #8a6830 50%, #5a4418 100%)','linear-gradient(135deg, #a07840 0%, #7a5820 50%, #4a3410 100%)'];
+        const thumbImages = ['kerti-garniturak/kert-3.jpg','kerti-garniturak/osszecsukhato-6.jpg','kerti-garniturak/osszecsukhato-8.jpg',null];
+        const mainImageGradients = [null,null,null,'linear-gradient(135deg, #a07840 0%, #7a5820 50%, #4a3410 100%)'];
         function selectThumb(index, el) {
             document.querySelectorAll('.thumb-btn').forEach(btn => { btn.style.borderColor = 'rgba(44,24,16,0.1)'; });
             el.style.borderColor = '#2D5016';
@@ -318,7 +319,7 @@
             setTimeout(() => {
                 const imgEl = document.getElementById('mainImgEl');
                 const gradEl = document.getElementById('mainGradEl');
-                if (index === 0) { imgEl.style.display = 'block'; gradEl.style.display = 'none'; }
+                if (thumbImages[index]) { imgEl.src = thumbImages[index]; imgEl.style.display = 'block'; gradEl.style.display = 'none'; }
                 else { imgEl.style.display = 'none'; gradEl.style.display = 'flex'; gradEl.style.background = mainImageGradients[index]; }
                 mainImg.style.opacity = '1'; mainImg.style.transform = 'scale(1)';
             }, 200);
