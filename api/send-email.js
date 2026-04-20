@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, phone, product, color, size, roofType, extras, finalPrice, message } = req.body;
+  const { name, email, phone, address, product, color, size, roofType, extras, finalPrice, message } = req.body;
 
   if (!name || !email || !phone || !product) {
     return res.status(400).json({ error: 'Hiányzó kötelező mezők' });
@@ -52,6 +52,14 @@ export default async function handler(req, res) {
             </td>
             <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
               <a href="tel:${phone}" style="color: #2D5016; font-size: 15px;">${phone}</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <strong style="color: rgba(44,24,16,0.5); font-size: 13px;">Szállítási cím</strong>
+            </td>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <span style="font-size: 15px;">${address || '–'}</span>
             </td>
           </tr>
           <tr>
