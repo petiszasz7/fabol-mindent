@@ -120,7 +120,7 @@
 
                     <!-- ORDER BUTTON -->
                     <div class="mb-5">
-                        <a href="kapcsolat.html" id="orderBtn" class="w-full flex items-center justify-center gap-2.5 text-base font-semibold py-4 rounded-xl transition-all" style="background-color: #2D5016; color: white; box-shadow: 0 4px 14px rgba(45,80,22,0.25); display: flex;" onmouseover="this.style.backgroundColor='#1e3a0e'; this.style.boxShadow='0 8px 25px rgba(45,80,22,0.35)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.backgroundColor='#2D5016'; this.style.boxShadow='0 4px 14px rgba(45,80,22,0.25)'; this.style.transform='translateY(0)'">
+                        <a href="kapcsolat.html" id="orderBtn" onclick="navigateToOrder(event)" class="w-full flex items-center justify-center gap-2.5 text-base font-semibold py-4 rounded-xl transition-all" style="background-color: #2D5016; color: white; box-shadow: 0 4px 14px rgba(45,80,22,0.25); display: flex;" onmouseover="this.style.backgroundColor='#1e3a0e'; this.style.boxShadow='0 8px 25px rgba(45,80,22,0.35)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.backgroundColor='#2D5016'; this.style.boxShadow='0 4px 14px rgba(45,80,22,0.25)'; this.style.transform='translateY(0)'">
                             <iconify-icon icon="solar:cart-large-2-linear" width="22" height="22"></iconify-icon>
                             MEGRENDELEM
                         </a>
@@ -269,6 +269,13 @@
         document.querySelectorAll('.tab-content').forEach(c => { c.style.transition = 'opacity 0.4s ease, transform 0.4s ease'; });
         document.getElementById('content-reszletek').style.opacity = '1'; document.getElementById('content-reszletek').style.transform = 'translateY(0)';
         const mainImgContainer = document.getElementById('mainImage'); mainImgContainer.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        function navigateToOrder(e) {
+            e.preventDefault();
+            const params = new URLSearchParams();
+            params.set('termek', 'Hintaágy – Lehajtható háttámlás');
+            params.set('ar', '200.000 Ft');
+            window.location.href = 'kapcsolat.html?' + params.toString();
+        }
 
         const mainImageGradients = [null,'linear-gradient(135deg, #7a5910 0%, #5a4008 50%, #342408 100%)','linear-gradient(135deg, #9a7920 0%, #785e14 50%, #4a3a0c 100%)','linear-gradient(135deg, #8B6914 0%, #6a4e10 50%, #3e2e08 100%)'];
         function selectThumb(index, el) {

@@ -155,6 +155,38 @@
     </footer>
 
     <script>
+      function initFromUrl() {
+          const params = new URLSearchParams(window.location.search);
+          const termek = params.get('termek');
+          if (!termek) return;
+          const termekMap = {
+              'Kőrisfa Garnitúra 2+2+1': 'korisfa-garnitura',
+              'Kis Játszótér': 'kis-jatszter',
+              'Kerti Kiülő': 'kerti-kiulo',
+              'Összecsukható Garnitúra': 'osszecsukhato',
+              '5 Pozíciós Garnitúra': '5-pozicios',
+              'Pillangó Csavaros Garnitúra': 'pillango',
+              'Zsindelytetős Hintaágy': 'hintaagy',
+              'Hintaágy – Lehajtható háttámlás': 'hintaagy',
+          };
+          const productSelect = document.querySelector('[name="product"]');
+          if (productSelect && termekMap[termek]) productSelect.value = termekMap[termek];
+          const lines = [];
+          if (termek) lines.push('Termék: ' + termek);
+          if (params.get('meret')) lines.push('Méret: ' + params.get('meret'));
+          if (params.get('szin')) lines.push('Szín: ' + params.get('szin'));
+          if (params.get('tetotipus')) lines.push('Tetőtípus: ' + params.get('tetotipus'));
+          if (params.get('kiegeszitok')) lines.push('Kiegészítők: ' + params.get('kiegeszitok'));
+          if (params.get('ar')) lines.push('Ár: ' + params.get('ar'));
+          const messageField = document.querySelector('[name="message"]');
+          if (messageField && lines.length > 0) messageField.value = lines.join('\n');
+          setTimeout(() => {
+              const formSection = document.getElementById('form-section');
+              if (formSection) formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 300);
+      }
+      document.addEventListener('DOMContentLoaded', initFromUrl);
+
       let mobileMenuOpen = false;
       function toggleMobileMenu() {
           mobileMenuOpen = !mobileMenuOpen;
