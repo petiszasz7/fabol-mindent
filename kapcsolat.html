@@ -161,6 +161,13 @@
 
     <script>
       function initFromUrl() {
+          console.log('URL paraméterek:', window.location.search);
+          console.log('Rejtett mezők értékei:', {
+            szin: document.querySelector('[name="szin"]')?.value,
+            meret: document.querySelector('[name="meret"]')?.value,
+            ar: document.querySelector('[name="ar"]')?.value,
+            kiegeszitok: document.querySelector('[name="kiegeszitok"]')?.value
+          });
           const params = new URLSearchParams(window.location.search);
           const termek = params.get('termek');
           if (!termek) return;
