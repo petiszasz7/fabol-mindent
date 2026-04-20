@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, phone, address, product, color, size, roofType, extras, finalPrice, message } = req.body;
+  const { name, email, phone, city, street, product, color, size, roofType, extras, finalPrice, message } = req.body;
 
   if (!name || !email || !phone || !product) {
     return res.status(400).json({ error: 'Hiányzó kötelező mezők' });
@@ -56,10 +56,18 @@ export default async function handler(req, res) {
           </tr>
           <tr>
             <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
-              <strong style="color: rgba(44,24,16,0.5); font-size: 13px;">Szállítási cím</strong>
+              <strong style="color: rgba(44,24,16,0.5); font-size: 13px;">Város</strong>
             </td>
             <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
-              <span style="font-size: 15px;">${address || '–'}</span>
+              <span style="font-size: 15px;">${city || '–'}</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <strong style="color: rgba(44,24,16,0.5); font-size: 13px;">Utca, házszám</strong>
+            </td>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <span style="font-size: 15px;">${street || '–'}</span>
             </td>
           </tr>
           <tr>
