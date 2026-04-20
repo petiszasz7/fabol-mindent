@@ -82,43 +82,7 @@
                   <div><label class="block text-sm font-medium mb-1.5" style="color: #2C1810;">E-mail cím <span style="color: #C4652A;">*</span></label><div class="relative"><div class="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"><iconify-icon icon="solar:letter-linear" width="18" height="18" style="color: rgba(44,24,16,0.3);"></iconify-icon></div><input type="email" name="email" required placeholder="pelda@email.com" class="w-full rounded-xl text-sm outline-none transition-all" style="padding: 12px 14px 12px 42px; border: 1.5px solid rgba(44,24,16,0.1); background: #FAFAF8; color: #2C1810;" onfocus="this.style.borderColor='#2D5016'; this.style.boxShadow='0 0 0 3px rgba(45,80,22,0.08)'; this.style.background='white'" onblur="this.style.borderColor='rgba(44,24,16,0.1)'; this.style.boxShadow='none'; this.style.background='#FAFAF8'"></div></div>
                   <div><label class="block text-sm font-medium mb-1.5" style="color: #2C1810;">Telefonszám <span style="color: #C4652A;">*</span></label><div class="relative"><div class="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"><iconify-icon icon="solar:phone-linear" width="18" height="18" style="color: rgba(44,24,16,0.3);"></iconify-icon></div><input type="tel" name="phone" required placeholder="+36 20 123 4567" class="w-full rounded-xl text-sm outline-none transition-all" style="padding: 12px 14px 12px 42px; border: 1.5px solid rgba(44,24,16,0.1); background: #FAFAF8; color: #2C1810;" onfocus="this.style.borderColor='#2D5016'; this.style.boxShadow='0 0 0 3px rgba(45,80,22,0.08)'; this.style.background='white'" onblur="this.style.borderColor='rgba(44,24,16,0.1)'; this.style.boxShadow='none'; this.style.background='#FAFAF8'"></div></div>
                 </div>
-                <div><label class="block text-sm font-medium mb-1.5" style="color: #2C1810;">Melyik termék érdekli? <span style="color: #C4652A;">*</span></label><div class="relative"><div class="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none z-10"><iconify-icon icon="solar:box-linear" width="18" height="18" style="color: rgba(44,24,16,0.3);"></iconify-icon></div><select name="product" id="product-select" required class="w-full rounded-xl text-sm outline-none transition-all appearance-none cursor-pointer" style="padding: 12px 40px 12px 42px; border: 1.5px solid rgba(44,24,16,0.1); background: #FAFAF8; color: #2C1810;" onchange="onProductChange(this.value)" onfocus="this.style.borderColor='#2D5016'; this.style.boxShadow='0 0 0 3px rgba(45,80,22,0.08)'; this.style.background='white'" onblur="this.style.borderColor='rgba(44,24,16,0.1)'; this.style.boxShadow='none'; this.style.background='#FAFAF8'"><option value="" disabled selected>Válassz terméket...</option><option value="nagy-jatszter">Nagy Játszótér</option><option value="kis-jatszter">Kis Játszótér</option><option value="kerti-kiulo">Kerti Kiülő – Nádtetős</option><option value="korisfa-garnitura">Kőrisfa Garnitúra 2+2+1</option><option value="osszecsukhato">Összecsukható Garnitúra</option><option value="5-pozicios">5 Pozíciós Garnitúra</option><option value="pillango">Pillangó Csavaros Garnitúra</option><option value="hintaagy">Zsindelytetős Hintaágy</option><option value="hintaagy-2">Hintaágy – Lehajtható háttámlás</option><option value="egyeb">Egyéb</option></select><div class="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none"><iconify-icon icon="solar:alt-arrow-down-linear" width="18" height="18" style="color: rgba(44,24,16,0.3);"></iconify-icon></div></div></div>
-
-                <!-- DINAMIKUS TERMÉK OPCIÓK -->
-                <div id="product-options" style="display:none;" class="space-y-4 rounded-2xl p-5" style2="border: 1.5px solid rgba(45,80,22,0.12); background: rgba(45,80,22,0.03);">
-                  <div style="border: 1.5px solid rgba(45,80,22,0.15); background: rgba(45,80,22,0.03); border-radius: 14px; padding: 16px 20px;" class="space-y-4">
-                    <p class="text-xs font-semibold uppercase tracking-wider" style="color: #2D5016;">Termék részletei</p>
-
-                    <!-- SZÍN -->
-                    <div id="opt-szin" style="display:none;">
-                      <label class="block text-sm font-medium mb-2" style="color: #2C1810;">Szín választás</label>
-                      <div id="szin-options" class="flex flex-wrap gap-2"></div>
-                    </div>
-
-                    <!-- MÉRET -->
-                    <div id="opt-meret" style="display:none;">
-                      <label class="block text-sm font-medium mb-2" style="color: #2C1810;">Méret / Személyek száma</label>
-                      <div id="meret-options" class="flex flex-col gap-2"></div>
-                    </div>
-
-                    <!-- KIEGÉSZÍTŐK -->
-                    <div id="opt-kiegeszitok" style="display:none;">
-                      <label class="block text-sm font-medium mb-2" style="color: #2C1810;">Kiegészítők</label>
-                      <div id="kiegeszitok-options" class="flex flex-col gap-2"></div>
-                    </div>
-
-                    <!-- ÁR ÖSSZESÍTŐ -->
-                    <div id="opt-ar" style="display:none; padding-top: 12px; border-top: 1px solid rgba(45,80,22,0.1);">
-                      <div class="flex items-center justify-between">
-                        <span class="text-sm font-medium" style="color: rgba(44,24,16,0.5);">Becsült ár:</span>
-                        <span id="ar-display" class="text-lg font-semibold" style="color: #2D5016;"></span>
-                      </div>
-                      <p class="text-xs mt-1" style="color: rgba(44,24,16,0.35);">Ingyenes szállítás + összeszerelés · Fizetés csak átvételkor</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- /DINAMIKUS TERMÉK OPCIÓK -->
-
+                <div><label class="block text-sm font-medium mb-1.5" style="color: #2C1810;">Melyik termék érdekli? <span style="color: #C4652A;">*</span></label><div class="relative"><div class="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none z-10"><iconify-icon icon="solar:box-linear" width="18" height="18" style="color: rgba(44,24,16,0.3);"></iconify-icon></div><select name="product" required class="w-full rounded-xl text-sm outline-none transition-all appearance-none cursor-pointer" style="padding: 12px 40px 12px 42px; border: 1.5px solid rgba(44,24,16,0.1); background: #FAFAF8; color: #2C1810;" onfocus="this.style.borderColor='#2D5016'; this.style.boxShadow='0 0 0 3px rgba(45,80,22,0.08)'; this.style.background='white'" onblur="this.style.borderColor='rgba(44,24,16,0.1)'; this.style.boxShadow='none'; this.style.background='#FAFAF8'"><option value="" disabled selected>Válassz terméket...</option><option value="nagy-jatszter">Nagy Játszótér</option><option value="kis-jatszter">Kis Játszótér</option><option value="kerti-kiulo">Kerti Kiülő – Nádtetős</option><option value="korisfa-garnitura">Kőrisfa Garnitúra 2+2+1</option><option value="osszecsukhato">Összecsukható Garnitúra</option><option value="5-pozicios">5 Pozíciós Garnitúra</option><option value="pillango">Pillangó Csavaros Garnitúra</option><option value="hintaagy">Zsindelytetős Hintaágy</option><option value="egyeb">Egyéb</option></select><div class="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none"><iconify-icon icon="solar:alt-arrow-down-linear" width="18" height="18" style="color: rgba(44,24,16,0.3);"></iconify-icon></div></div></div>
                 <div><label class="block text-sm font-medium mb-1.5" style="color: #2C1810;">Üzenet</label><div class="relative"><div class="absolute left-3.5 top-3.5 pointer-events-none"><iconify-icon icon="solar:chat-round-line-linear" width="18" height="18" style="color: rgba(44,24,16,0.3);"></iconify-icon></div><textarea name="message" rows="4" placeholder="Írja le kérését, különleges igényeit..." class="w-full rounded-xl text-sm outline-none transition-all resize-none" style="padding: 12px 14px 12px 42px; border: 1.5px solid rgba(44,24,16,0.1); background: #FAFAF8; color: #2C1810;" onfocus="this.style.borderColor='#2D5016'; this.style.boxShadow='0 0 0 3px rgba(45,80,22,0.08)'; this.style.background='white'" onblur="this.style.borderColor='rgba(44,24,16,0.1)'; this.style.boxShadow='none'; this.style.background='#FAFAF8'"></textarea></div></div>
                 <div class="flex items-start gap-3"><div class="relative flex-shrink-0 mt-0.5"><input type="checkbox" id="privacy-check" name="privacy" required class="sr-only peer"><label for="privacy-check" class="block w-5 h-5 rounded-md cursor-pointer transition-all peer-checked:border-transparent" style="border: 1.5px solid rgba(44,24,16,0.15); background: #FAFAF8;"></label><div class="absolute inset-0 rounded-md items-center justify-center pointer-events-none hidden peer-checked:flex" style="background: #2D5016;"><iconify-icon icon="solar:check-linear" width="14" height="14" style="color: white;"></iconify-icon></div></div><label for="privacy-check" class="text-sm cursor-pointer leading-relaxed" style="color: rgba(44,24,16,0.6);">Elfogadom az <a href="#" class="font-medium underline underline-offset-2" style="color: #2D5016;">adatkezelési tájékoztatót</a> <span style="color: #C4652A;">*</span></label></div>
                 <button type="submit" id="submit-btn" class="w-full flex items-center justify-center gap-2.5 text-base font-semibold rounded-xl transition-all cursor-pointer" style="padding: 14px 24px; background: #2D5016; color: white; box-shadow: 0 2px 12px rgba(45,80,22,0.25); border: none;" onmouseover="this.style.background='#244212'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#2D5016'; this.style.transform='translateY(0)'"><iconify-icon icon="solar:letter-linear" width="20" height="20"></iconify-icon>Megrendelem</button>
@@ -196,212 +160,17 @@
     </footer>
 
     <script>
-      // ============================================================
-      // TERMÉK KONFIGURÁTOR
-      // ============================================================
-      const TERMEK_OPCIOK = {
-        'nagy-jatszter': {
-          szinek: [],
-          meretek: [],
-          kiegeszitok: ['Homokozó alap', 'Extra hinta', 'Csúszda', 'Mászóháló', 'Trapéz rúd'],
-          alapar: null,
-        },
-        'kis-jatszter': {
-          szinek: [],
-          meretek: [],
-          kiegeszitok: ['Homokozó alap', 'Extra hinta', 'Csúszda'],
-          alapar: null,
-        },
-        'kerti-kiulo': {
-          szinek: [],
-          meretek: [],
-          kiegeszitok: [],
-          alapar: 225000,
-        },
-        'korisfa-garnitura': {
-          szinek: ['Cseresznye', 'Tölgy', 'Dió'],
-          meretek: [
-            { label: '8 személyes – 150 cm-es asztal', ar: 245000 },
-            { label: '10 személyes – 200 cm-es asztal', ar: 295000 },
-          ],
-          kiegeszitok: [],
-          alapar: null,
-        },
-        'osszecsukhato': {
-          szinek: ['Cseresznye', 'Tölgy'],
-          meretek: [
-            { label: '6 személyes – 150 cm-es asztal', ar: 185000 },
-            { label: '8 személyes – 200 cm-es asztal', ar: 215000 },
-          ],
-          kiegeszitok: [],
-          alapar: null,
-        },
-        '5-pozicios': {
-          szinek: ['Cseresznye', 'Tölgy'],
-          meretek: [
-            { label: '6 személyes – 150 cm-es asztal', ar: 295000 },
-          ],
-          kiegeszitok: ['Párna (+5.500 Ft/db)'],
-          alapar: null,
-        },
-        'pillango': {
-          szinek: ['Cseresznye', 'Tölgy'],
-          meretek: [
-            { label: '8 személyes – 150 cm-es asztal', ar: 195000 },
-            { label: '10 személyes – 200 cm-es asztal', ar: 225000 },
-          ],
-          kiegeszitok: [],
-          alapar: null,
-        },
-        'hintaagy': {
-          szinek: [],
-          meretek: [],
-          kiegeszitok: [],
-          alapar: 235000,
-        },
-        'hintaagy-2': {
-          szinek: [],
-          meretek: [],
-          kiegeszitok: [],
-          alapar: null,
-        },
-        'egyeb': { szinek: [], meretek: [], kiegeszitok: [], alapar: null },
-      };
-
-      let kivalasztottMeretAr = null;
-      let kivalasztottKiegeszitok = [];
-
-      function formatAr(n) {
-        return n.toLocaleString('hu-HU') + ' Ft';
-      }
-
-      function frissitArDisplay() {
-        const val = document.getElementById('product-select').value;
-        const opciok = TERMEK_OPCIOK[val];
-        if (!opciok) return;
-        let ar = opciok.alapar || kivalasztottMeretAr;
-        const parnaInput = document.getElementById('parna-db');
-        if (kivalasztottKiegeszitok.some(k => k.includes('Párna')) && parnaInput && ar) {
-          ar += (parseInt(parnaInput.value) || 0) * 5500;
-        }
-        if (ar) {
-          document.getElementById('ar-display').textContent = formatAr(ar);
-          document.getElementById('opt-ar').style.display = 'block';
-          document.querySelector('input[name="ar"]').value = formatAr(ar);
-        } else {
-          document.getElementById('opt-ar').style.display = 'none';
-          document.querySelector('input[name="ar"]').value = '';
-        }
-      }
-
-      function onProductChange(val) {
-        const opciok = TERMEK_OPCIOK[val];
-        kivalasztottMeretAr = null;
-        kivalasztottKiegeszitok = [];
-        document.querySelector('input[name="szin"]').value = '';
-        document.querySelector('input[name="meret"]').value = '';
-        document.querySelector('input[name="kiegeszitok"]').value = '';
-        document.querySelector('input[name="ar"]').value = '';
-
-        if (!opciok) { document.getElementById('product-options').style.display = 'none'; return; }
-        const hasOpts = opciok.szinek.length || opciok.meretek.length || opciok.kiegeszitok.length || opciok.alapar;
-        if (!hasOpts) { document.getElementById('product-options').style.display = 'none'; return; }
-        document.getElementById('product-options').style.display = 'block';
-
-        // SZÍN
-        const szinDiv = document.getElementById('opt-szin');
-        const szinOpts = document.getElementById('szin-options');
-        szinDiv.style.display = opciok.szinek.length ? 'block' : 'none';
-        szinOpts.innerHTML = '';
-        opciok.szinek.forEach(szin => {
-          const btn = document.createElement('button');
-          btn.type = 'button'; btn.textContent = szin; btn.dataset.szin = szin;
-          btn.className = 'szin-btn text-sm font-medium rounded-xl px-4 py-2 transition-all cursor-pointer';
-          btn.style.cssText = 'border:1.5px solid rgba(44,24,16,0.15);background:white;color:rgba(44,24,16,0.7);';
-          btn.onclick = function() {
-            document.querySelectorAll('.szin-btn').forEach(b => { b.style.cssText='border:1.5px solid rgba(44,24,16,0.15);background:white;color:rgba(44,24,16,0.7);'; });
-            this.style.cssText = 'border:1.5px solid #2D5016;background:rgba(45,80,22,0.08);color:#2D5016;font-weight:600;';
-            document.querySelector('input[name="szin"]').value = szin;
-          };
-          szinOpts.appendChild(btn);
-        });
-
-        // MÉRET
-        const meretDiv = document.getElementById('opt-meret');
-        const meretOpts = document.getElementById('meret-options');
-        meretDiv.style.display = opciok.meretek.length ? 'block' : 'none';
-        meretOpts.innerHTML = '';
-        opciok.meretek.forEach(m => {
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'meret-btn w-full text-left rounded-xl px-4 py-3 transition-all cursor-pointer flex items-center justify-between';
-          btn.style.cssText = 'border:1.5px solid rgba(44,24,16,0.12);background:white;';
-          btn.innerHTML = `<span class="text-sm font-medium" style="color:#2C1810;">${m.label}</span><span class="text-sm font-semibold" style="color:#2D5016;">${formatAr(m.ar)}</span>`;
-          btn.onclick = function() {
-            document.querySelectorAll('.meret-btn').forEach(b => { b.style.cssText='border:1.5px solid rgba(44,24,16,0.12);background:white;'; });
-            this.style.cssText = 'border:1.5px solid #2D5016;background:rgba(45,80,22,0.06);';
-            kivalasztottMeretAr = m.ar;
-            document.querySelector('input[name="meret"]').value = m.label;
-            frissitArDisplay();
-          };
-          meretOpts.appendChild(btn);
-        });
-
-        // KIEGÉSZÍTŐK
-        const kiegDiv = document.getElementById('opt-kiegeszitok');
-        const kiegOpts = document.getElementById('kiegeszitok-options');
-        kiegDiv.style.display = opciok.kiegeszitok.length ? 'block' : 'none';
-        kiegOpts.innerHTML = '';
-        kivalasztottKiegeszitok = [];
-        opciok.kiegeszitok.forEach(kieg => {
-          const isParna = kieg.includes('Párna');
-          const wrapper = document.createElement('label');
-          wrapper.className = 'flex items-center gap-3 cursor-pointer rounded-xl px-4 py-3 transition-all';
-          wrapper.style.cssText = 'border:1.5px solid rgba(44,24,16,0.1);background:white;';
-          const safeId = 'kieg-' + kieg.replace(/\W/g,'');
-          wrapper.innerHTML = `
-            <input type="checkbox" class="kieg-checkbox sr-only" data-kieg="${kieg}">
-            <span class="w-5 h-5 rounded-md flex-shrink-0 flex items-center justify-center" id="${safeId}" style="border:1.5px solid rgba(44,24,16,0.2);background:#FAFAF8;width:20px;height:20px;border-radius:6px;"></span>
-            <span class="text-sm font-medium flex-1" style="color:rgba(44,24,16,0.75);">${kieg}</span>
-            ${isParna ? '<div class="flex items-center gap-2"><span class="text-xs" style="color:rgba(44,24,16,0.4);">db:</span><input type="number" id="parna-db" min="1" max="20" value="4" class="w-14 rounded-lg text-sm text-center outline-none" style="border:1.5px solid rgba(44,24,16,0.15);padding:4px 8px;background:#FAFAF8;color:#2C1810;" oninput="frissitArDisplay()"></div>' : ''}
-          `;
-          const cb = wrapper.querySelector('.kieg-checkbox');
-          const box = wrapper.querySelector('#' + safeId);
-          cb.addEventListener('change', function() {
-            if (this.checked) {
-              kivalasztottKiegeszitok.push(kieg);
-              box.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-              box.style.cssText = 'background:#2D5016;border:1.5px solid #2D5016;width:20px;height:20px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;';
-              wrapper.style.borderColor='#2D5016'; wrapper.style.background='rgba(45,80,22,0.04)';
-            } else {
-              kivalasztottKiegeszitok = kivalasztottKiegeszitok.filter(k=>k!==kieg);
-              box.innerHTML=''; box.style.cssText='border:1.5px solid rgba(44,24,16,0.2);background:#FAFAF8;width:20px;height:20px;border-radius:6px;flex-shrink:0;';
-              wrapper.style.borderColor='rgba(44,24,16,0.1)'; wrapper.style.background='white';
-            }
-            document.querySelector('input[name="kiegeszitok"]').value = kivalasztottKiegeszitok.join(', ');
-            frissitArDisplay();
-          });
-          kiegOpts.appendChild(wrapper);
-        });
-
-        // Fix árú termék
-        if (opciok.alapar) {
-          document.getElementById('ar-display').textContent = formatAr(opciok.alapar);
-          document.getElementById('opt-ar').style.display = 'block';
-          document.querySelector('input[name="ar"]').value = formatAr(opciok.alapar);
-        } else {
-          document.getElementById('opt-ar').style.display = 'none';
-        }
-      }
-
-      // ============================================================
-      // URL PARAMÉTEREK KEZELÉSE
-      // ============================================================
       function initFromUrl() {
+          console.log('URL paraméterek:', window.location.search);
+          console.log('Rejtett mezők értékei:', {
+            szin: document.querySelector('[name="szin"]')?.value,
+            meret: document.querySelector('[name="meret"]')?.value,
+            ar: document.querySelector('[name="ar"]')?.value,
+            kiegeszitok: document.querySelector('[name="kiegeszitok"]')?.value
+          });
           const params = new URLSearchParams(window.location.search);
           const termek = params.get('termek');
           const termekMap = {
-              'Nagy Játszótér': 'nagy-jatszter',
               'Kőrisfa Garnitúra 2+2+1': 'korisfa-garnitura',
               'Kis Játszótér': 'kis-jatszter',
               'Kerti Kiülő': 'kerti-kiulo',
@@ -409,20 +178,21 @@
               '5 Pozíciós Garnitúra': '5-pozicios',
               'Pillangó Csavaros Garnitúra': 'pillango',
               'Zsindelytetős Hintaágy': 'hintaagy',
-              'Hintaágy – Lehajtható háttámlás': 'hintaagy-2',
+              'Hintaágy – Lehajtható háttámlás': 'hintaagy',
           };
-          const productSelect = document.getElementById('product-select');
-          if (productSelect && termek) {
-            const val = termekMap[termek] || null;
-            if (val) {
-              productSelect.value = val;
-              onProductChange(val);
-              const urlSzin = params.get('szin');
-              const urlMeret = params.get('meret');
-              if (urlSzin) setTimeout(() => { document.querySelectorAll('.szin-btn').forEach(b => { if (b.dataset.szin === urlSzin) b.click(); }); }, 80);
-              if (urlMeret) setTimeout(() => { document.querySelectorAll('.meret-btn').forEach(b => { if (b.querySelector('span')?.textContent.includes(urlMeret)) b.click(); }); }, 80);
-            }
-          }
+          const productSelect = document.querySelector('[name="product"]');
+          if (productSelect && termek && termekMap[termek]) productSelect.value = termekMap[termek];
+          const hiddenSzin = document.querySelector('input[name="szin"]');
+          const hiddenMeret = document.querySelector('input[name="meret"]');
+          const hiddenTetotipus = document.querySelector('input[name="tetotipus"]');
+          const hiddenKiegeszitok = document.querySelector('input[name="kiegeszitok"]');
+          const hiddenAr = document.querySelector('input[name="ar"]');
+
+          if (hiddenSzin) hiddenSzin.value = params.get('szin') || '';
+          if (hiddenMeret) hiddenMeret.value = params.get('meret') || '';
+          if (hiddenTetotipus) hiddenTetotipus.value = params.get('tetotipus') || '';
+          if (hiddenKiegeszitok) hiddenKiegeszitok.value = params.get('kiegeszitok') || '';
+          if (hiddenAr) hiddenAr.value = params.get('ar') || '';
           setTimeout(() => {
               const formSection = document.getElementById('form-section');
               if (formSection) formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
