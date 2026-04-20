@@ -143,8 +143,20 @@
                                 <iconify-icon icon="solar:check-linear" width="16" height="16" style="color: white;"></iconify-icon>
                             </button>
                             <button onclick="selectColor('Tölgy', '#C4952A', this)" class="color-swatch w-11 h-11 rounded-full transition-all flex items-center justify-center" style="background: #C4952A; border: 3px solid transparent; box-shadow: 0 0 0 1px rgba(44,24,16,0.15);"></button>
-                            <button onclick="selectColor('Dió', '#5C3A1E', this)" class="color-swatch w-11 h-11 rounded-full transition-all flex items-center justify-center" style="background: #5C3A1E; border: 3px solid transparent; box-shadow: 0 0 0 1px rgba(44,24,16,0.15);"></button>
                         </div>
+                    </div>
+
+                    <div class="mb-6" style="border-top: 1px solid rgba(44,24,16,0.08);"></div>
+
+                    <!-- PÁRNA SZETT -->
+                    <div class="mb-6">
+                        <label class="flex items-start gap-3 cursor-pointer p-4 rounded-xl transition-all" style="border: 1px solid rgba(44,24,16,0.1); background: white;" id="parnaSzettBox">
+                            <input type="checkbox" id="parnaSzett" onchange="updatePrice()" style="margin-top:2px; width:16px; height:16px; accent-color:#2D5016; cursor:pointer; flex-shrink:0;">
+                            <div>
+                                <p class="text-sm font-semibold" style="color: #2C1810;">Párna szett kiegészítő</p>
+                                <p class="text-xs mt-0.5" id="parnaSzettInfo" style="color: rgba(44,24,16,0.55);">Párna szett (8 db) – <span class="font-semibold" style="color: #2D5016;">+20.000 Ft</span></p>
+                            </div>
+                        </label>
                     </div>
 
                     <div class="mb-6" style="border-top: 1px solid rgba(44,24,16,0.08);"></div>
@@ -334,14 +346,29 @@
         }
 
         let selectedSize = '150';
-        const prices = { '150': '245.000 Ft', '200': '295.000 Ft' };
+        const basePrices = { '150': 245000, '200': 295000 };
+        const pillowPrices = { '150': 20000, '200': 30000 };
+        const pillowLabels = { '150': 'Párna szett (8 db)', '200': 'Párna szett (10 db)' };
+
+        function formatPrice(n) {
+            return n.toLocaleString('hu-HU').replace(/\s/g, '.') + ' Ft';
+        }
+
+        function updatePrice() {
+            const base = basePrices[selectedSize];
+            const pillow = document.getElementById('parnaSzett').checked ? pillowPrices[selectedSize] : 0;
+            const priceEl = document.getElementById('currentPrice');
+            priceEl.style.opacity = '0'; priceEl.style.transform = 'translateY(5px)';
+            setTimeout(() => { priceEl.textContent = formatPrice(base + pillow); priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
+        }
+
         function selectSize(size, el) {
             selectedSize = size;
             document.querySelectorAll('.size-btn').forEach(btn => { const c = btn.querySelector('.absolute'); if(c) c.remove(); btn.style.borderColor = 'rgba(44,24,16,0.1)'; btn.style.background = 'white'; btn.querySelector('span:first-child').style.color = '#2C1810'; btn.querySelector('span:last-child').style.color = 'rgba(44,24,16,0.45)'; });
             el.style.borderColor = '#2D5016'; el.style.background = 'rgba(45,80,22,0.04)'; el.querySelector('span:first-child').style.color = '#2D5016'; el.querySelector('span:last-child').style.color = 'rgba(45,80,22,0.7)';
             const checkDiv = document.createElement('div'); checkDiv.className = 'absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center'; checkDiv.style.background = '#2D5016'; checkDiv.innerHTML = '<iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>'; el.appendChild(checkDiv);
-            const priceEl = document.getElementById('currentPrice'); priceEl.style.opacity = '0'; priceEl.style.transform = 'translateY(5px)';
-            setTimeout(() => { priceEl.textContent = prices[size]; priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
+            document.getElementById('parnaSzettInfo').innerHTML = pillowLabels[size] + ' – <span class="font-semibold" style="color: #2D5016;">+' + formatPrice(pillowPrices[size]) + '</span>';
+            updatePrice();
         }
 
         function selectColor(name, hex, el) {
@@ -371,6 +398,9 @@
             const meret = selectedSize === '150' ? '150 cm (8 személyes)' : '200 cm (10 személyes)';
             params.set('meret', meret);
             params.set('szin', document.getElementById('colorLabel').textContent);
+            if (document.getElementById('parnaSzett').checked) {
+                params.set('kiegeszito', pillowLabels[selectedSize]);
+            }
             params.set('ar', document.getElementById('currentPrice').textContent);
             window.location.href = 'kapcsolat.html?' + params.toString();
         }
