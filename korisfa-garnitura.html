@@ -154,7 +154,7 @@
                             <input type="checkbox" id="parnaSzett" onchange="updatePrice()" style="margin-top:2px; width:16px; height:16px; accent-color:#2D5016; cursor:pointer; flex-shrink:0;">
                             <div>
                                 <p class="text-sm font-semibold" style="color: #2C1810;">Párna szett kiegészítő</p>
-                                <p class="text-xs mt-0.5" id="parnaSzettInfo" style="color: rgba(44,24,16,0.55);">Párna szett (8 db) – <span class="font-semibold" style="color: #2D5016;">+20.000 Ft</span></p>
+                                <p class="text-xs mt-0.5" id="parnaSzettInfo" style="color: rgba(44,24,16,0.55);">Párna szett (4 db) – <span class="font-semibold" style="color: #2D5016;">+20.000 Ft</span></p>
                             </div>
                         </label>
                     </div>
@@ -348,7 +348,7 @@
         let selectedSize = '150';
         const basePrices = { '150': 245000, '200': 295000 };
         const pillowPrices = { '150': 20000, '200': 30000 };
-        const pillowLabels = { '150': 'Párna szett (8 db)', '200': 'Párna szett (10 db)' };
+        const pillowLabels = { '150': 'Párna szett (4 db)', '200': 'Párna szett (4 db)' };
 
         function formatPrice(n) {
             return n.toLocaleString('hu-HU').replace(/\s/g, '.') + ' Ft';
