@@ -129,11 +129,11 @@
 
                     <!-- COLOR SELECTOR -->
                     <div class="mb-6">
-                        <p class="text-sm font-semibold mb-3" style="color: #2C1810;">Szín: <span id="colorLabel" class="font-normal" style="color: rgba(44,24,16,0.5);">Cseresznye</span></p>
+                        <p class="text-sm font-semibold mb-3" style="color: #2C1810;">Szín: <span id="colorLabel" class="font-normal" style="color: rgba(44,24,16,0.5);">Tölgy</span></p>
                         <div class="flex items-center gap-3">
-                            <button onclick="selectColor('Cseresznye', '#8B4513', this)" class="color-swatch active-color w-11 h-11 rounded-full transition-all flex items-center justify-center" style="background: #8B4513; border: 3px solid #2D5016; box-shadow: 0 0 0 2px white inset;"><iconify-icon icon="solar:check-linear" width="16" height="16" style="color: white;"></iconify-icon></button>
-                            <button onclick="selectColor('Tölgy', '#C4952A', this)" class="color-swatch w-11 h-11 rounded-full transition-all flex items-center justify-center" style="background: #C4952A; border: 3px solid transparent; box-shadow: 0 0 0 1px rgba(44,24,16,0.15);"></button>
-                            <button onclick="selectColor('Dió', '#5C3D1E', this)" class="color-swatch w-11 h-11 rounded-full transition-all flex items-center justify-center" style="background: #5C3D1E; border: 3px solid transparent; box-shadow: 0 0 0 1px rgba(44,24,16,0.15);"></button>
+                            <button onclick="selectColor('Tölgy', '#C4952A', this)" class="color-swatch active-color w-11 h-11 rounded-full transition-all flex items-center justify-center" style="background: #C4952A; border: 3px solid #2D5016; box-shadow: 0 0 0 2px white inset;"><iconify-icon icon="solar:check-linear" width="16" height="16" style="color: white;"></iconify-icon></button>
+                            <button onclick="selectColor('Cseresznye', '#8B4513', this, 'kerti-garniturak/5pozicios-cseresznye.jpg')" class="color-swatch w-11 h-11 rounded-full transition-all flex items-center justify-center" style="background: #8B4513; border: 3px solid transparent; box-shadow: 0 0 0 1px rgba(44,24,16,0.15);"></button>
+                            <button onclick="selectColor('Dió', '#5C3D1E', this, 'kerti-garniturak/5pozicios-dio.jpg')" class="color-swatch w-11 h-11 rounded-full transition-all flex items-center justify-center" style="background: #5C3D1E; border: 3px solid transparent; box-shadow: 0 0 0 1px rgba(44,24,16,0.15);"></button>
                         </div>
                     </div>
 
@@ -326,10 +326,11 @@
             setTimeout(() => { priceEl.textContent = prices[size]; priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
             if (sizeImages[size]) { const imgEl = document.getElementById('mainImgEl'); const gradEl = document.getElementById('mainGradEl'); imgEl.src = sizeImages[size]; imgEl.style.display = 'block'; gradEl.style.display = 'none'; }
         }
-        function selectColor(name, hex, el) {
+        function selectColor(name, hex, el, img) {
             document.querySelectorAll('.color-swatch').forEach(s => { s.style.borderColor = 'transparent'; s.style.boxShadow = '0 0 0 1px rgba(44,24,16,0.15)'; s.innerHTML = ''; });
             el.style.borderColor = '#2D5016'; el.style.boxShadow = '0 0 0 2px white inset'; el.innerHTML = '<iconify-icon icon="solar:check-linear" width="16" height="16" style="color: white;"></iconify-icon>';
             document.getElementById('colorLabel').textContent = name;
+            if (img) { const imgEl = document.getElementById('mainImgEl'); const gradEl = document.getElementById('mainGradEl'); imgEl.src = img; imgEl.style.display = 'block'; gradEl.style.display = 'none'; }
         }
         function switchTab(tabName) {
             document.querySelectorAll('.tab-btn').forEach(btn => { btn.style.backgroundColor = 'transparent'; btn.style.color = 'rgba(44,24,16,0.55)'; btn.style.fontWeight = '500'; });
