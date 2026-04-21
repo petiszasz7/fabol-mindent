@@ -136,6 +136,21 @@
 
                     <div class="mb-6" style="border-top: 1px solid rgba(44,24,16,0.08);"></div>
 
+                    <!-- PÁRNA SZETT OPCIÓ -->
+                    <div class="mb-6">
+                        <label class="flex items-start gap-3 cursor-pointer" onclick="toggleParna()">
+                            <div class="relative mt-0.5 flex-shrink-0">
+                                <input type="checkbox" id="parnaCheckbox" class="sr-only">
+                                <div id="parnaCheckboxUI" class="w-5 h-5 rounded flex items-center justify-center transition-all" style="border: 2px solid rgba(44,24,16,0.2); background: white;">
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-semibold" style="color: #2C1810;">Párna szett (4 db) – <span id="parnaPriceLabel" class="font-semibold" style="color: #2D5016;">+20.000 Ft</span></p>
+                                <p class="text-xs mt-0.5" style="color: rgba(44,24,16,0.5);">Vízálló kültéri párna szett a garnitúrához</p>
+                            </div>
+                        </label>
+                    </div>
+
                     <!-- PRICE -->
                     <div class="mb-6">
                         <div class="flex items-baseline gap-3 mb-2">
@@ -306,14 +321,30 @@
             }, 200);
         }
         let selectedSize = '150';
-        const prices = { '150': '195.000 Ft', '200': '225.000 Ft' };
+        const basePrices = { '150': 195000, '200': 225000 };
+        const parnaPrices = { '150': 20000, '200': 30000 };
+        function formatPrice(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' Ft'; }
+        function toggleParna() {
+            const cb = document.getElementById('parnaCheckbox');
+            cb.checked = !cb.checked;
+            const ui = document.getElementById('parnaCheckboxUI');
+            if (cb.checked) { ui.style.background = '#2D5016'; ui.style.borderColor = '#2D5016'; ui.innerHTML = '<iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>'; }
+            else { ui.style.background = 'white'; ui.style.borderColor = 'rgba(44,24,16,0.2)'; ui.innerHTML = ''; }
+            const total = basePrices[selectedSize] + (cb.checked ? parnaPrices[selectedSize] : 0);
+            document.getElementById('currentPrice').textContent = formatPrice(total);
+        }
         function selectSize(size, el) {
             selectedSize = size;
             document.querySelectorAll('.size-btn').forEach(btn => { const c = btn.querySelector('.absolute'); if(c) c.remove(); btn.style.borderColor = 'rgba(44,24,16,0.1)'; btn.style.background = 'white'; btn.querySelector('span:first-child').style.color = '#2C1810'; btn.querySelector('span:last-child').style.color = 'rgba(44,24,16,0.45)'; });
             el.style.borderColor = '#2D5016'; el.style.background = 'rgba(45,80,22,0.04)'; el.querySelector('span:first-child').style.color = '#2D5016'; el.querySelector('span:last-child').style.color = 'rgba(45,80,22,0.7)';
             const checkDiv = document.createElement('div'); checkDiv.className = 'absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center'; checkDiv.style.background = '#2D5016'; checkDiv.innerHTML = '<iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>'; el.appendChild(checkDiv);
             const priceEl = document.getElementById('currentPrice'); priceEl.style.opacity = '0'; priceEl.style.transform = 'translateY(5px)';
-            setTimeout(() => { priceEl.textContent = prices[size]; priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
+            setTimeout(() => {
+                document.getElementById('parnaPriceLabel').textContent = '+' + formatPrice(parnaPrices[size]);
+                const parnaChecked = document.getElementById('parnaCheckbox').checked;
+                priceEl.textContent = formatPrice(basePrices[size] + (parnaChecked ? parnaPrices[size] : 0));
+                priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)';
+            }, 200);
         }
         function selectColor(name, hex, el) {
             document.querySelectorAll('.color-swatch').forEach(s => { s.style.borderColor = 'transparent'; s.style.boxShadow = '0 0 0 1px rgba(44,24,16,0.15)'; s.innerHTML = ''; });
@@ -339,6 +370,9 @@
             const meret = selectedSize === '150' ? '150 cm (8 személyes)' : '200 cm (10 személyes)';
             params.set('meret', meret);
             params.set('szin', document.getElementById('colorLabel').textContent);
+            if (document.getElementById('parnaCheckbox').checked) {
+                params.set('kiegeszito', 'Párna szett (4 db) +' + formatPrice(parnaPrices[selectedSize]));
+            }
             params.set('ar', document.getElementById('currentPrice').textContent);
             window.location.href = 'kapcsolat.html?' + params.toString();
         }
