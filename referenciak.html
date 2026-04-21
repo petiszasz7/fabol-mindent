@@ -232,22 +232,6 @@
 
         </div>
 
-        <!-- Lightbox -->
-        <div id="lightbox" class="fixed inset-0 z-[200] flex items-center justify-center" style="display:none !important; background: rgba(20,12,8,0.93); backdrop-filter: blur(6px);">
-          <button onclick="closeLightbox()" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full transition-all" style="background: rgba(255,255,255,0.1); color: white;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-            <iconify-icon icon="solar:close-circle-linear" width="22" height="22"></iconify-icon>
-          </button>
-          <button onclick="prevImage()" class="absolute left-3 sm:left-6 w-10 h-10 flex items-center justify-center rounded-full transition-all" style="background: rgba(255,255,255,0.1); color: white;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-            <iconify-icon icon="solar:arrow-left-linear" width="22" height="22"></iconify-icon>
-          </button>
-          <div class="max-w-4xl w-full mx-14 sm:mx-20 flex flex-col items-center">
-            <img id="lightbox-img" src="" alt="" class="rounded-xl max-h-[80vh] w-auto max-w-full object-contain" style="box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
-            <p id="lightbox-counter" class="mt-4 text-sm" style="color: rgba(255,255,255,0.4);"></p>
-          </div>
-          <button onclick="nextImage()" class="absolute right-3 sm:right-6 w-10 h-10 flex items-center justify-center rounded-full transition-all" style="background: rgba(255,255,255,0.1); color: white;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-            <iconify-icon icon="solar:arrow-right-linear" width="22" height="22"></iconify-icon>
-          </button>
-        </div>
 
       </div>
     </section>
@@ -274,7 +258,6 @@
       .gallery-card:hover .gallery-img { transform: scale(1.06); }
       .gallery-item { transition: opacity 0.35s ease, transform 0.35s ease; }
       .gallery-item.hidden { display: none; }
-      #lightbox.open { display: flex !important; }
     </style>
 
     <script>
@@ -305,39 +288,62 @@
 
       function openLightbox(index) {
         currentIndex = index;
-        document.getElementById('lightbox-img').src = allImages[index];
-        const pos = visibleIndices.indexOf(index) + 1;
-        document.getElementById('lightbox-counter').textContent = pos + ' / ' + visibleIndices.length;
-        document.getElementById('lightbox').classList.add('open');
+        closeLightbox();
+
+        const overlay = document.createElement('div');
+        overlay.id = 'lightbox-overlay';
+        overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;';
+
+        const img = document.createElement('img');
+        img.src = allImages[index];
+        img.style.cssText = 'max-width:90vw;max-height:90vh;object-fit:contain;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.5);';
+
+        const closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '✕';
+        closeBtn.style.cssText = 'position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;font-size:18px;border:none;cursor:pointer;line-height:1;';
+        closeBtn.onclick = (e) => { e.stopPropagation(); closeLightbox(); };
+
+        const prevBtn = document.createElement('button');
+        prevBtn.innerHTML = '‹';
+        prevBtn.style.cssText = 'position:absolute;left:16px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;font-size:28px;border:none;cursor:pointer;line-height:1;';
+        prevBtn.onclick = (e) => { e.stopPropagation(); prevImage(); };
+
+        const nextBtn = document.createElement('button');
+        nextBtn.innerHTML = '›';
+        nextBtn.style.cssText = 'position:absolute;right:16px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;font-size:28px;border:none;cursor:pointer;line-height:1;';
+        nextBtn.onclick = (e) => { e.stopPropagation(); nextImage(); };
+
+        overlay.appendChild(img);
+        overlay.appendChild(closeBtn);
+        overlay.appendChild(prevBtn);
+        overlay.appendChild(nextBtn);
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) closeLightbox(); });
+
+        document.body.appendChild(overlay);
         document.body.style.overflow = 'hidden';
       }
 
       function closeLightbox() {
-        document.getElementById('lightbox').classList.remove('open');
+        const overlay = document.getElementById('lightbox-overlay');
+        if (overlay) overlay.remove();
         document.body.style.overflow = '';
       }
 
       function prevImage() {
         const pos = visibleIndices.indexOf(currentIndex);
-        const newPos = (pos - 1 + visibleIndices.length) % visibleIndices.length;
-        openLightbox(visibleIndices[newPos]);
+        openLightbox(visibleIndices[(pos - 1 + visibleIndices.length) % visibleIndices.length]);
       }
 
       function nextImage() {
         const pos = visibleIndices.indexOf(currentIndex);
-        const newPos = (pos + 1) % visibleIndices.length;
-        openLightbox(visibleIndices[newPos]);
+        openLightbox(visibleIndices[(pos + 1) % visibleIndices.length]);
       }
 
       document.addEventListener('keydown', e => {
-        if (!document.getElementById('lightbox').classList.contains('open')) return;
+        if (!document.getElementById('lightbox-overlay')) return;
         if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowLeft') prevImage();
         if (e.key === 'ArrowRight') nextImage();
-      });
-
-      document.getElementById('lightbox').addEventListener('click', function(e) {
-        if (e.target === this) closeLightbox();
       });
 
       let mobileMenuOpen = false;
