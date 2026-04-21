@@ -23,12 +23,38 @@ export default async function handler(req, res) {
 
   const productLabel = productNames[product] || product;
 
+  const orderSummaryRows = [
+    size ? `<tr><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1); width:130px;"><span style="color:rgba(44,24,16,0.55); font-size:13px;">Méret</span></td><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="font-size:14px;">${size}</span></td></tr>` : '',
+    color ? `<tr><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="color:rgba(44,24,16,0.55); font-size:13px;">Szín</span></td><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="font-size:14px;">${color}</span></td></tr>` : '',
+    roofType ? `<tr><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="color:rgba(44,24,16,0.55); font-size:13px;">Tetőtípus</span></td><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="font-size:14px;">${roofType}</span></td></tr>` : '',
+    extras ? `<tr><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="color:rgba(44,24,16,0.55); font-size:13px;">Kiegészítők</span></td><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="font-size:14px;">${extras}</span></td></tr>` : '',
+  ].filter(Boolean).join('');
+
   const htmlBody = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #2C1810;">
       <div style="background: #2D5016; padding: 24px 32px; border-radius: 12px 12px 0 0;">
         <h1 style="color: white; margin: 0; font-size: 20px;">Új árajánlat kérés – Fából Mindent</h1>
       </div>
       <div style="background: #F5F0EB; padding: 32px; border-radius: 0 0 12px 12px; border: 1px solid rgba(44,24,16,0.1); border-top: none;">
+
+        ${(size || color || roofType || extras || finalPrice) ? `
+        <div style="background: #f0f7ea; border: 2px solid #2D5016; border-radius: 10px; padding: 20px 24px; margin-bottom: 28px;">
+          <h2 style="margin: 0 0 14px 0; font-size: 15px; color: #2D5016;">🛒 Rendelés összefoglalója</h2>
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1); width:130px;"><span style="color:rgba(44,24,16,0.55); font-size:13px;">Termék</span></td>
+              <td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="font-size:14px; font-weight:600; color:#2D5016;">${productLabel}</span></td>
+            </tr>
+            ${orderSummaryRows}
+            ${finalPrice ? `
+            <tr>
+              <td style="padding:10px 0 0 0;"><span style="color:rgba(44,24,16,0.55); font-size:13px;">Végső ár</span></td>
+              <td style="padding:10px 0 0 0;"><span style="font-size:17px; font-weight:700; color:#2D5016;">${finalPrice}</span></td>
+            </tr>` : ''}
+          </table>
+        </div>
+        ` : ''}
+
         <table style="width: 100%; border-collapse: collapse;">
           <tr>
             <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08); width: 140px;">
