@@ -712,7 +712,7 @@
     </section>
 
     <!-- REFERENCIA SZEKCIÓ -->
-    <section class="py-16 sm:py-24" style="background-color: #F5F0EB;">
+    <section class="py-10 sm:py-24" style="background-color: #F5F0EB;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Section Header -->
@@ -724,7 +724,7 @@
           <h2 style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(1.75rem, 4vw, 2.75rem);" class="tracking-tight mb-4">
             Elégedett vásárlóink munkái
           </h2>
-          <p class="text-base max-w-2xl mx-auto" style="color: rgba(44,24,16,0.6);">
+          <p class="text-sm sm:text-base max-w-2xl mx-auto" style="color: rgba(44,24,16,0.6);">
             Valódi vásárlóink, valódi vélemények – nézze meg kész munkáinkat!
           </p>
         </div>
@@ -737,7 +737,11 @@
             .ref-box-slide.active { display: flex; animation: refBoxFadeIn 0.7s ease forwards; }
             @media (max-width: 639px) {
               .ref-box-slide.active { flex-direction: column; }
-              .ref-box-img { min-height: 210px; width: 100% !important; }
+              .ref-box-img { min-height: 160px !important; width: 100% !important; }
+              .ref-box-img img { min-height: 0 !important; }
+              .ref-stars iconify-icon { width: 15px !important; height: 15px !important; }
+              .ref-nav-btn iconify-icon { width: 22px !important; height: 22px !important; }
+              #refBoxDots button { width: 8px !important; height: 8px !important; }
             }
           </style>
 
@@ -748,19 +752,19 @@
               <div class="ref-box-img flex-shrink-0 overflow-hidden" style="width: 42%;">
                 <img src="jatszoterek/jatszter-1.jpg" alt="Nagy Játszótér referencia" style="width:100%;height:100%;object-fit:cover;display:block;min-height:280px;">
               </div>
-              <div class="flex-1 p-7 sm:p-10 flex flex-col justify-center">
-                <div class="flex gap-1 mb-5">
+              <div class="flex-1 p-4 sm:p-10 flex flex-col justify-center">
+                <div class="ref-stars flex gap-1 mb-3 sm:mb-5">
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                 </div>
-                <p style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.55;" class="mb-6">
+                <p style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(0.9rem, 4vw, 1.4rem); line-height: 1.55;" class="mb-3 sm:mb-6">
                   „Gyors szállítás, precíz összeszerelés. A gyerekek imádják!"
                 </p>
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(45,80,22,0.1);">
+                <div class="flex items-center gap-2 sm:gap-3">
+                  <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(45,80,22,0.1);">
                     <iconify-icon icon="solar:user-bold" width="20" height="20" style="color: #2D5016;"></iconify-icon>
                   </div>
                   <div>
@@ -776,19 +780,19 @@
               <div class="ref-box-img flex-shrink-0 overflow-hidden" style="width: 42%;">
                 <img src="kerti-garniturak/kert-4.jpg" alt="Kőrisfa Garnitúra referencia" style="width:100%;height:100%;object-fit:cover;display:block;min-height:280px;">
               </div>
-              <div class="flex-1 p-7 sm:p-10 flex flex-col justify-center">
-                <div class="flex gap-1 mb-5">
+              <div class="flex-1 p-4 sm:p-10 flex flex-col justify-center">
+                <div class="ref-stars flex gap-1 mb-3 sm:mb-5">
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                 </div>
-                <p style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.55;" class="mb-6">
+                <p style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(0.9rem, 4vw, 1.4rem); line-height: 1.55;" class="mb-3 sm:mb-6">
                   „Masszív, időtálló bútor. Már 2 éve áll a kertben, mint új."
                 </p>
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(139,105,20,0.1);">
+                <div class="flex items-center gap-2 sm:gap-3">
+                  <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(139,105,20,0.1);">
                     <iconify-icon icon="solar:user-bold" width="20" height="20" style="color: #8B6914;"></iconify-icon>
                   </div>
                   <div>
@@ -804,19 +808,19 @@
               <div class="ref-box-img flex-shrink-0 overflow-hidden" style="width: 42%;">
                 <img src="kiulok/kiulo-1.jpg" alt="Kerti Kiülő referencia" style="width:100%;height:100%;object-fit:cover;display:block;min-height:280px;">
               </div>
-              <div class="flex-1 p-7 sm:p-10 flex flex-col justify-center">
-                <div class="flex gap-1 mb-5">
+              <div class="flex-1 p-4 sm:p-10 flex flex-col justify-center">
+                <div class="ref-stars flex gap-1 mb-3 sm:mb-5">
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                 </div>
-                <p style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.55;" class="mb-6">
+                <p style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(0.9rem, 4vw, 1.4rem); line-height: 1.55;" class="mb-3 sm:mb-6">
                   „Gyönyörű kivitelezés, a nádtető tökéletes árnyékot ad."
                 </p>
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(196,101,42,0.1);">
+                <div class="flex items-center gap-2 sm:gap-3">
+                  <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(196,101,42,0.1);">
                     <iconify-icon icon="solar:user-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   </div>
                   <div>
@@ -832,19 +836,19 @@
               <div class="ref-box-img flex-shrink-0 overflow-hidden" style="width: 42%;">
                 <img src="kerti-garniturak/kert-3.jpg" alt="Összecsukható Garnitúra referencia" style="width:100%;height:100%;object-fit:cover;display:block;min-height:280px;">
               </div>
-              <div class="flex-1 p-7 sm:p-10 flex flex-col justify-center">
-                <div class="flex gap-1 mb-5">
+              <div class="flex-1 p-4 sm:p-10 flex flex-col justify-center">
+                <div class="ref-stars flex gap-1 mb-3 sm:mb-5">
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                 </div>
-                <p style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.55;" class="mb-6">
+                <p style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(0.9rem, 4vw, 1.4rem); line-height: 1.55;" class="mb-3 sm:mb-6">
                   „Könnyen összecsukható, praktikus megoldás."
                 </p>
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(45,80,22,0.1);">
+                <div class="flex items-center gap-2 sm:gap-3">
+                  <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(45,80,22,0.1);">
                     <iconify-icon icon="solar:user-bold" width="20" height="20" style="color: #2D5016;"></iconify-icon>
                   </div>
                   <div>
@@ -860,19 +864,19 @@
               <div class="ref-box-img flex-shrink-0 overflow-hidden" style="width: 42%;">
                 <img src="kerti-garniturak/kert-2.jpg" alt="Zsindelytetős Hintaágy referencia" style="width:100%;height:100%;object-fit:cover;display:block;min-height:280px;">
               </div>
-              <div class="flex-1 p-7 sm:p-10 flex flex-col justify-center">
-                <div class="flex gap-1 mb-5">
+              <div class="flex-1 p-4 sm:p-10 flex flex-col justify-center">
+                <div class="ref-stars flex gap-1 mb-3 sm:mb-5">
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                   <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
                 </div>
-                <p style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.55;" class="mb-6">
+                <p style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(0.9rem, 4vw, 1.4rem); line-height: 1.55;" class="mb-3 sm:mb-6">
                   „Stabilan áll, kényelmes ülőfelület. Már az első nyáron sokat pihentünk rajta!"
                 </p>
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(45,80,22,0.1);">
+                <div class="flex items-center gap-2 sm:gap-3">
+                  <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(45,80,22,0.1);">
                     <iconify-icon icon="solar:user-bold" width="20" height="20" style="color: #2D5016;"></iconify-icon>
                   </div>
                   <div>
@@ -884,12 +888,12 @@
             </div>
 
             <!-- Navigációs sáv: bal nyíl + pontok + jobb nyíl -->
-            <div class="flex items-center justify-between px-5 py-4" style="border-top: 1px solid rgba(44,24,16,0.06);">
-              <button onclick="refBoxPrev()" style="color:#2C1810; background:none; border:none; cursor:pointer; padding:4px; display:flex; align-items:center; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+            <div class="flex items-center justify-between px-3 py-3 sm:px-5 sm:py-4" style="border-top: 1px solid rgba(44,24,16,0.06);">
+              <button class="ref-nav-btn" onclick="refBoxPrev()" style="color:#2C1810; background:none; border:none; cursor:pointer; padding:4px; display:flex; align-items:center; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
                 <iconify-icon icon="solar:arrow-left-bold" width="28" height="28"></iconify-icon>
               </button>
-              <div id="refBoxDots" class="flex gap-2.5"></div>
-              <button onclick="refBoxNext()" style="color:#2C1810; background:none; border:none; cursor:pointer; padding:4px; display:flex; align-items:center; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+              <div id="refBoxDots" class="flex gap-2"></div>
+              <button class="ref-nav-btn" onclick="refBoxNext()" style="color:#2C1810; background:none; border:none; cursor:pointer; padding:4px; display:flex; align-items:center; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
                 <iconify-icon icon="solar:arrow-right-bold" width="28" height="28"></iconify-icon>
               </button>
             </div>
