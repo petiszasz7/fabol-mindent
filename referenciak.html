@@ -70,24 +70,165 @@
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Section header -->
-        <div class="text-center mb-12 sm:mb-16 fade-up">
+        <div class="text-center mb-10 sm:mb-12 fade-up">
           <div class="flex items-center justify-center gap-2.5 mb-4"><div class="w-8 h-[2px] rounded-full" style="background: rgba(44,24,16,0.15);"></div><span class="text-xs font-semibold uppercase tracking-widest" style="color: rgba(44,24,16,0.4);">Galéria</span><div class="w-8 h-[2px] rounded-full" style="background: rgba(44,24,16,0.15);"></div></div>
           <h2 style="font-family: 'Playfair Display', serif; color: #2C1810; font-size: clamp(1.5rem, 3.5vw, 2.25rem);" class="tracking-tight font-medium mb-3">Elkészült munkáink</h2>
           <p class="text-sm sm:text-base" style="color: rgba(44,24,16,0.5); max-width: 480px; margin: 0 auto;">Minden termékünket kézzel, prémium minőségű fából készítjük erdélyi műhelyünkben.</p>
         </div>
 
-        <!-- Galéria rács – képek ide kerülnek majd -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-up" style="animation-delay: 0.15s;">
+        <!-- Szűrő fülek -->
+        <div class="flex flex-wrap justify-center gap-2 mb-10 fade-up" style="animation-delay: 0.08s;" id="filter-tabs">
+          <button onclick="filterGallery('osszes')" class="filter-btn active-tab px-5 py-2 rounded-full text-sm font-medium transition-all" data-cat="osszes">Összes</button>
+          <button onclick="filterGallery('jatszoter')" class="filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all" data-cat="jatszoter">Játszóterek</button>
+          <button onclick="filterGallery('garnitura')" class="filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all" data-cat="garnitura">Garnitúrák</button>
+          <button onclick="filterGallery('kiulo')" class="filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all" data-cat="kiulo">Kiülők</button>
+        </div>
 
-          <!-- Üres galéria állapot -->
-          <div class="sm:col-span-2 lg:col-span-3 flex flex-col items-center justify-center py-20 rounded-2xl" style="background: white; border: 2px dashed rgba(44,24,16,0.1);">
-            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-4" style="background: rgba(45,80,22,0.06);">
-              <iconify-icon icon="solar:gallery-linear" width="32" height="32" style="color: rgba(44,24,16,0.25);"></iconify-icon>
+        <!-- Galéria rács -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 fade-up" id="gallery-grid" style="animation-delay: 0.15s;">
+
+          <!-- Játszóterek -->
+          <div class="gallery-item" data-cat="jatszoter" data-index="0">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(0)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rjatszo-1.jpg" alt="Játszótér 1" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
             </div>
-            <p class="text-base font-medium mb-1" style="color: rgba(44,24,16,0.4);">Képek hamarosan</p>
-            <p class="text-sm" style="color: rgba(44,24,16,0.25);">A referencia képek feltöltése folyamatban van</p>
+          </div>
+          <div class="gallery-item" data-cat="jatszoter" data-index="1">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(1)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rjatszo-2.jpg" alt="Játszótér 2" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-cat="jatszoter" data-index="2">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(2)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rjatszo-3.jpg" alt="Játszótér 3" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-cat="jatszoter" data-index="3">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(3)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rjatszo-4.jpg" alt="Játszótér 4" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-cat="jatszoter" data-index="4">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(4)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rjatszo-5.jpg" alt="Játszótér 5" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-cat="jatszoter" data-index="5">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(5)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rjatszo-6.jpg" alt="Játszótér 6" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-cat="jatszoter" data-index="6">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(6)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rjatszo-7.webp" alt="Játszótér 7" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
           </div>
 
+          <!-- Garnitúrák -->
+          <div class="gallery-item" data-cat="garnitura" data-index="7">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(7)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rkoris.jpg" alt="Garnitúra 1" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-cat="garnitura" data-index="8">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(8)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rkoris-2.jpg" alt="Garnitúra 2" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-cat="garnitura" data-index="9">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(9)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rkoris-3.jpg" alt="Garnitúra 3" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-cat="garnitura" data-index="10">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(10)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rkoris-4.jpg" alt="Garnitúra 4" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-cat="garnitura" data-index="11">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(11)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rkoris-5.jpg" alt="Garnitúra 5" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-cat="garnitura" data-index="12">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(12)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rkoris-6.webp" alt="Garnitúra 6" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+
+          <!-- Kiülők -->
+          <div class="gallery-item" data-cat="kiulo" data-index="13">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(13)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rkiulo-1.jpg" alt="Kiülő 1" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-cat="kiulo" data-index="14">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(14)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rkiulo-2.jpg" alt="Kiülő 2" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-cat="kiulo" data-index="15">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(15)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rkiulo-3.jpg" alt="Kiülő 3" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-cat="kiulo" data-index="16">
+            <div class="gallery-card rounded-2xl overflow-hidden cursor-pointer" style="background: white; box-shadow: 0 2px 12px rgba(44,24,16,0.07);" onclick="openLightbox(16)">
+              <div class="relative overflow-hidden" style="padding-top: 72%;">
+                <img src="referenciak/rkiulo-4.jpg" alt="Kiülő 4" loading="lazy" class="gallery-img absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="fixed inset-0 z-[200] flex items-center justify-center" style="display:none !important; background: rgba(20,12,8,0.93); backdrop-filter: blur(6px);">
+          <button onclick="closeLightbox()" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full transition-all" style="background: rgba(255,255,255,0.1); color: white;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+            <iconify-icon icon="solar:close-circle-linear" width="22" height="22"></iconify-icon>
+          </button>
+          <button onclick="prevImage()" class="absolute left-3 sm:left-6 w-10 h-10 flex items-center justify-center rounded-full transition-all" style="background: rgba(255,255,255,0.1); color: white;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+            <iconify-icon icon="solar:arrow-left-linear" width="22" height="22"></iconify-icon>
+          </button>
+          <div class="max-w-4xl w-full mx-14 sm:mx-20 flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="" class="rounded-xl max-h-[80vh] w-auto max-w-full object-contain" style="box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+            <p id="lightbox-counter" class="mt-4 text-sm" style="color: rgba(255,255,255,0.4);"></p>
+          </div>
+          <button onclick="nextImage()" class="absolute right-3 sm:right-6 w-10 h-10 flex items-center justify-center rounded-full transition-all" style="background: rgba(255,255,255,0.1); color: white;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+            <iconify-icon icon="solar:arrow-right-linear" width="22" height="22"></iconify-icon>
+          </button>
         </div>
 
       </div>
@@ -108,7 +249,78 @@
       </div>
     </footer>
 
+    <style>
+      .filter-btn { background: white; color: rgba(44,24,16,0.55); border: 1.5px solid rgba(44,24,16,0.1); }
+      .filter-btn:hover { border-color: #2D5016; color: #2D5016; }
+      .filter-btn.active-tab { background: #2D5016; color: white; border-color: #2D5016; }
+      .gallery-card:hover .gallery-img { transform: scale(1.06); }
+      .gallery-item { transition: opacity 0.35s ease, transform 0.35s ease; }
+      .gallery-item.hidden { display: none; }
+      #lightbox.open { display: flex !important; }
+    </style>
+
     <script>
+      const allImages = [
+        'referenciak/rjatszo-1.jpg','referenciak/rjatszo-2.jpg','referenciak/rjatszo-3.jpg',
+        'referenciak/rjatszo-4.jpg','referenciak/rjatszo-5.jpg','referenciak/rjatszo-6.jpg',
+        'referenciak/rjatszo-7.webp','referenciak/rkoris.jpg','referenciak/rkoris-2.jpg',
+        'referenciak/rkoris-3.jpg','referenciak/rkoris-4.jpg','referenciak/rkoris-5.jpg',
+        'referenciak/rkoris-6.webp','referenciak/rkiulo-1.jpg','referenciak/rkiulo-2.jpg',
+        'referenciak/rkiulo-3.jpg','referenciak/rkiulo-4.jpg'
+      ];
+      let currentIndex = 0;
+      let visibleIndices = allImages.map((_, i) => i);
+
+      function filterGallery(cat) {
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.classList.toggle('active-tab', btn.dataset.cat === cat);
+        });
+        const items = document.querySelectorAll('.gallery-item');
+        visibleIndices = [];
+        items.forEach(item => {
+          const match = cat === 'osszes' || item.dataset.cat === cat;
+          item.classList.toggle('hidden', !match);
+          if (match) visibleIndices.push(parseInt(item.dataset.index));
+        });
+      }
+
+      function openLightbox(index) {
+        currentIndex = index;
+        document.getElementById('lightbox-img').src = allImages[index];
+        const pos = visibleIndices.indexOf(index) + 1;
+        document.getElementById('lightbox-counter').textContent = pos + ' / ' + visibleIndices.length;
+        document.getElementById('lightbox').classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      function prevImage() {
+        const pos = visibleIndices.indexOf(currentIndex);
+        const newPos = (pos - 1 + visibleIndices.length) % visibleIndices.length;
+        openLightbox(visibleIndices[newPos]);
+      }
+
+      function nextImage() {
+        const pos = visibleIndices.indexOf(currentIndex);
+        const newPos = (pos + 1) % visibleIndices.length;
+        openLightbox(visibleIndices[newPos]);
+      }
+
+      document.addEventListener('keydown', e => {
+        if (!document.getElementById('lightbox').classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'ArrowRight') nextImage();
+      });
+
+      document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target === this) closeLightbox();
+      });
+
       let mobileMenuOpen = false;
       function toggleMobileMenu() {
           mobileMenuOpen = !mobileMenuOpen;
