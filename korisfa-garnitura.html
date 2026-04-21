@@ -368,6 +368,17 @@
             const checkDiv = document.createElement('div'); checkDiv.className = 'absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center'; checkDiv.style.background = '#2D5016'; checkDiv.innerHTML = '<iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>'; el.appendChild(checkDiv);
             document.getElementById('parnaSzettInfo').innerHTML = pillowLabels[size] + ' – <span class="font-semibold" style="color: #2D5016;">+' + formatPrice(pillowPrices[size]) + '</span>';
             updatePrice();
+            const sizeImages = { '150': 'kerti-garniturak/koris-cseresznye-150.jpg', '200': 'kerti-garniturak/koris-cseresznye-200.jpg' };
+            if (sizeImages[size]) {
+                const mainImgBox = document.getElementById('mainImage');
+                mainImgBox.style.opacity = '0'; mainImgBox.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    const imgEl = document.getElementById('mainImgEl');
+                    const gradEl = document.getElementById('mainGradEl');
+                    imgEl.src = sizeImages[size]; imgEl.style.display = 'block'; gradEl.style.display = 'none';
+                    mainImgBox.style.opacity = '1'; mainImgBox.style.transform = 'scale(1)';
+                }, 200);
+            }
         }
 
         function selectColor(name, hex, el) {
