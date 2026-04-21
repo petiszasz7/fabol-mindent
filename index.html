@@ -925,171 +925,52 @@
           </p>
         </div>
 
-        <!-- Egységes csúszka box -->
+        <!-- Képes slideshow -->
         <div class="max-w-4xl mx-auto">
           <style>
-            @keyframes refBoxFadeIn { from { opacity: 0; } to { opacity: 1; } }
-            .ref-box-slide { display: none; }
-            .ref-box-slide.active { display: flex; animation: refBoxFadeIn 0.7s ease forwards; }
-            @media (max-width: 639px) {
-              .ref-box-slide.active { flex-direction: column; }
-              .ref-box-img { min-height: 160px !important; width: 100% !important; }
-              .ref-box-img img { min-height: 0 !important; }
-              .ref-stars iconify-icon { width: 15px !important; height: 15px !important; }
-              .ref-nav-btn iconify-icon { width: 22px !important; height: 22px !important; }
-              #refBoxDots button { width: 8px !important; height: 8px !important; }
-            }
+            @keyframes refImgFadeIn { from { opacity: 0; } to { opacity: 1; } }
+            .ref-img-slide { display: none; }
+            .ref-img-slide.active { display: block; animation: refImgFadeIn 0.7s ease forwards; }
           </style>
 
-          <div class="relative bg-white rounded-2xl overflow-hidden shadow-xl" style="border: 1px solid rgba(44,24,16,0.08);">
+          <div class="relative rounded-2xl overflow-hidden shadow-xl" style="border: 1px solid rgba(44,24,16,0.08);">
 
-            <!-- Slide 1: jatszter-1.jpg + Játszótér vélemény -->
-            <div class="ref-box-slide active flex-row">
-              <div class="ref-box-img flex-shrink-0 overflow-hidden" style="width: 42%;">
-                <img src="jatszoterek/jatszter-1.jpg" alt="Nagy Játszótér referencia" style="width:100%;height:100%;object-fit:cover;display:block;min-height:280px;">
-              </div>
-              <div class="flex-1 p-4 sm:p-10 flex flex-col justify-center">
-                <div class="ref-stars flex gap-1 mb-3 sm:mb-5">
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                </div>
-                <p style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(0.9rem, 4vw, 1.4rem); line-height: 1.55;" class="mb-3 sm:mb-6">
-                  „Gyors szállítás, precíz összeszerelés. A gyerekek imádják!"
-                </p>
-                <div class="flex items-center gap-2 sm:gap-3">
-                  <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(45,80,22,0.1);">
-                    <iconify-icon icon="solar:user-bold" width="20" height="20" style="color: #2D5016;"></iconify-icon>
-                  </div>
-                  <div>
-                    <div class="text-sm font-semibold" style="color: #2C1810;">Nagy Játszótér vásárló</div>
-                    <div class="text-xs" style="color: rgba(44,24,16,0.45);">5/5 csillag</div>
-                  </div>
-                </div>
-              </div>
+            <!-- Slides -->
+            <div class="ref-img-slide active">
+              <img src="kiulok/kiulo-1.jpg" alt="" style="width:100%;height:420px;object-fit:cover;display:block;">
             </div>
-
-            <!-- Slide 2: jatszter-4.webp + Kőrisfa Garnitúra vélemény -->
-            <div class="ref-box-slide flex-row">
-              <div class="ref-box-img flex-shrink-0 overflow-hidden" style="width: 42%;">
-                <img src="kerti-garniturak/kert-4.jpg" alt="Kőrisfa Garnitúra referencia" style="width:100%;height:100%;object-fit:cover;display:block;min-height:280px;">
-              </div>
-              <div class="flex-1 p-4 sm:p-10 flex flex-col justify-center">
-                <div class="ref-stars flex gap-1 mb-3 sm:mb-5">
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                </div>
-                <p style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(0.9rem, 4vw, 1.4rem); line-height: 1.55;" class="mb-3 sm:mb-6">
-                  „Masszív, időtálló bútor. Már 2 éve áll a kertben, mint új."
-                </p>
-                <div class="flex items-center gap-2 sm:gap-3">
-                  <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(139,105,20,0.1);">
-                    <iconify-icon icon="solar:user-bold" width="20" height="20" style="color: #8B6914;"></iconify-icon>
-                  </div>
-                  <div>
-                    <div class="text-sm font-semibold" style="color: #2C1810;">Kőrisfa Garnitúra vásárló</div>
-                    <div class="text-xs" style="color: rgba(44,24,16,0.45);">5/5 csillag</div>
-                  </div>
-                </div>
-              </div>
+            <div class="ref-img-slide">
+              <img src="kerti-garniturak/kert-1.jpg" alt="" style="width:100%;height:420px;object-fit:cover;display:block;">
             </div>
-
-            <!-- Slide 3: kiulo-1.jpg + Kerti Kiülő vélemény -->
-            <div class="ref-box-slide flex-row">
-              <div class="ref-box-img flex-shrink-0 overflow-hidden" style="width: 42%;">
-                <img src="kiulok/kiulo-1.jpg" alt="Kerti Kiülő referencia" style="width:100%;height:100%;object-fit:cover;display:block;min-height:280px;">
-              </div>
-              <div class="flex-1 p-4 sm:p-10 flex flex-col justify-center">
-                <div class="ref-stars flex gap-1 mb-3 sm:mb-5">
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                </div>
-                <p style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(0.9rem, 4vw, 1.4rem); line-height: 1.55;" class="mb-3 sm:mb-6">
-                  „Gyönyörű kivitelezés, a nádtető tökéletes árnyékot ad."
-                </p>
-                <div class="flex items-center gap-2 sm:gap-3">
-                  <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(196,101,42,0.1);">
-                    <iconify-icon icon="solar:user-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  </div>
-                  <div>
-                    <div class="text-sm font-semibold" style="color: #2C1810;">Kerti Kiülő vásárló</div>
-                    <div class="text-xs" style="color: rgba(44,24,16,0.45);">5/5 csillag</div>
-                  </div>
-                </div>
-              </div>
+            <div class="ref-img-slide">
+              <img src="kerti-garniturak/kert-2.jpg" alt="" style="width:100%;height:420px;object-fit:cover;display:block;">
             </div>
-
-            <!-- Slide 4: kert-1.jpg + Összecsukható Garnitúra vélemény -->
-            <div class="ref-box-slide flex-row">
-              <div class="ref-box-img flex-shrink-0 overflow-hidden" style="width: 42%;">
-                <img src="kerti-garniturak/kert-3.jpg" alt="Összecsukható Garnitúra referencia" style="width:100%;height:100%;object-fit:cover;display:block;min-height:280px;">
-              </div>
-              <div class="flex-1 p-4 sm:p-10 flex flex-col justify-center">
-                <div class="ref-stars flex gap-1 mb-3 sm:mb-5">
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                </div>
-                <p style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(0.9rem, 4vw, 1.4rem); line-height: 1.55;" class="mb-3 sm:mb-6">
-                  „Könnyen összecsukható, praktikus megoldás."
-                </p>
-                <div class="flex items-center gap-2 sm:gap-3">
-                  <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(45,80,22,0.1);">
-                    <iconify-icon icon="solar:user-bold" width="20" height="20" style="color: #2D5016;"></iconify-icon>
-                  </div>
-                  <div>
-                    <div class="text-sm font-semibold" style="color: #2C1810;">Összecsukható Garnitúra vásárló</div>
-                    <div class="text-xs" style="color: rgba(44,24,16,0.45);">5/5 csillag</div>
-                  </div>
-                </div>
-              </div>
+            <div class="ref-img-slide">
+              <img src="kerti-garniturak/kert-3.jpg" alt="" style="width:100%;height:420px;object-fit:cover;display:block;">
             </div>
-
-            <!-- Slide 5: hintaagy + Zsindelytetős Hintaágy vélemény -->
-            <div class="ref-box-slide flex-row">
-              <div class="ref-box-img flex-shrink-0 overflow-hidden" style="width: 42%;">
-                <img src="kerti-garniturak/kert-2.jpg" alt="Zsindelytetős Hintaágy referencia" style="width:100%;height:100%;object-fit:cover;display:block;min-height:280px;">
-              </div>
-              <div class="flex-1 p-4 sm:p-10 flex flex-col justify-center">
-                <div class="ref-stars flex gap-1 mb-3 sm:mb-5">
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                  <iconify-icon icon="solar:star-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon>
-                </div>
-                <p style="font-family: 'DM Serif Display', serif; color: #2C1810; font-size: clamp(0.9rem, 4vw, 1.4rem); line-height: 1.55;" class="mb-3 sm:mb-6">
-                  „Stabilan áll, kényelmes ülőfelület. Már az első nyáron sokat pihentünk rajta!"
-                </p>
-                <div class="flex items-center gap-2 sm:gap-3">
-                  <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(45,80,22,0.1);">
-                    <iconify-icon icon="solar:user-bold" width="20" height="20" style="color: #2D5016;"></iconify-icon>
-                  </div>
-                  <div>
-                    <div class="text-sm font-semibold" style="color: #2C1810;">Zsindelytetős Hintaágy vásárló</div>
-                    <div class="text-xs" style="color: rgba(44,24,16,0.45);">5/5 csillag</div>
-                  </div>
-                </div>
-              </div>
+            <div class="ref-img-slide">
+              <img src="kerti-garniturak/kert-4.jpg" alt="" style="width:100%;height:420px;object-fit:cover;display:block;">
+            </div>
+            <div class="ref-img-slide">
+              <img src="jatszoterek/jatszter-1.jpg" alt="" style="width:100%;height:420px;object-fit:cover;display:block;">
+            </div>
+            <div class="ref-img-slide">
+              <img src="jatszoterek/jatszter-2.jpg" alt="" style="width:100%;height:420px;object-fit:cover;display:block;">
+            </div>
+            <div class="ref-img-slide">
+              <img src="jatszoterek/jatszter-3.jpg" alt="" style="width:100%;height:420px;object-fit:cover;display:block;">
+            </div>
+            <div class="ref-img-slide">
+              <img src="hintaagyak/hintaagy-2.jpg" alt="" style="width:100%;height:420px;object-fit:cover;display:block;">
             </div>
 
             <!-- Navigációs sáv: bal nyíl + pontok + jobb nyíl -->
-            <div class="flex items-center justify-between px-3 py-3 sm:px-5 sm:py-4" style="border-top: 1px solid rgba(44,24,16,0.06);">
-              <button class="ref-nav-btn" onclick="refBoxPrev()" style="color:#2C1810; background:none; border:none; cursor:pointer; padding:4px; display:flex; align-items:center; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+            <div class="flex items-center justify-between px-3 py-3 sm:px-5 sm:py-4" style="background:#fff; border-top: 1px solid rgba(44,24,16,0.06);">
+              <button onclick="refImgPrev()" style="color:#2C1810; background:none; border:none; cursor:pointer; padding:4px; display:flex; align-items:center; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
                 <iconify-icon icon="solar:arrow-left-bold" width="28" height="28"></iconify-icon>
               </button>
-              <div id="refBoxDots" class="flex gap-2"></div>
-              <button class="ref-nav-btn" onclick="refBoxNext()" style="color:#2C1810; background:none; border:none; cursor:pointer; padding:4px; display:flex; align-items:center; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+              <div id="refImgDots" class="flex gap-2"></div>
+              <button onclick="refImgNext()" style="color:#2C1810; background:none; border:none; cursor:pointer; padding:4px; display:flex; align-items:center; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
                 <iconify-icon icon="solar:arrow-right-bold" width="28" height="28"></iconify-icon>
               </button>
             </div>
@@ -1102,25 +983,21 @@
       <script>
         (function() {
           var cur = 0;
-          var slides = document.querySelectorAll('.ref-box-slide');
+          var slides = document.querySelectorAll('.ref-img-slide');
           var total = slides.length;
-          var dotsEl = document.getElementById('refBoxDots');
+          var dotsEl = document.getElementById('refImgDots');
           var timer;
 
           for (var i = 0; i < total; i++) {
             var d = document.createElement('button');
             d.style.cssText = 'width:10px;height:10px;border-radius:50%;border:none;cursor:pointer;padding:0;transition:all 0.3s;background:' + (i === 0 ? '#2D5016' : 'rgba(44,24,16,0.18)') + ';';
-            (function(idx) { d.onclick = function() { refBoxGoTo(idx); }; })(i);
+            (function(idx) { d.onclick = function() { refImgGoTo(idx); }; })(i);
             dotsEl.appendChild(d);
           }
 
-          function updateRefBox() {
+          function updateRefImg() {
             slides.forEach(function(s, i) {
-              if (i === cur) {
-                s.classList.add('active');
-              } else {
-                s.classList.remove('active');
-              }
+              s.classList.toggle('active', i === cur);
             });
             dotsEl.querySelectorAll('button').forEach(function(d, i) {
               d.style.background = i === cur ? '#2D5016' : 'rgba(44,24,16,0.18)';
@@ -1128,16 +1005,16 @@
             });
           }
 
-          window.refBoxGoTo = function(idx) {
+          window.refImgGoTo = function(idx) {
             cur = (idx + total) % total;
-            updateRefBox();
+            updateRefImg();
             clearInterval(timer);
-            timer = setInterval(function() { window.refBoxGoTo(cur + 1); }, 6000);
+            timer = setInterval(function() { window.refImgGoTo(cur + 1); }, 5000);
           };
-          window.refBoxNext = function() { window.refBoxGoTo(cur + 1); };
-          window.refBoxPrev = function() { window.refBoxGoTo(cur - 1); };
+          window.refImgNext = function() { window.refImgGoTo(cur + 1); };
+          window.refImgPrev = function() { window.refImgGoTo(cur - 1); };
 
-          timer = setInterval(function() { window.refBoxGoTo(cur + 1); }, 6000);
+          timer = setInterval(function() { window.refImgGoTo(cur + 1); }, 5000);
         })();
       </script>
     </section>
