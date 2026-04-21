@@ -1,0 +1,139 @@
+<html lang="hu"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referenciák – Fából Mindent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+<body style="font-family: 'DM Sans', sans-serif; background-color: #F5F0EB; color: #2C1810;">
+
+    <!-- NAVIGATION -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 flex items-center" style="background: white; height: 70px; box-shadow: 0 1px 8px rgba(44,24,16,0.06); border-bottom: 1px solid rgba(44,24,16,0.04);">
+      <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+          <svg width="140" height="40" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+            <rect x="28" y="28" width="4" height="12" rx="2" fill="#2D5016"/>
+            <polygon points="30,2 18,26 42,26" fill="#2D5016"/>
+            <polygon points="30,10 19,28 41,28" fill="#3a6b1e" opacity="0.45"/>
+            <polygon points="30,18 21,32 39,32" fill="#4a7a24" opacity="0.25"/>
+            <text x="50" y="16" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#2C1810" letter-spacing="-0.5">Fából</text>
+            <text x="50" y="31" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#2D5016" letter-spacing="-0.5">Mindent</text>
+          </svg>
+        </a>
+        <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+          <a href="index.html" class="text-sm font-medium px-3 py-2 rounded-lg transition-colors" style="color: rgba(44,24,16,0.6);" onmouseover="this.style.color='#2D5016'; this.style.background='rgba(45,80,22,0.06)'" onmouseout="this.style.color='rgba(44,24,16,0.6)'; this.style.background='transparent'">Főoldal</a>
+          <a href="termekek.html" class="text-sm font-medium px-3 py-2 rounded-lg transition-colors" style="color: rgba(44,24,16,0.6);" onmouseover="this.style.color='#2D5016'; this.style.background='rgba(45,80,22,0.06)'" onmouseout="this.style.color='rgba(44,24,16,0.6)'; this.style.background='transparent'">Termékek</a>
+          <a href="rolunk.html" class="text-sm font-medium px-3 py-2 rounded-lg transition-colors" style="color: rgba(44,24,16,0.6);" onmouseover="this.style.color='#2D5016'; this.style.background='rgba(45,80,22,0.06)'" onmouseout="this.style.color='rgba(44,24,16,0.6)'; this.style.background='transparent'">Rólunk</a>
+          <a href="referenciak.html" class="text-sm font-medium px-3 py-2 rounded-lg" style="color: #2D5016; background: rgba(45,80,22,0.06);">Referenciák</a>
+          <a href="kapcsolat.html" class="text-sm font-medium px-3 py-2 rounded-lg transition-colors" style="color: rgba(44,24,16,0.6);" onmouseover="this.style.color='#2D5016'; this.style.background='rgba(45,80,22,0.06)'" onmouseout="this.style.color='rgba(44,24,16,0.6)'; this.style.background='transparent'">Kapcsolat</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-4 flex-shrink-0">
+          <a href="tel:+36206128116" class="flex items-center gap-1.5 text-sm font-medium transition-colors" style="color: rgba(44,24,16,0.55);"><iconify-icon icon="solar:phone-linear" width="16" height="16"></iconify-icon><span class="hidden lg:inline">+36 20 612 8116</span></a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg" style="color: #2C1810;" onclick="toggleMobileMenu()">
+          <iconify-icon id="hamburger-icon" icon="solar:hamburger-menu-linear" width="24" height="24"></iconify-icon>
+          <iconify-icon id="close-icon" icon="solar:close-circle-linear" width="24" height="24" style="display:none;"></iconify-icon>
+        </button>
+      </div>
+      <div id="mobile-menu" class="md:hidden absolute top-full left-0 right-0 overflow-hidden transition-all" style="max-height: 0; background: white; box-shadow: 0 4px 20px rgba(44,24,16,0.08); border-top: 1px solid rgba(44,24,16,0.06);">
+        <nav class="flex flex-col px-4 py-4 gap-1">
+          <a href="index.html" class="text-sm font-medium px-4 py-3 rounded-lg" style="color: rgba(44,24,16,0.7);">Főoldal</a>
+          <a href="termekek.html" class="text-sm font-medium px-4 py-3 rounded-lg" style="color: rgba(44,24,16,0.7);">Termékek</a>
+          <a href="rolunk.html" class="text-sm font-medium px-4 py-3 rounded-lg" style="color: rgba(44,24,16,0.7);">Rólunk</a>
+          <a href="referenciak.html" class="text-sm font-medium px-4 py-3 rounded-lg" style="color: #2D5016; background: rgba(45,80,22,0.06);">Referenciák</a>
+          <a href="kapcsolat.html" class="text-sm font-medium px-4 py-3 rounded-lg" style="color: rgba(44,24,16,0.7);">Kapcsolat</a>
+          <div style="border-top: 1px solid rgba(44,24,16,0.06);" class="mt-2 pt-3 flex flex-col gap-3">
+            <a href="tel:+36206128116" class="flex items-center gap-2 text-sm font-medium px-4 py-2" style="color: rgba(44,24,16,0.6);"><iconify-icon icon="solar:phone-linear" width="16" height="16"></iconify-icon>+36 20 612 8116</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="relative overflow-hidden" style="padding-top: 70px;">
+      <div class="relative py-16 sm:py-20 lg:py-24" style="background: linear-gradient(170deg, #2D5016 0%, #1f3b0f 50%, #162c0a 100%);">
+        <div class="absolute inset-0 opacity-[0.04]" style="background: repeating-linear-gradient(90deg, white 0px, transparent 1px, transparent 80px), repeating-linear-gradient(0deg, white 0px, transparent 1px, transparent 80px);"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-up">
+          <div class="flex items-center justify-center gap-2.5 mb-4"><div class="w-8 h-[2px] rounded-full" style="background: rgba(255,255,255,0.3);"></div><span class="text-xs font-semibold uppercase tracking-widest" style="color: rgba(255,255,255,0.5);">Munkáink</span><div class="w-8 h-[2px] rounded-full" style="background: rgba(255,255,255,0.3);"></div></div>
+          <h1 style="font-family: 'Playfair Display', serif; color: white; font-size: clamp(1.75rem, 4.5vw, 3rem);" class="tracking-tight font-medium mb-3">Referenciák</h1>
+          <p class="text-sm sm:text-base" style="color: rgba(255,255,255,0.55); max-width: 520px; margin: 0 auto;">Elkészült munkáink – boldog vevőink kertjeiből</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALÉRIA SZEKCIÓ -->
+    <section class="relative py-16 sm:py-20 lg:py-24" style="background-color: #F5F0EB;">
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/><feColorMatrix type=%22saturate%22 values=%220%22/></filter><rect width=%22200%22 height=%22200%22 filter=%22url(%23n)%22/></svg>'); background-size: 200px 200px;"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section header -->
+        <div class="text-center mb-12 sm:mb-16 fade-up">
+          <div class="flex items-center justify-center gap-2.5 mb-4"><div class="w-8 h-[2px] rounded-full" style="background: rgba(44,24,16,0.15);"></div><span class="text-xs font-semibold uppercase tracking-widest" style="color: rgba(44,24,16,0.4);">Galéria</span><div class="w-8 h-[2px] rounded-full" style="background: rgba(44,24,16,0.15);"></div></div>
+          <h2 style="font-family: 'Playfair Display', serif; color: #2C1810; font-size: clamp(1.5rem, 3.5vw, 2.25rem);" class="tracking-tight font-medium mb-3">Elkészült munkáink</h2>
+          <p class="text-sm sm:text-base" style="color: rgba(44,24,16,0.5); max-width: 480px; margin: 0 auto;">Minden termékünket kézzel, prémium minőségű fából készítjük erdélyi műhelyünkben.</p>
+        </div>
+
+        <!-- Galéria rács – képek ide kerülnek majd -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-up" style="animation-delay: 0.15s;">
+
+          <!-- Üres galéria állapot -->
+          <div class="sm:col-span-2 lg:col-span-3 flex flex-col items-center justify-center py-20 rounded-2xl" style="background: white; border: 2px dashed rgba(44,24,16,0.1);">
+            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-4" style="background: rgba(45,80,22,0.06);">
+              <iconify-icon icon="solar:gallery-linear" width="32" height="32" style="color: rgba(44,24,16,0.25);"></iconify-icon>
+            </div>
+            <p class="text-base font-medium mb-1" style="color: rgba(44,24,16,0.4);">Képek hamarosan</p>
+            <p class="text-sm" style="color: rgba(44,24,16,0.25);">A referencia képek feltöltése folyamatban van</p>
+          </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-16 text-center fade-up" style="animation-delay: 0.3s;">
+          <p class="text-sm mb-5" style="color: rgba(44,24,16,0.5);">Tetszik, amit látsz? Kérj ajánlatot most!</p>
+          <a href="kapcsolat.html" class="inline-flex items-center gap-2.5 text-sm font-semibold rounded-xl transition-all" style="padding: 14px 28px; background: #2D5016; color: white; box-shadow: 0 2px 12px rgba(45,80,22,0.25);" onmouseover="this.style.background='#244212'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#2D5016'; this.style.transform='translateY(0)'">
+            <iconify-icon icon="solar:letter-linear" width="18" height="18"></iconify-icon>
+            Árajánlat kérése
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background: #2C1810;" class="pt-14 sm:pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12">
+          <div class="sm:col-span-2 lg:col-span-1"><div class="flex items-center gap-2 mb-4"><iconify-icon icon="solar:tree-linear" width="24" height="24" style="color: #7a9e5a;"></iconify-icon><span style="font-family: 'Playfair Display', serif; color: white;" class="text-lg font-normal">Fából Mindent</span></div><p class="text-sm leading-relaxed mb-5" style="color: rgba(255,255,255,0.4); max-width: 280px;">Prémium minőségű kézműves fa játszóterek, kerti bútorok és kiülők gyártása Erdélyben.</p><a href="https://www.facebook.com/profile.php?id=100089913262225" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center transition-all" style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.4);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.4)'"><iconify-icon icon="mdi:facebook" width="18" height="18"></iconify-icon></a></div>
+          <div><h4 class="text-sm font-semibold mb-5" style="color: white;">Termékeink</h4><ul class="space-y-3"><li><a href="termekek.html" class="text-sm" style="color: rgba(255,255,255,0.4);">Játszóterek</a></li><li><a href="termekek.html" class="text-sm" style="color: rgba(255,255,255,0.4);">Kerti bútorok</a></li><li><a href="termekek.html" class="text-sm" style="color: rgba(255,255,255,0.4);">Kiülők</a></li><li><a href="termekek.html" class="text-sm" style="color: rgba(255,255,255,0.4);">Hintaágyak</a></li></ul></div>
+          <div><h4 class="text-sm font-semibold mb-5" style="color: white;">Információk</h4><ul class="space-y-3"><li><a href="rolunk.html" class="text-sm" style="color: rgba(255,255,255,0.4);">Rólunk</a></li><li><a href="referenciak.html" class="text-sm" style="color: rgba(255,255,255,0.4);">Referenciák</a></li><li><a href="kapcsolat.html" class="text-sm" style="color: rgba(255,255,255,0.4);">Szállítás</a></li><li><a href="kapcsolat.html" class="text-sm" style="color: rgba(255,255,255,0.4);">Garancia</a></li></ul></div>
+          <div><h4 class="text-sm font-semibold mb-5" style="color: white;">Kapcsolat</h4><ul class="space-y-3.5"><li><a href="tel:+36206128116" class="flex items-center gap-2.5 text-sm" style="color: rgba(255,255,255,0.4);"><iconify-icon icon="solar:phone-linear" width="16" height="16" style="color: #7a9e5a;"></iconify-icon>+36 20 612 8116</a></li><li><a href="mailto:fabolmindent.hu@gmail.com" class="flex items-center gap-2.5 text-sm" style="color: rgba(255,255,255,0.4);"><iconify-icon icon="solar:letter-linear" width="16" height="16" style="color: #7a9e5a;"></iconify-icon>fabolmindent.hu@gmail.com</a></li><li class="flex items-start gap-2.5 text-sm" style="color: rgba(255,255,255,0.4);"><iconify-icon icon="solar:buildings-2-linear" width="16" height="16" style="color: #7a9e5a;" class="flex-shrink-0 mt-0.5"></iconify-icon><span>TUDOR E.V.<br>Adószám: 68709950-1-39</span></li></ul></div>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.06);" class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p class="text-xs" style="color: rgba(255,255,255,0.25);">© 2025 Fából Mindent – Minden jog fenntartva</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      let mobileMenuOpen = false;
+      function toggleMobileMenu() {
+          mobileMenuOpen = !mobileMenuOpen;
+          const menu = document.getElementById('mobile-menu');
+          const h = document.getElementById('hamburger-icon');
+          const c = document.getElementById('close-icon');
+          if (mobileMenuOpen) { menu.style.maxHeight = menu.scrollHeight + 'px'; h.style.display = 'none'; c.style.display = 'block'; }
+          else { menu.style.maxHeight = '0'; h.style.display = 'block'; c.style.display = 'none'; }
+      }
+      document.querySelectorAll('#mobile-menu a').forEach(link => { link.addEventListener('click', () => { if (mobileMenuOpen) toggleMobileMenu(); }); });
+
+      const animStyle = document.createElement('style');
+      animStyle.textContent = `.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); } .fade-up.visible { opacity: 1; transform: translateY(0); } #mobile-menu { transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1); }`;
+      document.head.appendChild(animStyle);
+
+      const fadeUpObserver = new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) { const ms = parseFloat(entry.target.style.animationDelay || '0') * 1000; setTimeout(() => entry.target.classList.add('visible'), ms); fadeUpObserver.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.fade-up').forEach(el => fadeUpObserver.observe(el));
+    </script>
+</body></html>
