@@ -1,4 +1,22 @@
 export default async function handler(req, res) {
+  const allowedOrigins = [
+    'https://fabolmindent.com',
+    'https://www.fabolmindent.com',
+    'https://fábolmindent.hu',
+    'https://www.fábolmindent.hu',
+  ];
+
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(204).end();
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -177,7 +195,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Fából Mindent <onboarding@resend.dev>',
+        from: 'Fából Mindent <noreply@fabolmindent.com>',
         to: ['fabolmindent.hu@gmail.com'],
         subject: `Új árajánlat kérés – ${productLabel} (${name})`,
         html: htmlBody,
