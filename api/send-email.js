@@ -51,7 +51,7 @@ export default async function handler(req, res) {
   const htmlBody = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #2C1810;">
       <div style="background: #2D5016; padding: 24px 32px; border-radius: 12px 12px 0 0;">
-        <h1 style="color: white; margin: 0; font-size: 20px;">Új árajánlat kérés – Fából Mindent</h1>
+        <h1 style="color: white; margin: 0; font-size: 20px;">Új rendelés érkezett – Fából Mindent</h1>
       </div>
       <div style="background: #F5F0EB; padding: 32px; border-radius: 0 0 12px 12px; border: 1px solid rgba(44,24,16,0.1); border-top: none;">
 
@@ -197,7 +197,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         from: 'Fából Mindent <noreply@fabolmindent.com>',
         to: ['fabolmindent.hu@gmail.com'],
-        subject: `Új árajánlat kérés – ${productLabel} (${name})`,
+        subject: `Új rendelés érkezett – ${productLabel} (${name})`,
         html: htmlBody,
         reply_to: email,
       }),
