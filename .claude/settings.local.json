@@ -10,7 +10,8 @@
       "Bash(python3 -)",
       "Bash(sed -i -e 's|kepek/jatszoter/jatszter-1\\\\.jpg|jatszoterek/jatszter-1.jpg|g' -e 's|kepek/jatszoter/jatszter-2\\\\.jpg|jatszoterek/jatszter-2.jpg|g' -e 's|kepek/jatszoter/jatszter-3\\\\.jpg|jatszoterek/jatszter-3.jpg|g' -e 's|kepek/jatszoter/jatszter-4\\\\.webp|jatszoterek/jatszter-4.webp|g' -e 's|kepek/jatszoter/jatszter-5\\\\.webp|jatszoterek/jatszter-5.webp|g' -e 's|kepek/kerti-garniturak/kert-1\\\\.jpg|kerti-garniturak/kert-1.jpg|g' -e 's|kepek/kerti-garniturak/kert-2\\\\.jpg|kerti-garniturak/kert-2.jpg|g' -e 's|kepek/kerti-garniturak/kert-3\\\\.jpg|kerti-garniturak/kert-3.jpg|g' -e 's|kepek/kerti-garniturak/kert-4\\\\.jpg|kerti-garniturak/kert-4.jpg|g' -e 's|kepek/kerti-garniturak/pillango-1\\\\.webp|kerti-garniturak/pillango-1.webp|g' -e 's|kepek/kerti-garniturak/5pozicios-1\\\\.webp|kerti-garniturak/5pozicios-1.webp|g' -e 's|kepek/kiulok/kiulo-1\\\\.jpg|kiulok/kiulo-1.jpg|g' -e 's|kepek/hintaagyak/hintaagy-2\\\\.jpg|hintaagyak/hintaagy-2.jpg|g' index.html termekek.html nagy-jatszter.html kis-jatszter.html kerti-kiulo.html korisfa-garnitura.html osszecsukhhato-garnitura.html 5-pozicios-garnitura.html pillango-garnitura.html hintaagy.html hintaagy-2.html)",
       "Bash(sed -i -e 's|'\\\\''kepek/jatszoter/jatszter-4\\\\.webp'\\\\''|'\\\\''jatszoterek/jatszter-4.webp'\\\\''|g' -e 's|'\\\\''kepek/jatszoter/jatszter-5\\\\.webp'\\\\''|'\\\\''jatszoterek/jatszter-5.webp'\\\\''|g' nagy-jatszter.html)",
-      "Bash(grep -v \"^$\")"
+      "Bash(grep -v \"^$\")",
+      "Bash(npx vercel *)"
     ]
   }
 }
