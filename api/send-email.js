@@ -251,24 +251,23 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'Email küldési hiba' });
     }
 
-    const confirmResponse = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'Fából Mindent <onboarding@resend.dev>',
-        to: [email],
-        subject: 'Köszönjük a rendelését – Fából Mindent',
-        html: confirmationHtml,
-        reply_to: 'fabolmindent.hu@gmail.com',
-      }),
-    });
-
-    if (!confirmResponse.ok) {
-      const confirmError = await confirmResponse.json();
-      console.error('Resend confirmation error:', confirmError);
+    const confirmationSubject = 'Köszönjük a rendelését – Fából Mindent';
+    try {
+      const confirmResult = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${process.env.RESEND_API_KEY}` },
+        body: JSON.stringify({
+          from: 'onboarding@resend.dev',
+          to: email,
+          reply_to: 'fabolmindent.hu@gmail.com',
+          subject: confirmationSubject,
+          html: confirmationHtml
+        })
+      });
+      const confirmData = await confirmResult.json();
+      console.log('Visszaigazolo email eredmeny:', JSON.stringify(confirmData));
+    } catch (err) {
+      console.log('Visszaigazolo email hiba:', err.message);
     }
 
     return res.status(200).json({ success: true, message: 'Email sikeresen elküldve' });
