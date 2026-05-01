@@ -1,4 +1,4 @@
-<html lang="hu"><head>
+﻿<html lang="hu"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kerti Kiülő Nádtetős – Fából Mindent</title>
@@ -435,4 +435,60 @@
         document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightboxBtn(); });
     </script>
 
+
+    <!-- AJÁNDÉK POPUP -->
+    <div id="ajandekPopup" style="display:none; position:fixed; top:80px; left:20px; z-index:9999; max-width:300px; width:calc(100% - 40px); background:#fff; border-radius:1rem; box-shadow:0 8px 32px rgba(0,0,0,0.18); overflow:hidden;">
+      <!-- X bezáró gomb -->
+      <button onclick="ajandekClose()" style="position:absolute; top:8px; right:8px; background:none; border:none; cursor:pointer; color:#2C1810; font-size:18px; line-height:1; z-index:1; padding:2px 6px;">&times;</button>
+      <!-- Zöld fejléc sáv -->
+      <div style="background:#2D5016; padding:1rem 1.1rem 0.9rem; position:relative;">
+        <div style="display:flex; align-items:center; gap:0.6rem;">
+          <iconify-icon icon="solar:gift-linear" width="24" height="24" style="color:#fff; flex-shrink:0;"></iconify-icon>
+          <div>
+            <div style="font-size:0.65rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:0.1rem;">Különleges akció</div>
+            <h2 style="font-family:'DM Serif Display', serif; color:#fff; font-size:1rem; line-height:1.2; margin:0;">Május 15-ig különleges ajándékok!</h2>
+          </div>
+        </div>
+      </div>
+      <!-- Tartalom -->
+      <div style="padding:1rem 1.1rem;">
+        <!-- Kerti bútorok -->
+        <div style="background:rgba(45,80,22,0.06); border:1px solid rgba(45,80,22,0.15); border-radius:0.6rem; padding:0.7rem 0.85rem; margin-bottom:0.6rem;">
+          <div style="display:flex; align-items:center; gap:0.45rem; margin-bottom:0.4rem;">
+            <iconify-icon icon="solar:armchair-linear" width="16" height="16" style="color:#2D5016; flex-shrink:0;"></iconify-icon>
+            <span style="font-weight:600; color:#2D5016; font-size:0.8rem;">Kerti bútorokhoz</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.4rem; color:#2C1810; font-size:0.8rem;">
+            <iconify-icon icon="solar:check-circle-linear" width="14" height="14" style="color:#2D5016; flex-shrink:0;"></iconify-icon>
+            Ajándék székpárna minden kerti bútorhoz
+          </div>
+        </div>
+        <!-- Játszóterek -->
+        <div style="background:rgba(45,80,22,0.06); border:1px solid rgba(45,80,22,0.15); border-radius:0.6rem; padding:0.7rem 0.85rem; margin-bottom:0.875rem;">
+          <div style="display:flex; align-items:center; gap:0.45rem; margin-bottom:0.4rem;">
+            <iconify-icon icon="solar:playground-linear" width="16" height="16" style="color:#2D5016; flex-shrink:0;"></iconify-icon>
+            <span style="font-weight:600; color:#2D5016; font-size:0.8rem;">Játszóterekhez</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.4rem; color:#2C1810; font-size:0.8rem; margin-bottom:0.3rem;">
+            <iconify-icon icon="solar:check-circle-linear" width="14" height="14" style="color:#2D5016; flex-shrink:0;"></iconify-icon>
+            5 × 25 kg játszótér homok
+          </div>
+          <div style="display:flex; align-items:center; gap:0.4rem; color:#2C1810; font-size:0.8rem;">
+            <iconify-icon icon="solar:check-circle-linear" width="14" height="14" style="color:#2D5016; flex-shrink:0;"></iconify-icon>
+            Homokozó szett ajándékba
+          </div>
+        </div>
+        <!-- Gomb -->
+        <a href="termekek.html" onclick="ajandekClose()" style="display:flex; align-items:center; justify-content:center; gap:0.4rem; background:#2D5016; color:#fff; border-radius:0.5rem; padding:0.65rem 1rem; font-size:0.825rem; font-weight:600; text-decoration:none; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+          <iconify-icon icon="solar:arrow-right-linear" width="16" height="16"></iconify-icon>
+          Megnézem a termékeket!
+        </a>
+      </div>
+    </div>
+    <script>
+      document.getElementById('ajandekPopup').style.display = 'block';
+      function ajandekClose() {
+        document.getElementById('ajandekPopup').style.display = 'none';
+      }
+    </script>
 </body></html>
