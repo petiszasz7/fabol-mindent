@@ -1465,18 +1465,10 @@
     </div>
 
     <script>
-      (function() {
-        if (!localStorage.getItem('ajandekPopupSeen')) {
-          var popup = document.getElementById('ajandekPopup');
-          popup.style.display = 'flex';
-          setTimeout(function() { popup.style.opacity = '1'; }, 10);
-        }
-      })();
+      document.getElementById('ajandekPopup').style.display = 'flex';
 
       function ajandekClose() {
-        var popup = document.getElementById('ajandekPopup');
-        popup.style.display = 'none';
-        localStorage.setItem('ajandekPopupSeen', '1');
+        document.getElementById('ajandekPopup').style.display = 'none';
       }
 
       document.getElementById('ajandekPopup').addEventListener('click', function(e) {
