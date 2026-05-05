@@ -459,6 +459,21 @@
     </script>
 
 
+    <style>
+    @media (max-width: 768px) {
+      #ajandekPopup { max-width: 260px !important; }
+      #ajandekPopup > button {
+        min-width: 24px !important;
+        min-height: 24px !important;
+        font-size: 22px !important;
+        font-weight: 700 !important;
+        color: #2C1810 !important;
+        padding: 2px 5px !important;
+      }
+      #ajandekPopup > div { padding: 0.65rem 0.85rem !important; }
+      #ajandekPopup [style*="font-size"] { font-size: 13px !important; }
+    }
+    </style>
     <!-- AJÁNDÉK POPUP -->
     <div id="ajandekPopup" style="display:none; position:fixed; top:80px; left:20px; z-index:9999; max-width:300px; width:calc(100% - 40px); background:#fff; border-radius:1rem; box-shadow:0 8px 32px rgba(0,0,0,0.18); overflow:hidden;">
       <!-- X bezáró gomb -->
