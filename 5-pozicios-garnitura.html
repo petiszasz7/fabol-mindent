@@ -86,7 +86,7 @@
                         <button onclick="selectThumb(0, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;"><img src="kerti-garniturak/5pozicios-1.webp" alt="Tölgy" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
                         <button onclick="selectThumb(1, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;"><img src="kerti-garniturak/5pozicios-cseresznye.webp" alt="Cseresznye" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
                         <button onclick="selectThumb(2, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;"><img src="kerti-garniturak/5pozicios-dio.webp" alt="Dió" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
-                        <button onclick="selectThumb(3, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;"><img src="kerti-garniturak/5pozicos-8szek.jpg" alt="8 személyes" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
+                        <button onclick="selectThumb(3, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;"><img src="kerti-garniturak/5pozis-8szek.jpg" alt="8 személyes" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
                         <button onclick="selectThumb(4, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;"><img src="kerti-garniturak/5pozicios-cseresznye-szek.webp" alt="Cseresznye szék" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
                         <button onclick="selectThumb(5, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;"><img src="kerti-garniturak/5pozis-garnitura.jpg" alt="Garnitúra referencia" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
                         <button onclick="selectThumb(6, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;"><img src="kerti-garniturak/5pozis-8szek.jpg" alt="8 személyes 2" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
@@ -340,7 +340,7 @@
         let menuOpen = false;
         mobileMenuBtn.addEventListener('click', () => { menuOpen = !menuOpen; mobileMenu.classList.toggle('hidden'); if (menuOpen) { navbar.style.backgroundColor = 'rgba(255,255,255,0.98)'; navbar.style.backdropFilter = 'blur(20px)'; } });
 
-        const thumbImages = ['kerti-garniturak/5pozicios-1.webp','kerti-garniturak/5pozicios-cseresznye.webp','kerti-garniturak/5pozicios-dio.webp','kerti-garniturak/5pozicos-8szek.jpg','kerti-garniturak/5pozicios-cseresznye-szek.webp','kerti-garniturak/5pozis-garnitura.jpg','kerti-garniturak/5pozis-8szek.jpg','kerti-garniturak/5pozis-8szek3.jpg'];
+        const thumbImages = ['kerti-garniturak/5pozicios-1.webp','kerti-garniturak/5pozicios-cseresznye.webp','kerti-garniturak/5pozicios-dio.webp','kerti-garniturak/5pozis-8szek.jpg','kerti-garniturak/5pozicios-cseresznye-szek.webp','kerti-garniturak/5pozis-garnitura.jpg','kerti-garniturak/5pozis-8szek.jpg','kerti-garniturak/5pozis-8szek3.jpg'];
         function selectThumb(index, el) {
             document.querySelectorAll('.thumb-btn').forEach(btn => { btn.style.borderColor = 'rgba(44,24,16,0.1)'; });
             el.style.borderColor = '#2D5016';
@@ -357,7 +357,7 @@
         const basePrices = { '150': 275000, '200': 335000 };
         const cushionPrices = { '150': 36000, '200': 48000 };
         const cushionCounts = { '150': '6 db', '200': '8 db' };
-        const sizeImages = { '150': 'kerti-garniturak/5pozicios-1.webp', '200': 'kerti-garniturak/5pozicos-8szek.jpg' };
+        const sizeImages = { '150': 'kerti-garniturak/5pozicios-1.webp', '200': 'kerti-garniturak/5pozis-8szek.jpg' };
         function formatPrice(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' Ft'; }
         function updateTotalPrice() {
             const total = basePrices[selectedSize] + (document.getElementById('cushionCheck').checked ? cushionPrices[selectedSize] : 0);
