@@ -341,7 +341,8 @@
 
     <style>
     @media (max-width: 768px) {
-      #ajandekPopup { max-width: 260px !important; }
+      #ajandekPopup { max-width: 240px !important; width: 240px !important; font-size: 12px !important; }
+      #ajandekPopup h2 { font-size: 0.85rem !important; }
       #ajandekPopup > button {
         min-width: 24px !important;
         min-height: 24px !important;
@@ -355,7 +356,7 @@
     }
     </style>
     <!-- AJÁNDÉK POPUP -->
-    <div id="ajandekPopup" style="display:none; position:fixed; top:80px; left:20px; z-index:9999; max-width:300px; width:calc(100% - 40px); background:#fff; border-radius:1rem; box-shadow:0 8px 32px rgba(0,0,0,0.18); overflow:hidden;">
+    <div id="ajandekPopup" style="display:none; position:fixed; top:80px; left:20px; z-index:9999; max-width:300px; width:auto; background:#fff; border-radius:1rem; box-shadow:0 8px 32px rgba(0,0,0,0.18); overflow:hidden;">
       <!-- X bezáró gomb -->
       <button onclick="ajandekClose()" style="position:absolute; top:8px; right:8px; background:none; border:none; cursor:pointer; color:#2C1810; font-size:18px; line-height:1; z-index:1; padding:2px 6px;">&times;</button>
       <!-- Zöld fejléc sáv -->
