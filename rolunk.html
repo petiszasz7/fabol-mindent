@@ -249,30 +249,4 @@
         const statsGrid = document.querySelector('.count-up');
         if (statsGrid) countUpObserver.observe(statsGrid.closest('.grid'));
     </script>
-
-    <!-- AJÁNDÉK POPUP -->
-    <div id="ajandekPopup" style="display:none; position:fixed; top:70px; left:10px; z-index:9999; width:220px; background:#fff; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.2); overflow:hidden; font-size:12px;">
-      <button onclick="ajandekClose()" style="position:absolute; top:6px; right:6px; background:#2C1810; border:none; cursor:pointer; color:white; font-size:16px; font-weight:bold; width:24px; height:24px; border-radius:50%; line-height:1; z-index:10;">&times;</button>
-      <div style="background:#2D5016; padding:12px 14px;">
-        <div style="color:rgba(255,255,255,0.7); font-size:10px; text-transform:uppercase; letter-spacing:1px;">Különleges akció</div>
-        <h2 style="color:white; font-size:13px; font-weight:700; margin:4px 0 0;">Május 15-ig ajándékok!</h2>
-      </div>
-      <div style="padding:10px 14px;">
-        <div style="margin-bottom:8px;">
-          <div style="font-weight:600; font-size:11px; color:#2D5016;">🪑 Kerti bútorokhoz</div>
-          <div style="font-size:11px; color:#555;">Ajándék székpárna</div>
-        </div>
-        <div style="margin-bottom:10px;">
-          <div style="font-weight:600; font-size:11px; color:#2D5016;">🛝 Játszóterekhez</div>
-          <div style="font-size:11px; color:#555;">5×25 kg homok + homokozó szett</div>
-        </div>
-        <a href="termekek.html" style="display:block; background:#2D5016; color:white; text-align:center; padding:8px; border-radius:8px; font-size:11px; font-weight:600; text-decoration:none;">Megnézem →</a>
-      </div>
-    </div>
-    <script>
-      document.getElementById('ajandekPopup').style.display = 'block';
-      function ajandekClose() {
-        document.getElementById('ajandekPopup').style.display = 'none';
-      }
-    </script>
 </body></html>
