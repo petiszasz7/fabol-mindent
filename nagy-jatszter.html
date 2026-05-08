@@ -211,7 +211,7 @@
 
                     <!-- ORDER BUTTON -->
                     <div class="mb-5">
-                        <button id="orderBtn" class="w-full flex items-center justify-center gap-2.5 text-base font-semibold py-4 rounded-xl" style="background-color: #2D5016; color: white; border: none; cursor: pointer;" onclick="window.location.href='kapcsolat.html'">
+                        <button id="orderBtn" class="w-full flex items-center justify-center gap-2.5 text-base font-semibold py-4 rounded-xl" style="background-color: #2D5016; color: white; border: none; cursor: pointer;" onclick="navigateToOrder(event)">
                             <iconify-icon icon="solar:letter-linear" width="22" height="22"></iconify-icon>
                             MEGRENDELEM
                         </button>
@@ -451,10 +451,11 @@
             if (tabName === 'velemenyek' || tabName === 'referencia') { activeContent.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
         }
 
-        function goToOrder() {
+        function navigateToOrder(e) {
+            e.preventDefault();
             const szin = document.getElementById('colorLabel').textContent.trim();
             const ar = document.getElementById('totalPrice').textContent.trim();
-            const kiegeszitok = extraStates.map((on, i) => on ? extraNames[i] : null).filter(Boolean).join(', ');
+            const kiegeszitok = extraStates.map((on, i) => on ? extraNames[i] + ' (' + extraPrices[i].toLocaleString('hu-HU').replace(/\s/g, '.') + ' Ft)' : null).filter(Boolean).join(', ');
             const params = new URLSearchParams();
             params.set('termek', 'Nagy Játszótér');
             params.set('szin', szin);
