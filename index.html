@@ -1471,12 +1471,9 @@
     </div>
 
     <script>
-      if (!localStorage.getItem('ajandekLatva')) {
-        document.getElementById('ajandekPopup').style.display = 'block';
-      }
+      document.getElementById('ajandekPopup').style.display = 'block';
       function ajandekClose() {
         document.getElementById('ajandekPopup').style.display = 'none';
-        localStorage.setItem('ajandekLatva', '1');
       }
     </script>
   </body>
