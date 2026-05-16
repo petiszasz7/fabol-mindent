@@ -134,7 +134,7 @@
                             <span class="text-sm font-semibold" style="color: #2D5016;">Rendelhető</span>
                         </div>
                         <div class="flex items-baseline gap-3 mb-2">
-                            <span style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">285.000 Ft</span>
+                            <span id="totalPrice" style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">295.000 Ft</span>
                         </div>
                         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg" style="background: linear-gradient(135deg, rgba(196,101,42,0.08), rgba(139,105,20,0.08));">
                             <iconify-icon icon="solar:tag-price-linear" width="14" height="14" style="color: #C4652A;"></iconify-icon>
@@ -159,9 +159,28 @@
                         </div>
                     </div>
 
+                    <!-- EXTRAS CONFIGURATOR -->
+                    <div class="mb-6">
+                        <p class="text-xs font-medium uppercase tracking-wider mb-3" style="color: rgba(44,24,16,0.4);">Kiegészítők</p>
+                        <div class="space-y-2.5">
+                            <label class="extra-option flex items-center justify-between gap-3 p-3.5 rounded-xl cursor-pointer transition-all" style="border: 1.5px solid rgba(44,24,16,0.1); background: white;" onclick="toggleExtra(this)">
+                                <div class="flex items-center gap-3"><div class="extra-checkbox w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 transition-all" style="border: 1.5px solid rgba(44,24,16,0.2); background: white;"><iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white; display: none;" class="check-icon"></iconify-icon></div><div><p class="text-sm font-semibold" style="color: #2C1810;">Fészek hinta</p></div></div>
+                                <span class="text-sm font-semibold flex-shrink-0" style="color: #2D5016;">+30.000 Ft</span>
+                            </label>
+                            <label class="extra-option flex items-center justify-between gap-3 p-3.5 rounded-xl cursor-pointer transition-all" style="border: 1.5px solid rgba(44,24,16,0.1); background: white;" onclick="toggleExtra(this)">
+                                <div class="flex items-center gap-3"><div class="extra-checkbox w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 transition-all" style="border: 1.5px solid rgba(44,24,16,0.2); background: white;"><iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white; display: none;" class="check-icon"></iconify-icon></div><div><p class="text-sm font-semibold" style="color: #2C1810;">Baba hinta</p></div></div>
+                                <span class="text-sm font-semibold flex-shrink-0" style="color: #2D5016;">+7.500 Ft</span>
+                            </label>
+                            <label class="extra-option flex items-center justify-between gap-3 p-3.5 rounded-xl cursor-pointer transition-all" style="border: 1.5px solid rgba(44,24,16,0.1); background: white;" onclick="toggleExtra(this)">
+                                <div class="flex items-center gap-3"><div class="extra-checkbox w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 transition-all" style="border: 1.5px solid rgba(44,24,16,0.2); background: white;"><iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white; display: none;" class="check-icon"></iconify-icon></div><div><p class="text-sm font-semibold" style="color: #2C1810;">Biztonsági létra korlát</p></div></div>
+                                <span class="text-sm font-semibold flex-shrink-0" style="color: #2D5016;">+20.000 Ft</span>
+                            </label>
+                        </div>
+                    </div>
+
                     <!-- ORDER BUTTON -->
                     <div class="mb-5">
-                        <button class="w-full flex items-center justify-center gap-2.5 text-base font-semibold py-4 rounded-xl" style="background-color: #2D5016; color: white; border: none; cursor: pointer;" onclick="window.location.href='kapcsolat.html'">
+                        <button class="w-full flex items-center justify-center gap-2.5 text-base font-semibold py-4 rounded-xl" style="background-color: #2D5016; color: white; border: none; cursor: pointer;" onclick="navigateToOrder(event)">
                             <iconify-icon icon="solar:cart-large-bold-duotone" width="22" height="22"></iconify-icon>
                             MEGRENDELEM
                         </button>
@@ -365,13 +384,43 @@
             selectThumb(thumbIndex, thumbBtn);
         }
 
+        const extraPrices = [30000, 7500, 20000];
+        const extraNames = ['Fészek hinta', 'Baba hinta', 'Biztonsági létra korlát'];
+        const basePrice = 295000;
+        const extraStates = [false, false, false];
+        function toggleExtra(el) {
+            const options = document.querySelectorAll('.extra-option');
+            const idx = Array.from(options).indexOf(el);
+            extraStates[idx] = !extraStates[idx];
+            const cb = el.querySelector('.extra-checkbox');
+            const icon = el.querySelector('.check-icon');
+            if (extraStates[idx]) {
+                cb.style.background = '#2D5016';
+                cb.style.borderColor = '#2D5016';
+                icon.style.display = 'block';
+                el.style.borderColor = '#2D5016';
+                el.style.background = 'rgba(45,80,22,0.04)';
+            } else {
+                cb.style.background = 'white';
+                cb.style.borderColor = 'rgba(44,24,16,0.2)';
+                icon.style.display = 'none';
+                el.style.borderColor = 'rgba(44,24,16,0.1)';
+                el.style.background = 'white';
+            }
+            const total = basePrice + extraStates.reduce((sum, on, i) => sum + (on ? extraPrices[i] : 0), 0);
+            document.getElementById('totalPrice').textContent = total.toLocaleString('hu-HU').replace(/\s/g, '.') + ' Ft';
+        }
+
         function navigateToOrder(e) {
             e.preventDefault();
             const colorLabel = selectedColor === 'antracit' ? 'Antracit' : 'Tölgy';
+            const ar = document.getElementById('totalPrice').textContent.trim();
+            const kiegeszitok = extraStates.map((on, i) => on ? extraNames[i] : null).filter(Boolean).join(', ');
             const params = new URLSearchParams();
             params.set('termek', 'Kis Játszótér');
-            params.set('ar', '285.000 Ft');
+            params.set('ar', ar);
             params.set('szin', colorLabel);
+            if (kiegeszitok) params.set('kiegeszitok', kiegeszitok);
             window.location.href = 'kapcsolat.html?' + params.toString();
         }
     </script>
