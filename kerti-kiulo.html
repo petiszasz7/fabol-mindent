@@ -133,14 +133,14 @@
                         <div class="grid grid-cols-2 gap-3">
                             <button id="roofNad" onclick="selectRoof('nad', this)" class="roof-btn relative px-4 py-3.5 rounded-xl text-left transition-all" style="border: 2px solid #2D5016; background: rgba(45,80,22,0.04);">
                                 <span class="block text-sm font-semibold" style="color: #2D5016;">Nádtetős</span>
-                                <span class="block text-xs mt-0.5" style="color: rgba(45,80,22,0.7);">225.000 Ft</span>
+                                <span class="block text-xs mt-0.5" style="color: rgba(45,80,22,0.7);">235.000 Ft</span>
                                 <div class="check-icon absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center" style="background: #2D5016;">
                                     <iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>
                                 </div>
                             </button>
                             <button id="roofLemez" onclick="selectRoof('lemez', this)" class="roof-btn relative px-4 py-3.5 rounded-xl text-left transition-all" style="border: 2px solid rgba(44,24,16,0.1); background: white;">
                                 <span class="block text-sm font-semibold" style="color: #2C1810;">Lemeztetős</span>
-                                <span class="block text-xs mt-0.5" style="color: rgba(44,24,16,0.45);">275.000 Ft</span>
+                                <span class="block text-xs mt-0.5" style="color: rgba(44,24,16,0.45);">285.000 Ft</span>
                             </button>
                         </div>
                     </div>
@@ -148,7 +148,7 @@
                     <!-- PRICE -->
                     <div class="mb-6">
                         <div class="flex items-baseline gap-3 mb-2">
-                            <span id="currentPrice" style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">225.000 Ft</span>
+                            <span id="currentPrice" style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">235.000 Ft</span>
                         </div>
                         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg" style="background: linear-gradient(135deg, rgba(196,101,42,0.08), rgba(139,105,20,0.08));">
                             <iconify-icon icon="solar:tag-price-linear" width="14" height="14" style="color: #C4652A;"></iconify-icon>
@@ -355,7 +355,7 @@
         const mainImg = document.getElementById('mainImage'); mainImg.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
 
         let selectedRoof = 'Nádtetős';
-        const roofPrices = { nad: '225.000 Ft', lemez: '275.000 Ft' };
+        const roofPrices = { nad: '235.000 Ft', lemez: '285.000 Ft' };
         function selectRoof(type, el) {
             document.querySelectorAll('.roof-btn').forEach(btn => {
                 btn.style.border = '2px solid rgba(44,24,16,0.1)';
