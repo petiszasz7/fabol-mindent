@@ -82,7 +82,7 @@
                             <iconify-icon icon="solar:magnifer-zoom-in-linear" width="20" height="20" style="color: white;"></iconify-icon>
                         </div>
                     </div>
-                    <div class="grid grid-cols-4 gap-3">
+                    <div class="grid grid-cols-3 gap-3">
                         <button onclick="selectThumb(0, this)" class="thumb-btn active-thumb relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid #2D5016; transition: all 0.3s ease;">
                             <img src="jatszoterek/jatszter-4.webp" alt="Főkép" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </button>
@@ -91,9 +91,6 @@
                         </button>
                         <button onclick="selectThumb(2, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
                             <img src="jatszoterek/nagyjaszto-vilagos.jpg" alt="Világos tölgy" style="width:100%;height:100%;object-fit:cover;display:block;">
-                        </button>
-                        <button onclick="selectThumb(3, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
-                            <img src="jatszoterek/nagy-jatszoter-sotet.jpg" alt="Sötét tölgy" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </button>
                     </div>
                 </div>
@@ -147,7 +144,7 @@
                     <!-- COLOR SELECTOR -->
                     <div class="mb-6">
                         <p class="text-sm font-semibold mb-3" style="color: #2C1810;">Szín: <span id="colorLabel" class="font-normal" style="color: rgba(44,24,16,0.5);">Világos tölgy</span></p>
-                        <div class="grid grid-cols-3 gap-3">
+                        <div class="grid grid-cols-2 gap-3">
                             <button id="colorVilagosTolgy" onclick="selectColor('Világos tölgy', 'colorVilagosTolgy', this)" class="color-btn relative px-3 py-3.5 rounded-xl text-left transition-all" style="border: 2px solid #2D5016; background: rgba(45,80,22,0.04);">
                                 <div class="flex items-center gap-2.5">
                                     <span class="flex-shrink-0 w-5 h-5 rounded-full" style="background: #C8A96E; border: 1px solid rgba(44,24,16,0.15);"></span>
@@ -159,12 +156,6 @@
                                 <div class="flex items-center gap-2.5">
                                     <span class="flex-shrink-0 w-5 h-5 rounded-full" style="background: #4A4A4A; border: 1px solid rgba(44,24,16,0.15);"></span>
                                     <span class="text-xs font-semibold leading-tight" style="color: #2C1810;">Antracit</span>
-                                </div>
-                            </button>
-                            <button id="colorSotetTolgy" onclick="selectColor('Sötét tölgy', 'colorSotetTolgy', this)" class="color-btn relative px-3 py-3.5 rounded-xl text-left transition-all" style="border: 2px solid rgba(44,24,16,0.1); background: white;">
-                                <div class="flex items-center gap-2.5">
-                                    <span class="flex-shrink-0 w-5 h-5 rounded-full" style="background: #5C3D1E; border: 1px solid rgba(44,24,16,0.15);"></span>
-                                    <span class="text-xs font-semibold leading-tight" style="color: #2C1810;">Sötét tölgy</span>
                                 </div>
                             </button>
                         </div>
@@ -387,8 +378,7 @@
         const mainImageSources = [
             'jatszoterek/jatszter-4.webp',
             'jatszoterek/nagyjatszo-antrcit2.jpg',
-            'jatszoterek/nagyjaszto-vilagos.jpg',
-            'jatszoterek/nagy-jatszoter-sotet.jpg'
+            'jatszoterek/nagyjaszto-vilagos.jpg'
         ];
         function selectThumb(index, el) {
             document.querySelectorAll('.thumb-btn').forEach(btn => { btn.style.borderColor = 'rgba(44,24,16,0.1)'; });
@@ -405,7 +395,7 @@
             }, 200);
         }
 
-        const colorImages = { 'Világos tölgy': { src: 'jatszoterek/nagyjaszto-vilagos.jpg', thumbIndex: 2 }, 'Antracit': { src: 'jatszoterek/nagyjatszo-antrcit2.jpg', thumbIndex: 1 }, 'Sötét tölgy': { src: 'jatszoterek/nagy-jatszoter-sotet.jpg', thumbIndex: 3 } };
+        const colorImages = { 'Világos tölgy': { src: 'jatszoterek/nagyjaszto-vilagos.jpg', thumbIndex: 2 }, 'Antracit': { src: 'jatszoterek/nagyjatszo-antrcit2.jpg', thumbIndex: 1 } };
         function selectColor(colorName, btnId, el) {
             document.querySelectorAll('.color-btn').forEach(btn => {
                 btn.style.border = '2px solid rgba(44,24,16,0.1)';
