@@ -157,6 +157,11 @@
                         <div class="flex items-baseline gap-3 mb-2">
                             <span id="currentPrice" style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">355.000 Ft</span>
                         </div>
+                        <div id="parnaGiftNote" class="flex items-center gap-1.5 mb-2 flex-wrap text-xs" style="color: rgba(44,24,16,0.6);">
+                            <span>+ Párna szett értéke:</span>
+                            <span id="parnaGiftValue" style="text-decoration: line-through; color: rgba(44,24,16,0.4);">48.000 Ft</span>
+                            <span class="font-bold px-1.5 py-0.5 rounded" style="background: #16a34a; color: white;">Ajándék!</span>
+                        </div>
                         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg" style="background: linear-gradient(135deg, rgba(196,101,42,0.08), rgba(139,105,20,0.08));">
                             <iconify-icon icon="solar:tag-price-linear" width="14" height="14" style="color: #C4652A;"></iconify-icon>
                             <span class="text-xs font-semibold" style="color: #C4652A;">Ingyenes szállítás + összeszerelés</span>
@@ -166,13 +171,19 @@
                     <!-- CUSHION SET ADDON -->
                     <div class="mb-6">
                         <p class="text-sm font-semibold mb-3" style="color: #2C1810;">Kiegészítők</p>
-                        <label id="cushionWrapper" class="flex items-center gap-3 p-3.5 rounded-xl cursor-pointer transition-all" style="background: rgba(45,80,22,0.04); border: 1px solid rgba(45,80,22,0.1);">
-                            <input type="checkbox" id="cushionCheck" onchange="updateCushion()" style="width: 18px; height: 18px; accent-color: #2D5016; cursor: pointer; flex-shrink: 0;">
+                        <label id="cushionWrapper" class="flex items-center gap-3 p-3.5 rounded-xl cursor-pointer transition-all" style="background: rgba(45,80,22,0.08); border: 1px solid rgba(45,80,22,0.2);">
+                            <input type="checkbox" id="cushionCheck" checked onchange="updateCushion()" style="width: 18px; height: 18px; accent-color: #2D5016; cursor: pointer; flex-shrink: 0;">
                             <iconify-icon icon="solar:sofa-linear" width="18" height="18" style="color: #2D5016; flex-shrink: 0;"></iconify-icon>
                             <div class="flex-1">
-                                <span class="text-sm font-medium" style="color: #2C1810;">Párna szett <span id="cushionCount" style="color: rgba(44,24,16,0.5);">(6 db)</span></span>
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <span class="text-sm font-medium" style="color: #2C1810;">Párna szett <span id="cushionCount" style="color: rgba(44,24,16,0.5);">(8 db)</span></span>
+                                    <span class="text-xs font-bold px-2 py-0.5 rounded-full" style="background: #16a34a; color: white;">Ajándék!</span>
+                                </div>
+                                <div class="text-xs mt-0.5" style="color: rgba(44,24,16,0.5);">
+                                    <span style="text-decoration: line-through; color: rgba(44,24,16,0.35);" id="cushionPrice">48.000 Ft</span>
+                                    <span style="color: #16a34a; font-weight: 600;"> Ajándék!</span>
+                                </div>
                             </div>
-                            <span class="text-sm font-semibold" style="color: #2D5016;" id="cushionPrice">+36.000 Ft</span>
                         </label>
                     </div>
 
@@ -360,10 +371,14 @@
         const sizeImages = { '150': 'kerti-garniturak/5pozis-8szek3.jpg', '200': 'kerti-garniturak/5pozis-8szek.jpg' };
         function formatPrice(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' Ft'; }
         function updateTotalPrice() {
-            const total = basePrices[selectedSize] + (document.getElementById('cushionCheck').checked ? cushionPrices[selectedSize] : 0);
             const priceEl = document.getElementById('currentPrice');
             priceEl.style.opacity = '0'; priceEl.style.transform = 'translateY(5px)';
-            setTimeout(() => { priceEl.textContent = formatPrice(total); priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
+            const checked = document.getElementById('cushionCheck').checked;
+            const giftNote = document.getElementById('parnaGiftNote');
+            if (giftNote) giftNote.style.display = checked ? 'flex' : 'none';
+            const giftVal = document.getElementById('parnaGiftValue');
+            if (giftVal) giftVal.textContent = formatPrice(cushionPrices[selectedSize]);
+            setTimeout(() => { priceEl.textContent = formatPrice(basePrices[selectedSize]); priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
         }
         function updateCushion() {
             const wrapper = document.getElementById('cushionWrapper');
@@ -378,7 +393,8 @@
             el.style.borderColor = '#2D5016'; el.style.background = 'rgba(45,80,22,0.04)'; el.querySelector('span:first-child').style.color = '#2D5016'; el.querySelector('span:last-child').style.color = 'rgba(45,80,22,0.7)';
             const checkDiv = document.createElement('div'); checkDiv.className = 'absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center'; checkDiv.style.background = '#2D5016'; checkDiv.innerHTML = '<iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>'; el.appendChild(checkDiv);
             document.getElementById('cushionCount').textContent = '(' + cushionCounts[size] + ')';
-            document.getElementById('cushionPrice').textContent = '+' + formatPrice(cushionPrices[size]);
+            document.getElementById('cushionPrice').textContent = formatPrice(cushionPrices[size]);
+            const giftVal = document.getElementById('parnaGiftValue'); if (giftVal) giftVal.textContent = formatPrice(cushionPrices[size]);
             updateTotalPrice();
             if (sizeImages[size]) { const imgEl = document.getElementById('mainImgEl'); const gradEl = document.getElementById('mainGradEl'); imgEl.src = sizeImages[size]; imgEl.style.display = 'block'; gradEl.style.display = 'none'; }
         }
@@ -399,6 +415,7 @@
         document.getElementById('content-reszletek').style.opacity = '1'; document.getElementById('content-reszletek').style.transform = 'translateY(0)';
         const mainImg = document.getElementById('mainImage'); mainImg.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
         const priceEl = document.getElementById('currentPrice'); priceEl.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+        updateCushion();
         function navigateToOrder(e) {
             e.preventDefault();
             const params = new URLSearchParams();

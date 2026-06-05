@@ -151,12 +151,16 @@
                         <label class="flex items-start gap-3 cursor-pointer" onclick="toggleParna()">
                             <div class="relative mt-0.5 flex-shrink-0">
                                 <input type="checkbox" id="parnaCheckbox" class="sr-only">
-                                <div id="parnaCheckboxUI" class="w-5 h-5 rounded flex items-center justify-center transition-all" style="border: 2px solid rgba(44,24,16,0.2); background: white;">
+                                <div id="parnaCheckboxUI" class="w-5 h-5 rounded flex items-center justify-center transition-all" style="border: 2px solid #2D5016; background: #2D5016;">
+                                    <iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>
                                 </div>
                             </div>
                             <div class="flex-1">
-                                <p class="text-sm font-semibold" style="color: #2C1810;">Párna szett (4 db) – <span id="parnaPriceLabel" class="font-semibold" style="color: #2D5016;">+20.000 Ft</span></p>
-                                <p class="text-xs mt-0.5" style="color: rgba(44,24,16,0.5);">Vízálló kültéri párna szett a garnitúrához</p>
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <p class="text-sm font-semibold" style="color: #2C1810;">Párna szett (4 db)</p>
+                                    <span class="text-xs font-bold px-2 py-0.5 rounded-full" style="background: #16a34a; color: white;">Ajándék!</span>
+                                </div>
+                                <p class="text-xs mt-0.5" style="color: rgba(44,24,16,0.5);">Vízálló kültéri párna szett – <span style="text-decoration: line-through; color: rgba(44,24,16,0.35);" id="parnaPriceLabel">20.000 Ft</span> <span style="color: #16a34a; font-weight: 600;">Ajándék!</span></p>
                             </div>
                         </label>
                     </div>
@@ -165,6 +169,11 @@
                     <div class="mb-6">
                         <div class="flex items-baseline gap-3 mb-2">
                             <span id="currentPrice" style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">205.000 Ft</span>
+                        </div>
+                        <div id="parnaGiftNote" class="flex items-center gap-1.5 mb-2 flex-wrap text-xs" style="color: rgba(44,24,16,0.6);">
+                            <span>+ Párna szett értéke:</span>
+                            <span id="parnaGiftValue" style="text-decoration: line-through; color: rgba(44,24,16,0.4);">20.000 Ft</span>
+                            <span class="font-bold px-1.5 py-0.5 rounded" style="background: #16a34a; color: white;">Ajándék!</span>
                         </div>
                         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg" style="background: linear-gradient(135deg, rgba(196,101,42,0.08), rgba(139,105,20,0.08));">
                             <iconify-icon icon="solar:tag-price-linear" width="14" height="14" style="color: #C4652A;"></iconify-icon>
@@ -355,14 +364,23 @@
         const basePrices = { '150': 205000, '200': 235000 };
         const parnaPrices = { '150': 20000, '200': 30000 };
         function formatPrice(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' Ft'; }
+        function initParna() {
+            const cb = document.getElementById('parnaCheckbox');
+            cb.checked = true;
+            const ui = document.getElementById('parnaCheckboxUI');
+            ui.style.background = '#2D5016'; ui.style.borderColor = '#2D5016';
+            const giftNote = document.getElementById('parnaGiftNote');
+            if (giftNote) giftNote.style.display = 'flex';
+        }
         function toggleParna() {
             const cb = document.getElementById('parnaCheckbox');
             cb.checked = !cb.checked;
             const ui = document.getElementById('parnaCheckboxUI');
             if (cb.checked) { ui.style.background = '#2D5016'; ui.style.borderColor = '#2D5016'; ui.innerHTML = '<iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>'; }
             else { ui.style.background = 'white'; ui.style.borderColor = 'rgba(44,24,16,0.2)'; ui.innerHTML = ''; }
-            const total = basePrices[selectedSize] + (cb.checked ? parnaPrices[selectedSize] : 0);
-            document.getElementById('currentPrice').textContent = formatPrice(total);
+            const giftNote = document.getElementById('parnaGiftNote');
+            if (giftNote) giftNote.style.display = cb.checked ? 'flex' : 'none';
+            document.getElementById('currentPrice').textContent = formatPrice(basePrices[selectedSize]);
         }
         function selectSize(size, el) {
             selectedSize = size;
@@ -371,9 +389,9 @@
             const checkDiv = document.createElement('div'); checkDiv.className = 'absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center'; checkDiv.style.background = '#2D5016'; checkDiv.innerHTML = '<iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>'; el.appendChild(checkDiv);
             const priceEl = document.getElementById('currentPrice'); priceEl.style.opacity = '0'; priceEl.style.transform = 'translateY(5px)';
             setTimeout(() => {
-                document.getElementById('parnaPriceLabel').textContent = '+' + formatPrice(parnaPrices[size]);
-                const parnaChecked = document.getElementById('parnaCheckbox').checked;
-                priceEl.textContent = formatPrice(basePrices[size] + (parnaChecked ? parnaPrices[size] : 0));
+                const parnaPL = document.getElementById('parnaPriceLabel'); if (parnaPL) parnaPL.textContent = formatPrice(parnaPrices[size]);
+                const giftVal = document.getElementById('parnaGiftValue'); if (giftVal) giftVal.textContent = formatPrice(parnaPrices[size]);
+                priceEl.textContent = formatPrice(basePrices[size]);
                 priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)';
             }, 200);
         }
@@ -394,6 +412,7 @@
         document.getElementById('content-reszletek').style.opacity = '1'; document.getElementById('content-reszletek').style.transform = 'translateY(0)';
         const mainImg = document.getElementById('mainImage'); mainImg.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
         const priceEl = document.getElementById('currentPrice'); priceEl.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+        initParna();
         function navigateToOrder(e) {
             e.preventDefault();
             const params = new URLSearchParams();

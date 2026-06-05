@@ -150,14 +150,17 @@
                     <div class="mb-6">
                         <label class="flex items-center gap-3 cursor-pointer group" style="user-select: none;">
                             <div class="relative flex-shrink-0">
-                                <input type="checkbox" id="parnaCheckbox" onchange="toggleParna(this)" class="sr-only">
-                                <div id="parnaCheckboxBox" class="w-6 h-6 rounded-lg flex items-center justify-center transition-all" style="border: 2px solid rgba(44,24,16,0.2); background: white;">
-                                    <iconify-icon id="parnaCheckIcon" icon="solar:check-linear" width="14" height="14" style="color: white; display: none;"></iconify-icon>
+                                <input type="checkbox" id="parnaCheckbox" checked onchange="toggleParna(this)" class="sr-only">
+                                <div id="parnaCheckboxBox" class="w-6 h-6 rounded-lg flex items-center justify-center transition-all" style="border: 2px solid #2D5016; background: #2D5016;">
+                                    <iconify-icon id="parnaCheckIcon" icon="solar:check-linear" width="14" height="14" style="color: white; display: block;"></iconify-icon>
                                 </div>
                             </div>
                             <div class="flex-1">
-                                <span class="text-sm font-semibold" style="color: #2C1810;">Párna szett kiegészítő</span>
-                                <span id="parnaLabel" class="block text-xs mt-0.5" style="color: rgba(44,24,16,0.5);">6 db párna – +30.000 Ft</span>
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <span class="text-sm font-semibold" style="color: #2C1810;">Párna szett kiegészítő</span>
+                                    <span class="text-xs font-bold px-2 py-0.5 rounded-full" style="background: #16a34a; color: white;">Ajándék!</span>
+                                </div>
+                                <span id="parnaLabel" class="block text-xs mt-0.5" style="color: rgba(44,24,16,0.5);">6 db párna – <span style="text-decoration: line-through; color: rgba(44,24,16,0.35);" id="parnaLabelAthuzott">30.000 Ft</span> <span style="color: #16a34a; font-weight: 600;">Ajándék!</span></span>
                             </div>
                         </label>
                     </div>
@@ -168,6 +171,11 @@
                     <div class="mb-6">
                         <div class="flex items-baseline gap-3 mb-2">
                             <span id="currentPrice" style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">195.000 Ft</span>
+                        </div>
+                        <div id="parnaGiftNote" class="flex items-center gap-1.5 mb-2 flex-wrap text-xs" style="color: rgba(44,24,16,0.6);">
+                            <span>+ Párna szett értéke:</span>
+                            <span id="parnaGiftValue" style="text-decoration: line-through; color: rgba(44,24,16,0.4);">30.000 Ft</span>
+                            <span class="font-bold px-1.5 py-0.5 rounded" style="background: #16a34a; color: white;">Ajándék!</span>
                         </div>
                         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg" style="background: linear-gradient(135deg, rgba(196,101,42,0.08), rgba(139,105,20,0.08));">
                             <iconify-icon icon="solar:tag-price-linear" width="14" height="14" style="color: #C4652A;"></iconify-icon>
@@ -359,17 +367,20 @@
         const basePrices = { '150': 195000, '200': 225000 };
         const parnaAddon = { '150': 30000, '200': 40000 };
         const parnaDb = { '150': 6, '200': 8 };
-        let parnaSelected = false;
+        let parnaSelected = true;
 
         function formatPrice(num) {
             return num.toLocaleString('hu-HU').replace(/\s/g, '.') + ' Ft';
         }
         function updateTotalPrice() {
             const base = basePrices[selectedSize];
-            const addon = parnaSelected ? parnaAddon[selectedSize] : 0;
             const priceEl = document.getElementById('currentPrice');
             priceEl.style.opacity = '0'; priceEl.style.transform = 'translateY(5px)';
-            setTimeout(() => { priceEl.textContent = formatPrice(base + addon); priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
+            const giftNote = document.getElementById('parnaGiftNote');
+            if (giftNote) giftNote.style.display = parnaSelected ? 'flex' : 'none';
+            const giftVal = document.getElementById('parnaGiftValue');
+            if (giftVal) giftVal.textContent = formatPrice(parnaAddon[selectedSize]);
+            setTimeout(() => { priceEl.textContent = formatPrice(base); priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
         }
         function toggleParna(checkbox) {
             parnaSelected = checkbox.checked;
@@ -384,7 +395,8 @@
             document.querySelectorAll('.size-btn').forEach(btn => { const c = btn.querySelector('.absolute'); if(c) c.remove(); btn.style.borderColor = 'rgba(44,24,16,0.1)'; btn.style.background = 'white'; btn.querySelector('span:first-child').style.color = '#2C1810'; btn.querySelector('span:last-child').style.color = 'rgba(44,24,16,0.45)'; });
             el.style.borderColor = '#2D5016'; el.style.background = 'rgba(45,80,22,0.04)'; el.querySelector('span:first-child').style.color = '#2D5016'; el.querySelector('span:last-child').style.color = 'rgba(45,80,22,0.7)';
             const checkDiv = document.createElement('div'); checkDiv.className = 'absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center'; checkDiv.style.background = '#2D5016'; checkDiv.innerHTML = '<iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>'; el.appendChild(checkDiv);
-            document.getElementById('parnaLabel').textContent = parnaDb[size] + ' db párna – +' + formatPrice(parnaAddon[size]);
+            const athuzott = document.getElementById('parnaLabelAthuzott'); if (athuzott) athuzott.textContent = formatPrice(parnaAddon[size]);
+            const giftVal = document.getElementById('parnaGiftValue'); if (giftVal) giftVal.textContent = formatPrice(parnaAddon[size]);
             updateTotalPrice();
             const sizeImages = { '150': 'kerti-garniturak/kert-3.jpg', '200': 'kerti-garniturak/osszecsukhato-8.jpg' };
             if (sizeImages[size]) {
@@ -415,6 +427,7 @@
         document.getElementById('content-reszletek').style.opacity = '1'; document.getElementById('content-reszletek').style.transform = 'translateY(0)';
         const mainImg = document.getElementById('mainImage'); mainImg.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
         const priceEl = document.getElementById('currentPrice'); priceEl.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+        updateTotalPrice();
         function navigateToOrder(e) {
             e.preventDefault();
             const params = new URLSearchParams();
