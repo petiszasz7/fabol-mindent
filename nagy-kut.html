@@ -1,0 +1,340 @@
+<html lang="hu"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerti Nagy Kút – Fából Mindent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <style>
+        @media (max-width: 768px) {
+            nav a svg[width="140"] { width: 110px; height: 31px; }
+            h1.tracking-tight { font-size: 1.5rem !important; line-height: 1.15 !important; }
+            h2.tracking-tight { font-size: 1.3rem !important; line-height: 1.2 !important; }
+            h3.text-xl { font-size: 1rem !important; }
+        }
+    </style>
+</head>
+<body style="font-family: 'DM Sans', sans-serif; background-color: #F5F0EB; color: #2C1810;">
+
+    <!-- NAVIGATION -->
+    <nav id="navbar" style="transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);" class="fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <svg width="140" height="40" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="28" y="28" width="4" height="12" rx="2" fill="#2D5016"/>
+                        <polygon points="30,2 18,26 42,26" fill="#2D5016"/>
+                        <polygon points="30,10 19,28 41,28" fill="#3a6b1e" opacity="0.45"/>
+                        <polygon points="30,18 21,32 39,32" fill="#4a7a24" opacity="0.25"/>
+                        <text x="50" y="16" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#2C1810" letter-spacing="-0.5">Fából</text>
+                        <text x="50" y="31" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#2D5016" letter-spacing="-0.5">Mindent</text>
+                    </svg>
+                </a>
+                <div class="hidden lg:flex items-center gap-7">
+                    <a href="index.html" class="text-sm font-medium hover:opacity-70 transition-opacity" style="color: #2C1810;">Főoldal</a>
+                    <a href="termekek.html" class="text-sm font-medium hover:opacity-70 transition-opacity" style="color: #2C1810;">Termékek</a>
+                    <a href="rolunk.html" class="text-sm font-medium hover:opacity-70 transition-opacity" style="color: #2C1810;">Rólunk</a>
+                    <a href="referenciak.html" class="text-sm font-medium hover:opacity-70 transition-opacity" style="color: #2C1810;">Referenciák</a>
+                    <a href="kapcsolat.html" class="text-sm font-medium hover:opacity-70 transition-opacity" style="color: #2C1810;">Kapcsolat</a>
+                </div>
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="tel:+36206128116" class="flex items-center gap-1.5 text-sm font-medium" style="color: #2C1810;">
+                        <iconify-icon icon="solar:phone-linear" width="18" height="18" style="color: #2D5016;"></iconify-icon>
+                        +36 20 612 8116
+                    </a>
+                </div>
+                <button id="mobileMenuBtn" class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg" style="color: #2C1810;">
+                    <iconify-icon icon="solar:hamburger-menu-linear" width="24" height="24"></iconify-icon>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden lg:hidden" style="background: white; border-top: 1px solid rgba(44,24,16,0.08);">
+            <div class="px-4 py-4 space-y-1">
+                <a href="index.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium" style="color: #2C1810;">Főoldal</a>
+                <a href="termekek.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium" style="color: #2C1810;">Termékek</a>
+                <a href="rolunk.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium" style="color: #2C1810;">Rólunk</a>
+                <a href="referenciak.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium" style="color: #2C1810;">Referenciák</a>
+                <a href="kapcsolat.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium" style="color: #2C1810;">Kapcsolat</a>
+                <div style="border-top: 1px solid rgba(44,24,16,0.08);" class="pt-3 mt-2">
+                    <a href="tel:+36206128116" class="flex items-center gap-2 px-3 py-2.5 text-sm font-medium" style="color: #2D5016;">
+                        <iconify-icon icon="solar:phone-linear" width="18" height="18"></iconify-icon>
+                        +36 20 612 8116
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PRODUCT DETAIL -->
+    <section class="pt-24 sm:pt-28 pb-16 sm:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16">
+                <!-- LEFT COLUMN - Images -->
+                <div class="w-full lg:w-[55%]">
+                    <div id="mainImage" class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio: 4/3; border: 1px solid rgba(44,24,16,0.06); transition: all 0.4s ease; cursor: pointer;" onclick="openLightbox()">
+                        <img src="diszek/nagykut1.jpg" alt="Kerti Nagy Kút – Főkép" id="mainImgEl" style="width:100%;height:100%;object-fit:cover;display:block;">
+                        <div class="absolute top-4 right-4 w-10 h-10 rounded-xl flex items-center justify-center" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);">
+                            <iconify-icon icon="solar:magnifer-zoom-in-linear" width="20" height="20" style="color: white;"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3">
+                        <button onclick="selectThumb(0, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid #2D5016; transition: all 0.3s ease;">
+                            <img src="diszek/nagykut1.jpg" alt="Kép 1" style="width:100%;height:100%;object-fit:cover;display:block;">
+                        </button>
+                        <button onclick="selectThumb(1, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
+                            <img src="diszek/nagykut2.jpg" alt="Kép 2" style="width:100%;height:100%;object-fit:cover;display:block;">
+                        </button>
+                        <button onclick="selectThumb(2, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
+                            <img src="diszek/nagykut3.jpg" alt="Kép 3" style="width:100%;height:100%;object-fit:cover;display:block;">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN - Product Info -->
+                <div class="w-full lg:w-[45%]">
+                    <nav class="flex items-center gap-1.5 mb-5 flex-wrap">
+                        <a href="index.html" class="text-xs font-medium transition-colors hover:underline" style="color: rgba(44,24,16,0.45);">Kezdőlap</a>
+                        <iconify-icon icon="solar:alt-arrow-right-linear" width="12" height="12" style="color: rgba(44,24,16,0.25);"></iconify-icon>
+                        <a href="termekek.html" class="text-xs font-medium transition-colors hover:underline" style="color: rgba(44,24,16,0.45);">Termékek</a>
+                        <iconify-icon icon="solar:alt-arrow-right-linear" width="12" height="12" style="color: rgba(44,24,16,0.25);"></iconify-icon>
+                        <span class="text-xs font-medium" style="color: #2D5016;">Kerti Nagy Kút</span>
+                    </nav>
+
+                    <h1 style="font-family: 'Playfair Display', serif; color: #2C1810; font-size: clamp(1.5rem, 3.5vw, 2.25rem);" class="tracking-tight font-medium mb-3 leading-tight">Kerti Nagy Kút</h1>
+
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="flex items-center gap-0.5">
+                            <iconify-icon icon="solar:star-bold" width="18" height="18" style="color: #C4652A;"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold" width="18" height="18" style="color: #C4652A;"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold" width="18" height="18" style="color: #C4652A;"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold" width="18" height="18" style="color: #C4652A;"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold" width="18" height="18" style="color: #C4652A;"></iconify-icon>
+                        </div>
+                        <span class="text-sm font-medium" style="color: #C4652A;">5/5</span>
+                    </div>
+
+                    <p class="text-sm leading-relaxed mb-5" style="color: rgba(44,24,16,0.6);">Dekoratív kerti nagy kút, zsindelyes tetővel. Tökéletes dísze bármely kertnek.</p>
+
+                    <div class="mb-6" style="border-top: 1px solid rgba(44,24,16,0.08);"></div>
+
+                    <!-- SPECS -->
+                    <div class="mb-6 space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(139,105,20,0.08);">
+                                <iconify-icon icon="solar:ruler-linear" width="16" height="16" style="color: #8B6914;"></iconify-icon>
+                            </div>
+                            <div>
+                                <span class="text-xs font-medium uppercase tracking-wider" style="color: rgba(44,24,16,0.4);">Méret</span>
+                                <p class="text-sm font-semibold" style="color: #2C1810;">105 cm széles, 220 cm magas</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(45,80,22,0.08);">
+                                <iconify-icon icon="solar:home-2-linear" width="16" height="16" style="color: #2D5016;"></iconify-icon>
+                            </div>
+                            <div>
+                                <span class="text-xs font-medium uppercase tracking-wider" style="color: rgba(44,24,16,0.4);">Tetőtípus</span>
+                                <p class="text-sm font-semibold" style="color: #2C1810;">Zsindelyes</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(196,101,42,0.08);">
+                                <iconify-icon icon="solar:paint-roller-linear" width="16" height="16" style="color: #C4652A;"></iconify-icon>
+                            </div>
+                            <div>
+                                <span class="text-xs font-medium uppercase tracking-wider" style="color: rgba(44,24,16,0.4);">Szín</span>
+                                <p class="text-sm font-semibold" style="color: #2C1810;">Cseresznye</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(45,80,22,0.08);">
+                                <iconify-icon icon="solar:tag-linear" width="16" height="16" style="color: #2D5016;"></iconify-icon>
+                            </div>
+                            <div>
+                                <span class="text-xs font-medium uppercase tracking-wider" style="color: rgba(44,24,16,0.4);">Kategória</span>
+                                <p class="text-sm font-semibold" style="color: #2C1810;">Dísztárgy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PRICE -->
+                    <div class="mb-6">
+                        <div class="flex items-baseline gap-3 mb-2">
+                            <span style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">215.000 Ft</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg" style="background: linear-gradient(135deg, rgba(196,101,42,0.08), rgba(139,105,20,0.08));">
+                            <iconify-icon icon="solar:tag-price-linear" width="14" height="14" style="color: #C4652A;"></iconify-icon>
+                            <span class="text-xs font-semibold" style="color: #C4652A;">Ingyenes szállítás + összeszerelés</span>
+                        </div>
+                    </div>
+
+                    <!-- ORDER BUTTON -->
+                    <div class="mb-5">
+                        <a href="kapcsolat.html" class="w-full flex items-center justify-center gap-2.5 text-base font-semibold py-4 rounded-xl transition-all" style="background-color: #2D5016; color: white; box-shadow: 0 4px 14px rgba(45,80,22,0.25); display: flex;" onmouseover="this.style.backgroundColor='#1e3a0e'; this.style.boxShadow='0 8px 25px rgba(45,80,22,0.35)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.backgroundColor='#2D5016'; this.style.boxShadow='0 4px 14px rgba(45,80,22,0.25)'; this.style.transform='translateY(0)'">
+                            <iconify-icon icon="solar:cart-large-2-linear" width="22" height="22"></iconify-icon>
+                            MEGRENDELEM
+                        </a>
+                    </div>
+
+                    <p class="text-center text-sm mb-7" style="color: rgba(44,24,16,0.45);">
+                        vagy hívjon: <a href="tel:+36206128116" class="font-semibold underline underline-offset-2 transition-colors" style="color: #2D5016;">+36 20 612 8116</a>
+                    </p>
+
+                    <!-- TRUST ICONS -->
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="flex flex-col items-center text-center p-3 sm:p-4 rounded-xl" style="background: white; border: 1px solid rgba(44,24,16,0.06);">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-2" style="background: rgba(45,80,22,0.08);"><iconify-icon icon="solar:shield-check-linear" width="20" height="20" style="color: #2D5016;"></iconify-icon></div>
+                            <span class="text-xs font-semibold leading-tight" style="color: #2C1810;">Előleg nélkül</span>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-3 sm:p-4 rounded-xl" style="background: white; border: 1px solid rgba(44,24,16,0.06);">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-2" style="background: rgba(139,105,20,0.08);"><iconify-icon icon="solar:delivery-linear" width="20" height="20" style="color: #8B6914;"></iconify-icon></div>
+                            <span class="text-xs font-semibold leading-tight" style="color: #2C1810;">Ingyenes szállítás</span>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-3 sm:p-4 rounded-xl" style="background: white; border: 1px solid rgba(44,24,16,0.06);">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-2" style="background: rgba(196,101,42,0.08);"><iconify-icon icon="solar:hammer-bold" width="20" height="20" style="color: #C4652A;"></iconify-icon></div>
+                            <span class="text-xs font-semibold leading-tight" style="color: #2C1810;">Helyszíni összeszerelés</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TABS SECTION -->
+            <div class="mt-16 sm:mt-20">
+                <div class="flex items-center gap-1 p-1.5 rounded-xl mb-8 overflow-x-auto" style="background: white; border: 1px solid rgba(44,24,16,0.06);">
+                    <button id="tab-reszletek" onclick="switchTab('reszletek')" class="tab-btn active-tab flex-1 min-w-max px-5 sm:px-8 py-3 rounded-lg text-sm font-semibold transition-all" style="background-color: #2D5016; color: white;">Részletek</button>
+                    <button id="tab-szallitas" onclick="switchTab('szallitas')" class="tab-btn flex-1 min-w-max px-5 sm:px-8 py-3 rounded-lg text-sm font-medium transition-all" style="background: transparent; color: rgba(44,24,16,0.55);">Szállítás &amp; Összeszerelés</button>
+                </div>
+
+                <!-- Tab: Részletek -->
+                <div id="content-reszletek" class="tab-content">
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 lg:p-10" style="border: 1px solid rgba(44,24,16,0.06);">
+                        <h2 style="font-family: 'Playfair Display', serif; color: #2C1810;" class="text-xl tracking-tight font-medium mb-6">Termékrészletek</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                            <div class="flex items-start gap-4 py-4 px-4" style="border-bottom: 1px solid rgba(44,24,16,0.06);"><div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(139,105,20,0.08);"><iconify-icon icon="solar:ruler-linear" width="18" height="18" style="color: #8B6914;"></iconify-icon></div><div><p class="text-xs font-medium uppercase tracking-wider mb-0.5" style="color: rgba(44,24,16,0.4);">Szélesség</p><p class="text-sm font-semibold" style="color: #2C1810;">105 cm</p></div></div>
+                            <div class="flex items-start gap-4 py-4 px-4" style="border-bottom: 1px solid rgba(44,24,16,0.06);"><div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(196,101,42,0.08);"><iconify-icon icon="solar:ruler-linear" width="18" height="18" style="color: #C4652A;"></iconify-icon></div><div><p class="text-xs font-medium uppercase tracking-wider mb-0.5" style="color: rgba(44,24,16,0.4);">Magasság</p><p class="text-sm font-semibold" style="color: #2C1810;">220 cm</p></div></div>
+                            <div class="flex items-start gap-4 py-4 px-4" style="border-bottom: 1px solid rgba(44,24,16,0.06);"><div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(45,80,22,0.08);"><iconify-icon icon="solar:home-2-linear" width="18" height="18" style="color: #2D5016;"></iconify-icon></div><div><p class="text-xs font-medium uppercase tracking-wider mb-0.5" style="color: rgba(44,24,16,0.4);">Tetőtípus</p><p class="text-sm font-semibold" style="color: #2C1810;">Zsindelyes</p></div></div>
+                            <div class="flex items-start gap-4 py-4 px-4" style="border-bottom: 1px solid rgba(44,24,16,0.06);"><div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(196,101,42,0.08);"><iconify-icon icon="solar:paint-roller-linear" width="18" height="18" style="color: #C4652A;"></iconify-icon></div><div><p class="text-xs font-medium uppercase tracking-wider mb-0.5" style="color: rgba(44,24,16,0.4);">Szín</p><p class="text-sm font-semibold" style="color: #2C1810;">Cseresznye</p></div></div>
+                            <div class="flex items-start gap-4 py-4 px-4" style="border-bottom: 1px solid rgba(44,24,16,0.06);"><div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(45,80,22,0.08);"><iconify-icon icon="solar:shield-check-linear" width="18" height="18" style="color: #2D5016;"></iconify-icon></div><div><p class="text-xs font-medium uppercase tracking-wider mb-0.5" style="color: rgba(44,24,16,0.4);">Időjárásálló</p><p class="text-sm font-semibold" style="color: #2D5016;">Igen ✓</p></div></div>
+                            <div class="flex items-start gap-4 py-4 px-4" style="border-bottom: 1px solid rgba(44,24,16,0.06);"><div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(139,105,20,0.08);"><iconify-icon icon="solar:paint-roller-linear" width="18" height="18" style="color: #8B6914;"></iconify-icon></div><div><p class="text-xs font-medium uppercase tracking-wider mb-0.5" style="color: rgba(44,24,16,0.4);">Felületkezelés</p><p class="text-sm font-semibold" style="color: #2C1810;">3x vizes bázisú lazúrral kezelve</p></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Szállítás -->
+                <div id="content-szallitas" class="tab-content hidden">
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 lg:p-10" style="border: 1px solid rgba(44,24,16,0.06);">
+                        <h2 style="font-family: 'Playfair Display', serif; color: #2C1810;" class="text-xl tracking-tight font-medium mb-6">Szállítás &amp; Összeszerelés</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                            <div class="p-5 rounded-xl" style="background: rgba(45,80,22,0.04); border: 1px solid rgba(45,80,22,0.1);"><div class="flex items-center gap-3 mb-2"><iconify-icon icon="solar:delivery-linear" width="22" height="22" style="color: #2D5016;"></iconify-icon><span class="text-sm font-semibold" style="color: #2D5016;">Szállítás díja</span></div><p class="text-lg font-semibold" style="font-family: 'Playfair Display', serif; color: #2C1810;">INGYENES</p><p class="text-xs mt-1" style="color: rgba(44,24,16,0.5);">Az ország egész területén</p></div>
+                            <div class="p-5 rounded-xl" style="background: rgba(196,101,42,0.04); border: 1px solid rgba(196,101,42,0.1);"><div class="flex items-center gap-3 mb-2"><iconify-icon icon="solar:hammer-bold" width="22" height="22" style="color: #C4652A;"></iconify-icon><span class="text-sm font-semibold" style="color: #C4652A;">Összeszerelés</span></div><p class="text-lg font-semibold" style="font-family: 'Playfair Display', serif; color: #2C1810;">INGYENES</p><p class="text-xs mt-1" style="color: rgba(44,24,16,0.5);">Helyszínen, szakembereinkkel</p></div>
+                        </div>
+                        <h3 class="text-base font-semibold mb-6" style="color: #2C1810;">Rendelés menete</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 sm:gap-2">
+                            <div class="flex sm:flex-col items-center sm:items-center gap-4 sm:gap-0 text-center relative"><div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 sm:mb-3 relative z-10" style="background: #2D5016;"><iconify-icon icon="solar:clipboard-text-linear" width="24" height="24" style="color: white;"></iconify-icon></div><div class="sm:text-center"><p class="text-sm font-semibold" style="color: #2C1810;">Rendelés</p><p class="text-xs mt-0.5" style="color: rgba(44,24,16,0.45);">Telefonon vagy online</p></div><div class="hidden sm:block absolute top-7 left-[calc(50%+28px)] right-0 h-0.5" style="background: rgba(45,80,22,0.15); width: calc(100% - 28px); z-index: 0;"></div></div>
+                            <div class="flex sm:flex-col items-center sm:items-center gap-4 sm:gap-0 text-center relative"><div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 sm:mb-3 relative z-10" style="background: #8B6914;"><iconify-icon icon="solar:phone-calling-linear" width="24" height="24" style="color: white;"></iconify-icon></div><div class="sm:text-center"><p class="text-sm font-semibold" style="color: #2C1810;">Egyeztetés</p><p class="text-xs mt-0.5" style="color: rgba(44,24,16,0.45);">Méret, időpont</p></div><div class="hidden sm:block absolute top-7 left-[calc(50%+28px)] right-0 h-0.5" style="background: rgba(139,105,20,0.15); width: calc(100% - 28px); z-index: 0;"></div></div>
+                            <div class="flex sm:flex-col items-center sm:items-center gap-4 sm:gap-0 text-center relative"><div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 sm:mb-3 relative z-10" style="background: #C4652A;"><iconify-icon icon="solar:delivery-linear" width="24" height="24" style="color: white;"></iconify-icon></div><div class="sm:text-center"><p class="text-sm font-semibold" style="color: #2C1810;">Szállítás</p><p class="text-xs mt-0.5" style="color: rgba(44,24,16,0.45);">Ingyenes, országos</p></div><div class="hidden sm:block absolute top-7 left-[calc(50%+28px)] right-0 h-0.5" style="background: rgba(196,101,42,0.15); width: calc(100% - 28px); z-index: 0;"></div></div>
+                            <div class="flex sm:flex-col items-center sm:items-center gap-4 sm:gap-0 text-center relative"><div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 sm:mb-3 relative z-10" style="background: #2D5016;"><iconify-icon icon="solar:hammer-bold" width="24" height="24" style="color: white;"></iconify-icon></div><div class="sm:text-center"><p class="text-sm font-semibold" style="color: #2C1810;">Összeszerelés</p><p class="text-xs mt-0.5" style="color: rgba(44,24,16,0.45);">Helyszínen, profin</p></div><div class="hidden sm:block absolute top-7 left-[calc(50%+28px)] right-0 h-0.5" style="background: rgba(45,80,22,0.15); width: calc(100% - 28px); z-index: 0;"></div></div>
+                            <div class="flex sm:flex-col items-center sm:items-center gap-4 sm:gap-0 text-center relative"><div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 sm:mb-3 relative z-10" style="background: #8B6914;"><iconify-icon icon="solar:wallet-money-linear" width="24" height="24" style="color: white;"></iconify-icon></div><div class="sm:text-center"><p class="text-sm font-semibold" style="color: #2C1810;">Fizetés</p><p class="text-xs mt-0.5" style="color: rgba(44,24,16,0.45);">Átvételkor, helyszínen</p></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Bar -->
+            <div class="mt-12 sm:mt-16 rounded-2xl overflow-hidden" style="background: linear-gradient(135deg, #2D5016 0%, #3d6b22 50%, #1a3310 100%);">
+                <div class="relative px-6 sm:px-10 lg:px-14 py-8 sm:py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div class="absolute inset-0 opacity-[0.04]" style="background: repeating-linear-gradient(90deg, white 0px, transparent 1px, transparent 40px);"></div>
+                    <div class="relative flex items-center gap-4 sm:gap-5">
+                        <div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0" style="background: rgba(255,255,255,0.12); backdrop-filter: blur(10px);"><iconify-icon icon="solar:phone-calling-linear" width="28" height="28" style="color: white;"></iconify-icon></div>
+                        <div><h3 style="font-family: 'Playfair Display', serif; color: white;" class="text-lg sm:text-xl tracking-tight mb-1 font-medium">Kérdésed van a termékkel kapcsolatban?</h3><p class="text-sm" style="color: rgba(255,255,255,0.65);">Hívjon minket bizalommal! Hétfő–Szombat 8:00–18:00</p></div>
+                    </div>
+                    <a href="tel:+36206128116" class="relative inline-flex items-center gap-2 text-sm font-semibold px-7 py-3.5 rounded-xl flex-shrink-0 transition-all" style="background: white; color: #2D5016;" onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"><iconify-icon icon="solar:phone-linear" width="18" height="18"></iconify-icon>+36 20 612 8116</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background: #2C1810; color: rgba(255,255,255,0.6);" class="pt-12 sm:pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-12">
+                <div class="sm:col-span-2 lg:col-span-1"><div class="flex items-center gap-1.5 mb-4"><iconify-icon icon="solar:tree-linear" width="24" height="24" style="color: #7a9e5a;"></iconify-icon><span style="font-family: 'Playfair Display', serif; color: white;" class="text-lg tracking-tight">Fából Mindent</span></div><p class="text-sm leading-relaxed mb-4" style="color: rgba(255,255,255,0.4);">Prémium minőségű kézműves fa játszóterek, kerti bútorok és kiülők gyártása több mint 15 éve.</p></div>
+                <div><h4 class="text-sm font-semibold mb-4" style="color: white;">Termékeink</h4><ul class="space-y-2.5"><li><a href="termekek.html" class="text-sm hover:text-white transition-colors">Játszóterek</a></li><li><a href="termekek.html" class="text-sm hover:text-white transition-colors">Kerti bútorok</a></li><li><a href="termekek.html" class="text-sm hover:text-white transition-colors">Kerti kiülők</a></li><li><a href="kapcsolat.html" class="text-sm hover:text-white transition-colors">Egyedi megrendelés</a></li></ul></div>
+                <div><h4 class="text-sm font-semibold mb-4" style="color: white;">Információk</h4><ul class="space-y-2.5"><li><a href="rolunk.html" class="text-sm hover:text-white transition-colors">Rólunk</a></li><li><a href="rolunk.html" class="text-sm hover:text-white transition-colors">Munkáink</a></li><li><a href="kapcsolat.html" class="text-sm hover:text-white transition-colors">Szállítás</a></li><li><a href="kapcsolat.html" class="text-sm hover:text-white transition-colors">GYIK</a></li></ul></div>
+                <div><h4 class="text-sm font-semibold mb-4" style="color: white;">Kapcsolat</h4><ul class="space-y-2.5"><li class="flex items-center gap-2 text-sm"><iconify-icon icon="solar:phone-linear" width="16" height="16" style="color: #7a9e5a;"></iconify-icon>+36 20 612 8116</li><li class="flex items-center gap-2 text-sm"><iconify-icon icon="solar:letter-linear" width="16" height="16" style="color: #7a9e5a;"></iconify-icon>fabolmindent.hu@gmail.com</li><li class="flex items-start gap-2 text-sm"><iconify-icon icon="solar:map-point-linear" width="16" height="16" style="color: #7a9e5a;" class="mt-0.5 flex-shrink-0"></iconify-icon>TUDOR E.V. · Adószám: 68709950-1-39</li></ul></div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.08);" class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+                <p class="text-xs" style="color: rgba(255,255,255,0.3);">© 2025 Fából Mindent. Minden jog fenntartva.</p>
+                <div class="flex flex-wrap items-center gap-4"><a href="aszf.html" class="text-xs hover:text-white transition-colors" style="color: rgba(255,255,255,0.3);">ÁSZF</a><a href="adatkezeles.html" class="text-xs hover:text-white transition-colors" style="color: rgba(255,255,255,0.3);">Adatkezelési tájékoztató</a><a href="cookie.html" class="text-xs hover:text-white transition-colors" style="color: rgba(255,255,255,0.3);">Cookie tájékoztató</a><a href="https://www.facebook.com/profile.php?id=100089913262225" target="_blank" class="hover:text-white transition-colors"><iconify-icon icon="mdi:facebook" width="20" height="20"></iconify-icon></a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { navbar.style.backgroundColor = 'rgba(255,255,255,0.95)'; navbar.style.backdropFilter = 'blur(20px)'; navbar.style.WebkitBackdropFilter = 'blur(20px)'; navbar.style.boxShadow = '0 1px 3px rgba(44,24,16,0.06)'; }
+            else { navbar.style.backgroundColor = 'transparent'; navbar.style.backdropFilter = 'none'; navbar.style.WebkitBackdropFilter = 'none'; navbar.style.boxShadow = 'none'; }
+        });
+        window.dispatchEvent(new Event('scroll'));
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        let menuOpen = false;
+        mobileMenuBtn.addEventListener('click', () => { menuOpen = !menuOpen; mobileMenu.classList.toggle('hidden'); if (menuOpen) { navbar.style.backgroundColor = 'rgba(255,255,255,0.98)'; navbar.style.backdropFilter = 'blur(20px)'; } });
+
+        const thumbImages = ['diszek/nagykut1.jpg','diszek/nagykut2.jpg','diszek/nagykut3.jpg'];
+        function selectThumb(index, el) {
+            document.querySelectorAll('.thumb-btn').forEach(btn => { btn.style.borderColor = 'rgba(44,24,16,0.1)'; });
+            el.style.borderColor = '#2D5016';
+            const mainImg = document.getElementById('mainImage');
+            mainImg.style.opacity = '0'; mainImg.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                const imgEl = document.getElementById('mainImgEl');
+                imgEl.src = thumbImages[index];
+                imgEl.style.display = 'block';
+                mainImg.style.opacity = '1'; mainImg.style.transform = 'scale(1)';
+            }, 200);
+        }
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-btn').forEach(btn => { btn.style.backgroundColor = 'transparent'; btn.style.color = 'rgba(44,24,16,0.55)'; btn.style.fontWeight = '500'; });
+            const activeBtn = document.getElementById('tab-' + tabName); activeBtn.style.backgroundColor = '#2D5016'; activeBtn.style.color = 'white'; activeBtn.style.fontWeight = '600';
+            document.querySelectorAll('.tab-content').forEach(c => { c.classList.add('hidden'); c.style.opacity = '0'; c.style.transform = 'translateY(10px)'; });
+            const activeContent = document.getElementById('content-' + tabName); activeContent.classList.remove('hidden');
+            setTimeout(() => { activeContent.style.opacity = '1'; activeContent.style.transform = 'translateY(0)'; activeContent.style.transition = 'opacity 0.4s ease, transform 0.4s ease'; }, 50);
+        }
+
+        document.querySelectorAll('.tab-content').forEach(c => { c.style.transition = 'opacity 0.4s ease, transform 0.4s ease'; });
+        document.getElementById('content-reszletek').style.opacity = '1';
+        document.getElementById('content-reszletek').style.transform = 'translateY(0)';
+        const mainImg = document.getElementById('mainImage');
+        mainImg.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    </script>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" onclick="closeLightbox(event)" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.88); backdrop-filter:blur(4px); align-items:center; justify-content:center; padding:16px;">
+        <button onclick="closeLightboxBtn()" style="position:absolute; top:20px; right:20px; width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.15); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; color:white; font-size:22px; line-height:1; z-index:10000;" aria-label="Bezárás">&#x2715;</button>
+        <img id="lightboxImg" src="" alt="" style="max-width:90vw; max-height:88vh; object-fit:contain; border-radius:12px; box-shadow:0 24px 80px rgba(0,0,0,0.5);">
+    </div>
+    <script>
+        function openLightbox() {
+            const imgEl = document.getElementById('mainImgEl');
+            const lb = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightboxImg');
+            lbImg.src = imgEl.src; lbImg.alt = imgEl.alt;
+            lb.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightboxBtn() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        function closeLightbox(e) {
+            if (e.target === document.getElementById('lightbox')) { closeLightboxBtn(); }
+        }
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightboxBtn(); });
+    </script>
+</body></html>
