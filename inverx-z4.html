@@ -74,25 +74,28 @@
                 <!-- LEFT COLUMN - Images -->
                 <div class="w-full lg:w-[55%]">
                     <div id="mainImage" class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio: 4/3; border: 1px solid rgba(44,24,16,0.06); transition: all 0.4s ease; cursor: pointer;" onclick="openLightbox()">
-                        <img src="robot%20funyiro/inverx-z4-1.png" alt="InverX Z4 Robot Fűnyíró – Főkép" id="mainImgEl" style="width:100%;height:100%;object-fit:cover;display:block;">
+                        <img src="robot%20funyiro/funyiro-robot.png" alt="InverX Z4 Robot Fűnyíró – Főkép" id="mainImgEl" style="width:100%;height:100%;object-fit:cover;display:block;">
                         <div class="absolute top-4 right-4 w-10 h-10 rounded-xl flex items-center justify-center" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);">
                             <iconify-icon icon="solar:magnifer-zoom-in-linear" width="20" height="20" style="color: white;"></iconify-icon>
                         </div>
                     </div>
-                    <div class="grid grid-cols-5 gap-3">
+                    <div class="grid grid-cols-6 gap-2">
                         <button onclick="selectThumb(0, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid #2D5016; transition: all 0.3s ease;">
-                            <img src="robot%20funyiro/inverx-z4-1.png" alt="Kép 1" style="width:100%;height:100%;object-fit:cover;display:block;">
+                            <img src="robot%20funyiro/funyiro-robot.png" alt="Főkép" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </button>
                         <button onclick="selectThumb(1, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
-                            <img src="robot%20funyiro/inverx-z4-2.png" alt="Kép 2" style="width:100%;height:100%;object-fit:cover;display:block;">
+                            <img src="robot%20funyiro/inverx-z4-1.png" alt="Kép 1" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </button>
                         <button onclick="selectThumb(2, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
-                            <img src="robot%20funyiro/inverx-z4-4.png" alt="Kép 3" style="width:100%;height:100%;object-fit:cover;display:block;">
+                            <img src="robot%20funyiro/inverx-z4-2.png" alt="Kép 2" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </button>
                         <button onclick="selectThumb(3, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
-                            <img src="robot%20funyiro/inverx-z4-5.png" alt="Kép 4" style="width:100%;height:100%;object-fit:cover;display:block;">
+                            <img src="robot%20funyiro/inverx-z4-4.png" alt="Kép 3" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </button>
                         <button onclick="selectThumb(4, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
+                            <img src="robot%20funyiro/inverx-z4-5.png" alt="Kép 4" style="width:100%;height:100%;object-fit:cover;display:block;">
+                        </button>
+                        <button onclick="selectThumb(5, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
                             <img src="robot%20funyiro/inverx-z4-6.png" alt="Kép 5" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </button>
                     </div>
@@ -165,10 +168,48 @@
                         </div>
                     </div>
 
+                    <!-- PACKAGE SELECTOR -->
+                    <div class="mb-6">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: rgba(44,24,16,0.45);">Csomag választó</p>
+                        <div class="space-y-2.5">
+                            <button onclick="selectPackage(0, this)" class="pkg-btn w-full text-left px-4 py-3.5 rounded-xl transition-all" style="border: 2px solid #2D5016; background: rgba(45,80,22,0.04);">
+                                <div class="flex items-center justify-between gap-2">
+                                    <div>
+                                        <p class="text-sm font-bold" style="color: #2C1810;">Alap csomag</p>
+                                        <p class="text-xs mt-0.5" style="color: rgba(44,24,16,0.55);">GLS futárszállítás, te üzemeled be</p>
+                                    </div>
+                                    <span class="text-base font-bold flex-shrink-0" style="color: #2D5016; font-family: 'Playfair Display', serif;">344.000 Ft</span>
+                                </div>
+                            </button>
+                            <button onclick="selectPackage(1, this)" class="pkg-btn w-full text-left px-4 py-3.5 rounded-xl transition-all" style="border: 2px solid rgba(44,24,16,0.12); background: transparent;">
+                                <div class="flex items-center justify-between gap-2">
+                                    <div>
+                                        <p class="text-sm font-bold" style="color: #2C1810;">Prémium csomag</p>
+                                        <p class="text-xs mt-0.5" style="color: rgba(44,24,16,0.55);">Mi szállítjuk ki + helyszíni beüzemelés</p>
+                                    </div>
+                                    <span class="text-base font-bold flex-shrink-0" style="color: #2D5016; font-family: 'Playfair Display', serif;">389.000 Ft</span>
+                                </div>
+                            </button>
+                            <button onclick="selectPackage(2, this)" class="pkg-btn w-full text-left px-4 py-3.5 rounded-xl transition-all" style="border: 2px solid rgba(44,24,16,0.12); background: transparent;">
+                                <div class="flex items-center justify-between gap-2">
+                                    <div class="flex-1">
+                                        <p class="text-sm font-bold" style="color: #2C1810;">Care csomag</p>
+                                        <p class="text-xs mt-0.5" style="color: rgba(44,24,16,0.55);">Beüzemelés + éves karbantartás</p>
+                                        <div class="mt-1.5 space-y-0.5">
+                                            <p class="text-xs" style="color: rgba(44,24,16,0.45);">• Szept. 15 – Okt. 15: elszállítás, tisztítás, késcsere, átnézés, lipuzolás</p>
+                                            <p class="text-xs" style="color: rgba(44,24,16,0.45);">• Márc. 15 – Ápr. 15: visszaszállítás + beüzemelés</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-base font-bold flex-shrink-0" style="color: #2D5016; font-family: 'Playfair Display', serif;">439.000 Ft</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
                     <!-- PRICE -->
                     <div class="mb-6">
                         <div class="flex items-baseline gap-3 mb-2">
-                            <span style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">339.000 Ft</span>
+                            <span id="selectedPrice" style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">344.000 Ft</span>
                         </div>
                         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg" style="background: linear-gradient(135deg, rgba(196,101,42,0.08), rgba(139,105,20,0.08));">
                             <iconify-icon icon="solar:tag-price-linear" width="14" height="14" style="color: #C4652A;"></iconify-icon>
@@ -338,7 +379,19 @@
         let menuOpen = false;
         mobileMenuBtn.addEventListener('click', () => { menuOpen = !menuOpen; mobileMenu.classList.toggle('hidden'); if (menuOpen) { navbar.style.backgroundColor = 'rgba(255,255,255,0.98)'; navbar.style.backdropFilter = 'blur(20px)'; } });
 
+        const packagePrices = ['344.000 Ft', '389.000 Ft', '439.000 Ft'];
+        function selectPackage(index, el) {
+            document.querySelectorAll('.pkg-btn').forEach(btn => {
+                btn.style.borderColor = 'rgba(44,24,16,0.12)';
+                btn.style.background = 'transparent';
+            });
+            el.style.borderColor = '#2D5016';
+            el.style.background = 'rgba(45,80,22,0.04)';
+            document.getElementById('selectedPrice').textContent = packagePrices[index];
+        }
+
         const thumbImages = [
+            'robot%20funyiro/funyiro-robot.png',
             'robot%20funyiro/inverx-z4-1.png',
             'robot%20funyiro/inverx-z4-2.png',
             'robot%20funyiro/inverx-z4-4.png',
