@@ -133,13 +133,17 @@
                     <!-- ROOF TYPE SELECTOR -->
                     <div class="mb-6">
                         <p class="text-sm font-semibold mb-3" style="color: #2C1810;">Tetőtípus</p>
-                        <div class="grid grid-cols-1 gap-3">
+                        <div class="grid grid-cols-2 gap-3">
                             <button id="roofLemez" onclick="selectRoof('lemez', this)" class="roof-btn relative px-4 py-3.5 rounded-xl text-left transition-all" style="border: 2px solid #2D5016; background: rgba(45,80,22,0.04);">
                                 <span class="block text-sm font-semibold" style="color: #2D5016;">Lemeztetős</span>
                                 <span class="block text-xs mt-0.5" style="color: rgba(45,80,22,0.7);">255.000 Ft</span>
                                 <div class="check-icon absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center" style="background: #2D5016;">
                                     <iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>
                                 </div>
+                            </button>
+                            <button id="roofNad" onclick="selectRoof('nad', this)" class="roof-btn relative px-4 py-3.5 rounded-xl text-left transition-all" style="border: 2px solid rgba(44,24,16,0.1); background: white;">
+                                <span class="block text-sm font-semibold" style="color: #2C1810;">Nádtetős</span>
+                                <span class="block text-xs mt-0.5" style="color: rgba(44,24,16,0.5);">235.000 Ft</span>
                             </button>
                         </div>
                     </div>
@@ -353,7 +357,8 @@
         const mainImg = document.getElementById('mainImage'); mainImg.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
 
         let selectedRoof = 'Lemeztetős';
-        const roofPrices = { lemez: '255.000 Ft' };
+        const roofPrices = { lemez: '255.000 Ft', nad: '235.000 Ft' };
+        const roofNames = { lemez: 'Lemeztetős', nad: 'Nádtetős' };
         function selectRoof(type, el) {
             document.querySelectorAll('.roof-btn').forEach(btn => {
                 btn.style.border = '2px solid rgba(44,24,16,0.1)';
@@ -372,7 +377,7 @@
                 icon.innerHTML = '<iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>';
                 el.appendChild(icon);
             }
-            selectedRoof = 'Lemeztetős';
+            selectedRoof = roofNames[type];
             document.getElementById('currentPrice').textContent = roofPrices[type];
             const thumbIndex = type === 'lemez' ? 3 : 1;
             const thumbBtns = document.querySelectorAll('.thumb-btn');
