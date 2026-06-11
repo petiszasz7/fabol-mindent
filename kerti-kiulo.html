@@ -143,7 +143,7 @@
                             </button>
                             <button id="roofNad" onclick="selectRoof('nad', this)" class="roof-btn relative px-4 py-3.5 rounded-xl text-left transition-all" style="border: 2px solid rgba(44,24,16,0.1); background: white;">
                                 <span class="block text-sm font-semibold" style="color: #2C1810;">Nádtetős</span>
-                                <span class="block text-xs mt-0.5" style="color: rgba(44,24,16,0.5);">235.000 Ft</span>
+                                <span class="block text-xs mt-0.5" style="color: rgba(44,24,16,0.5);">225.000 Ft</span>
                             </button>
                         </div>
                     </div>
@@ -357,7 +357,7 @@
         const mainImg = document.getElementById('mainImage'); mainImg.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
 
         let selectedRoof = 'Lemeztetős';
-        const roofPrices = { lemez: '255.000 Ft', nad: '235.000 Ft' };
+        const roofPrices = { lemez: '255.000 Ft', nad: '225.000 Ft' };
         const roofNames = { lemez: 'Lemeztetős', nad: 'Nádtetős' };
         function selectRoof(type, el) {
             document.querySelectorAll('.roof-btn').forEach(btn => {
