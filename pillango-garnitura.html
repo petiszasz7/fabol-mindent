@@ -151,16 +151,14 @@
                         <label class="flex items-start gap-3 cursor-pointer" onclick="toggleParna()">
                             <div class="relative mt-0.5 flex-shrink-0">
                                 <input type="checkbox" id="parnaCheckbox" class="sr-only">
-                                <div id="parnaCheckboxUI" class="w-5 h-5 rounded flex items-center justify-center transition-all" style="border: 2px solid #2D5016; background: #2D5016;">
-                                    <iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white;"></iconify-icon>
+                                <div id="parnaCheckboxUI" class="w-5 h-5 rounded flex items-center justify-center transition-all" style="border: 2px solid rgba(44,24,16,0.2); background: white;">
                                 </div>
                             </div>
                             <div class="flex-1">
                                 <div class="flex items-center gap-2 flex-wrap">
                                     <p class="text-sm font-semibold" style="color: #2C1810;">Párna szett (4 db)</p>
-                                    <span class="text-xs font-bold px-2 py-0.5 rounded-full" style="background: #16a34a; color: white;">Ajándék!</span>
                                 </div>
-                                <p class="text-xs mt-0.5" style="color: rgba(44,24,16,0.5);">Vízálló kültéri párna szett – <span style="text-decoration: line-through; color: rgba(44,24,16,0.35);" id="parnaPriceLabel">20.000 Ft</span> <span style="color: #16a34a; font-weight: 600;">Ajándék!</span></p>
+                                <p class="text-xs mt-0.5" style="color: rgba(44,24,16,0.5);">Vízálló kültéri párna szett – <span class="font-semibold" style="color: #2D5016;">+<span id="parnaPriceLabel">20.000 Ft</span></span></p>
                             </div>
                         </label>
                     </div>
@@ -170,10 +168,9 @@
                         <div class="flex items-baseline gap-3 mb-2">
                             <span id="currentPrice" style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">205.000 Ft</span>
                         </div>
-                        <div id="parnaGiftNote" class="flex items-center gap-1.5 mb-2 flex-wrap text-xs" style="color: rgba(44,24,16,0.6);">
+                        <div id="parnaGiftNote" class="flex items-center gap-1.5 mb-2 flex-wrap text-xs" style="color: rgba(44,24,16,0.6); display: none;">
                             <span>+ Párna szett értéke:</span>
-                            <span id="parnaGiftValue" style="text-decoration: line-through; color: rgba(44,24,16,0.4);">20.000 Ft</span>
-                            <span class="font-bold px-1.5 py-0.5 rounded" style="background: #16a34a; color: white;">Ajándék!</span>
+                            <span id="parnaGiftValue" style="color: rgba(44,24,16,0.6);">20.000 Ft</span>
                         </div>
                         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg" style="background: linear-gradient(135deg, rgba(196,101,42,0.08), rgba(139,105,20,0.08));">
                             <iconify-icon icon="solar:tag-price-linear" width="14" height="14" style="color: #C4652A;"></iconify-icon>
@@ -366,11 +363,11 @@
         function formatPrice(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' Ft'; }
         function initParna() {
             const cb = document.getElementById('parnaCheckbox');
-            cb.checked = true;
+            cb.checked = false;
             const ui = document.getElementById('parnaCheckboxUI');
-            ui.style.background = '#2D5016'; ui.style.borderColor = '#2D5016';
+            ui.style.background = 'white'; ui.style.borderColor = 'rgba(44,24,16,0.2)';
             const giftNote = document.getElementById('parnaGiftNote');
-            if (giftNote) giftNote.style.display = 'flex';
+            if (giftNote) giftNote.style.display = 'none';
         }
         function toggleParna() {
             const cb = document.getElementById('parnaCheckbox');
