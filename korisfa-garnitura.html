@@ -395,7 +395,8 @@
             if (giftNote) giftNote.style.display = checked ? 'flex' : 'none';
             const giftVal = document.getElementById('parnaGiftValue');
             if (giftVal) giftVal.textContent = formatPrice(pillowPrices[selectedSize]);
-            setTimeout(() => { priceEl.textContent = formatPrice(base); priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
+            const total = base + (checked ? pillowPrices[selectedSize] : 0);
+            setTimeout(() => { priceEl.textContent = formatPrice(total); priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
         }
 
         function selectSize(size, el) {

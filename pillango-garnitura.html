@@ -377,7 +377,8 @@
             else { ui.style.background = 'white'; ui.style.borderColor = 'rgba(44,24,16,0.2)'; ui.innerHTML = ''; }
             const giftNote = document.getElementById('parnaGiftNote');
             if (giftNote) giftNote.style.display = cb.checked ? 'flex' : 'none';
-            document.getElementById('currentPrice').textContent = formatPrice(basePrices[selectedSize]);
+            const total = basePrices[selectedSize] + (cb.checked ? parnaPrices[selectedSize] : 0);
+            document.getElementById('currentPrice').textContent = formatPrice(total);
         }
         function selectSize(size, el) {
             selectedSize = size;

@@ -378,7 +378,8 @@
             if (giftNote) giftNote.style.display = parnaSelected ? 'flex' : 'none';
             const giftVal = document.getElementById('parnaGiftValue');
             if (giftVal) giftVal.textContent = formatPrice(parnaAddon[selectedSize]);
-            setTimeout(() => { priceEl.textContent = formatPrice(base); priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
+            const total = base + (parnaSelected ? parnaAddon[selectedSize] : 0);
+            setTimeout(() => { priceEl.textContent = formatPrice(total); priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
         }
         function toggleParna(checkbox) {
             parnaSelected = checkbox.checked;

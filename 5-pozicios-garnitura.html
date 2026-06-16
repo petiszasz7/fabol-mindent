@@ -375,7 +375,8 @@
             if (giftNote) giftNote.style.display = checked ? 'flex' : 'none';
             const giftVal = document.getElementById('parnaGiftValue');
             if (giftVal) giftVal.textContent = formatPrice(cushionPrices[selectedSize]);
-            setTimeout(() => { priceEl.textContent = formatPrice(basePrices[selectedSize]); priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
+            const total = basePrices[selectedSize] + (checked ? cushionPrices[selectedSize] : 0);
+            setTimeout(() => { priceEl.textContent = formatPrice(total); priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
         }
         function updateCushion() {
             const wrapper = document.getElementById('cushionWrapper');
