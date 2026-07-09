@@ -157,7 +157,7 @@
                         <div class="flex items-baseline gap-3 mb-2">
                             <span id="currentPrice" style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">335.000 Ft</span>
                         </div>
-                        <div id="parnaGiftNote" class="flex items-center gap-1.5 mb-2 flex-wrap text-xs" style="color: rgba(44,24,16,0.6); display: none;">
+                        <div id="parnaGiftNote" class="flex items-center gap-1.5 mb-2 flex-wrap text-xs" style="color: rgba(44,24,16,0.6); display: flex;">
                             <span>+ Párna szett értéke:</span>
                             <span id="parnaGiftValue" style="color: rgba(44,24,16,0.6);">35.000 Ft</span>
                         </div>
@@ -171,14 +171,15 @@
                     <div class="mb-6">
                         <p class="text-sm font-semibold mb-3" style="color: #2C1810;">Kiegészítők</p>
                         <label id="cushionWrapper" class="flex items-center gap-3 p-3.5 rounded-xl cursor-pointer transition-all" style="background: rgba(45,80,22,0.08); border: 1px solid rgba(45,80,22,0.2);">
-                            <input type="checkbox" id="cushionCheck" onchange="updateCushion()" style="width: 18px; height: 18px; accent-color: #2D5016; cursor: pointer; flex-shrink: 0;">
+                            <input type="checkbox" id="cushionCheck" checked="" onchange="updateCushion()" style="width: 18px; height: 18px; accent-color: #2D5016; cursor: pointer; flex-shrink: 0;">
                             <iconify-icon icon="solar:sofa-linear" width="18" height="18" style="color: #2D5016; flex-shrink: 0;"></iconify-icon>
                             <div class="flex-1">
                                 <div class="flex items-center gap-2 flex-wrap">
                                     <span class="text-sm font-medium" style="color: #2C1810;">Párna szett <span id="cushionCount" style="color: rgba(44,24,16,0.5);">(8 db)</span></span>
+                                    <span class="text-xs font-semibold flex-shrink-0" style="color: #2D5016; background: rgba(45,80,22,0.12); padding: 3px 10px; border-radius: 999px;">Ajándék!</span>
                                 </div>
                                 <div class="text-xs mt-0.5" style="color: rgba(44,24,16,0.5);">
-                                    <span class="font-semibold" style="color: #2D5016;">+<span id="cushionPrice">35.000 Ft</span></span>
+                                    <span class="line-through" id="cushionPrice">35.000 Ft</span>
                                 </div>
                             </div>
                         </label>
@@ -375,7 +376,7 @@
             if (giftNote) giftNote.style.display = checked ? 'flex' : 'none';
             const giftVal = document.getElementById('parnaGiftValue');
             if (giftVal) giftVal.textContent = formatPrice(cushionPrices[selectedSize]);
-            const total = basePrices[selectedSize] + (checked ? cushionPrices[selectedSize] : 0);
+            const total = basePrices[selectedSize];
             setTimeout(() => { priceEl.textContent = formatPrice(total); priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
         }
         function updateCushion() {
@@ -422,7 +423,7 @@
             params.set('meret', meret);
             params.set('szin', document.getElementById('colorLabel').textContent);
             if (document.getElementById('cushionCheck').checked) {
-                params.set('kiegeszito', 'Párna szett (' + cushionCounts[selectedSize] + ')');
+                params.set('kiegeszito', 'Párna szett (' + cushionCounts[selectedSize] + ') (Ajándék)');
             }
             params.set('ar', document.getElementById('currentPrice').textContent);
             window.location.href = 'kapcsolat.html?' + params.toString();
