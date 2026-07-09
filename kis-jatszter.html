@@ -163,6 +163,10 @@
                     <div class="mb-6">
                         <p class="text-xs font-medium uppercase tracking-wider mb-3" style="color: rgba(44,24,16,0.4);">Kiegészítők</p>
                         <div class="space-y-2.5">
+                            <label class="extra-option flex items-center justify-between gap-3 p-3.5 rounded-xl cursor-pointer transition-all" style="border: 1.5px solid #2D5016; background: rgba(45,80,22,0.04);" onclick="toggleExtra(this)">
+                                <div class="flex items-center gap-3"><div class="extra-checkbox w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 transition-all" style="border: 1.5px solid #2D5016; background: #2D5016;"><iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white; display: block;" class="check-icon"></iconify-icon></div><div><p class="text-sm font-semibold" style="color: #2C1810;">Dupla mászófal</p></div></div>
+                                <span class="text-sm font-semibold flex-shrink-0" style="color: #2D5016; background: rgba(45,80,22,0.12); padding: 3px 10px; border-radius: 999px;">Ajándék!</span>
+                            </label>
                             <label class="extra-option flex items-center justify-between gap-3 p-3.5 rounded-xl cursor-pointer transition-all" style="border: 1.5px solid rgba(44,24,16,0.1); background: white;" onclick="toggleExtra(this)">
                                 <div class="flex items-center gap-3"><div class="extra-checkbox w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 transition-all" style="border: 1.5px solid rgba(44,24,16,0.2); background: white;"><iconify-icon icon="solar:check-linear" width="12" height="12" style="color: white; display: none;" class="check-icon"></iconify-icon></div><div><p class="text-sm font-semibold" style="color: #2C1810;">Fészek hinta</p></div></div>
                                 <span class="text-sm font-semibold flex-shrink-0" style="color: #2D5016;">+20.000 Ft</span>
@@ -384,10 +388,10 @@
             selectThumb(thumbIndex, thumbBtn);
         }
 
-        const extraPrices = [20000, 7500, 20000];
-        const extraNames = ['Fészek hinta', 'Baba hinta', 'Biztonsági létra korlát'];
+        const extraPrices = [0, 20000, 7500, 20000];
+        const extraNames = ['Dupla mászófal', 'Fészek hinta', 'Baba hinta', 'Biztonsági létra korlát'];
         const basePrice = 295000;
-        const extraStates = [false, false, false];
+        const extraStates = [true, false, false, false];
         function toggleExtra(el) {
             const options = document.querySelectorAll('.extra-option');
             const idx = Array.from(options).indexOf(el);
