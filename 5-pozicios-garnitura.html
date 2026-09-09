@@ -154,8 +154,10 @@
 
                     <!-- PRICE -->
                     <div class="mb-4">
-                        <div class="flex items-baseline gap-3 mb-2">
-                            <span id="currentPrice" style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">335.000 Ft</span>
+                        <div class="flex items-baseline gap-2 sm:gap-3 mb-2 flex-wrap">
+                            <span id="originalPrice" class="line-through" style="font-family: 'Playfair Display', serif; color: rgba(44,24,16,0.4); font-size: clamp(1.05rem, 2vw, 1.35rem);">335.000 Ft</span>
+                            <span id="currentPrice" style="font-family: 'Playfair Display', serif; color: #1E7B34; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">301.500 Ft</span>
+                            <span class="text-xs font-bold px-2 py-1 rounded-md" style="background: #C4652A; color: white; letter-spacing: 0.03em;">AKCIÓ -10%</span>
                         </div>
                         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg" style="background: linear-gradient(135deg, rgba(196,101,42,0.08), rgba(139,105,20,0.08));">
                             <iconify-icon icon="solar:tag-price-linear" width="14" height="14" style="color: #C4652A;"></iconify-icon>
@@ -358,7 +360,8 @@
             }, 200);
         }
         let selectedSize = '200';
-        const basePrices = { '150': 285000, '200': 335000 };
+        const basePrices = { '150': 256500, '200': 301500 };
+        const originalBasePrices = { '150': 285000, '200': 335000 };
         const cushionPrices = { '150': 25000, '200': 35000 };
         const cushionCounts = { '150': '6 db', '200': '8 db' };
         const sizeImages = { '150': 'kerti-garniturak/5pozis-8szek3.jpg', '200': 'kerti-garniturak/5pozis-8szek.jpg' };
@@ -368,7 +371,8 @@
             priceEl.style.opacity = '0'; priceEl.style.transform = 'translateY(5px)';
             const checked = document.getElementById('cushionCheck').checked;
             const total = basePrices[selectedSize] + (checked ? cushionPrices[selectedSize] : 0);
-            setTimeout(() => { priceEl.textContent = formatPrice(total); priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; }, 200);
+            const origTotal = originalBasePrices[selectedSize] + (checked ? cushionPrices[selectedSize] : 0);
+            setTimeout(() => { priceEl.textContent = formatPrice(total); priceEl.style.opacity = '1'; priceEl.style.transform = 'translateY(0)'; const o = document.getElementById('originalPrice'); if (o) o.textContent = formatPrice(origTotal); }, 200);
         }
         function updateCushion() {
             const wrapper = document.getElementById('cushionWrapper');

@@ -130,8 +130,10 @@
                             <iconify-icon icon="solar:check-circle-linear" width="18" height="18" style="color: #2D5016;"></iconify-icon>
                             <span class="text-sm font-semibold" style="color: #2D5016;">Rendelhető</span>
                         </div>
-                        <div class="flex items-baseline gap-3 mb-2">
-                            <span id="totalPrice" style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">450.000 Ft</span>
+                        <div class="flex items-baseline gap-2 sm:gap-3 mb-2 flex-wrap">
+                            <span id="originalPrice" class="line-through" style="font-family: 'Playfair Display', serif; color: rgba(44,24,16,0.4); font-size: clamp(1.05rem, 2vw, 1.35rem);">450.000 Ft</span>
+                            <span id="totalPrice" style="font-family: 'Playfair Display', serif; color: #1E7B34; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">405.000 Ft</span>
+                            <span class="text-xs font-bold px-2 py-1 rounded-md" style="background: #C4652A; color: white; letter-spacing: 0.03em;">AKCIÓ -10%</span>
                         </div>
                         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg" style="background: linear-gradient(135deg, rgba(196,101,42,0.08), rgba(139,105,20,0.08));">
                             <iconify-icon icon="solar:tag-price-linear" width="14" height="14" style="color: #C4652A;"></iconify-icon>
@@ -456,7 +458,8 @@
 
         const extraPrices = [0, 0, 0, 85000, 55000, 120000, 20000, 8000];
         const extraNames = ['Homokozó fedél kis paddal', 'Mászófal', 'Biztonsági létra korlát', 'Dupla mászófal', 'Háromállású hinta', 'Négyállású hinta', 'Fészek hinta', 'Baba hinta'];
-        const basePrice = 450000;
+        const basePrice = 405000;
+        const originalBasePrice = 450000;
         const extraStates = [true, true, true, false, false, false, false, false];
         function toggleExtra(el) {
             const options = document.querySelectorAll('.extra-option');
@@ -477,8 +480,10 @@
                 el.style.borderColor = 'rgba(44,24,16,0.1)';
                 el.style.background = 'white';
             }
-            const total = basePrice + extraStates.reduce((sum, on, i) => sum + (on ? extraPrices[i] : 0), 0);
+            const extrasSum = extraStates.reduce((sum, on, i) => sum + (on ? extraPrices[i] : 0), 0);
+            const total = basePrice + extrasSum;
             document.getElementById('totalPrice').textContent = total.toLocaleString('hu-HU').replace(/\s/g, '.') + ' Ft';
+            document.getElementById('originalPrice').textContent = (originalBasePrice + extrasSum).toLocaleString('hu-HU').replace(/\s/g, '.') + ' Ft';
         }
 
         document.querySelectorAll('.tab-content').forEach(c => { c.style.transition = 'opacity 0.4s ease, transform 0.4s ease'; });
