@@ -74,23 +74,32 @@
                 <!-- LEFT COLUMN - Images -->
                 <div class="w-full lg:w-[55%]">
                     <div id="mainImage" class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio: 4/3; border: 1px solid rgba(44,24,16,0.06); transition: all 0.4s ease; cursor: pointer;" onclick="openLightbox()">
-                        <img src="szerszamtarolo/tarolo%201.png" alt="Kerti Szerszámtároló – Főkép" id="mainImgEl" style="width:100%;height:100%;object-fit:cover;display:block;">
+                        <img src="szerszamtarolo/szerszam%201.jpg" alt="Kerti Szerszámtároló – Főkép" id="mainImgEl" style="width:100%;height:100%;object-fit:cover;display:block;">
                         <div class="absolute top-4 right-4 w-10 h-10 rounded-xl flex items-center justify-center" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);">
                             <iconify-icon icon="solar:magnifer-zoom-in-linear" width="20" height="20" style="color: white;"></iconify-icon>
                         </div>
                     </div>
                     <div class="grid grid-cols-4 gap-3">
                         <button onclick="selectThumb(0, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid #2D5016; transition: all 0.3s ease;">
-                            <img src="szerszamtarolo/tarolo%201.png" alt="Kép 1" style="width:100%;height:100%;object-fit:cover;display:block;">
+                            <img src="szerszamtarolo/szerszam%201.jpg" alt="Kép 1" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </button>
                         <button onclick="selectThumb(1, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
-                            <img src="szerszamtarolo/tarolo%202.png" alt="Kép 2" style="width:100%;height:100%;object-fit:cover;display:block;">
+                            <img src="szerszamtarolo/szerszam%203.jpg" alt="Kép 2" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </button>
                         <button onclick="selectThumb(2, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
-                            <img src="szerszamtarolo/tarolo%203.png" alt="Kép 3" style="width:100%;height:100%;object-fit:cover;display:block;">
+                            <img src="szerszamtarolo/szerszam%204.jpg" alt="Kép 3" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </button>
                         <button onclick="selectThumb(3, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
-                            <img src="szerszamtarolo/tarolo%204.png" alt="Kép 4" style="width:100%;height:100%;object-fit:cover;display:block;">
+                            <img src="szerszamtarolo/szerszam%205.jpg" alt="Kép 4" style="width:100%;height:100%;object-fit:cover;display:block;">
+                        </button>
+                        <button onclick="selectThumb(4, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
+                            <img src="szerszamtarolo/szerszam%206.jpg" alt="Kép 5" style="width:100%;height:100%;object-fit:cover;display:block;">
+                        </button>
+                        <button onclick="selectThumb(5, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
+                            <img src="szerszamtarolo/szerszam%208.jpg" alt="Kép 6" style="width:100%;height:100%;object-fit:cover;display:block;">
+                        </button>
+                        <button onclick="selectThumb(6, this)" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;">
+                            <img src="szerszamtarolo/szerszam%2010.jpg" alt="Kép 7" style="width:100%;height:100%;object-fit:cover;display:block;">
                         </button>
                     </div>
                 </div>
@@ -290,7 +299,7 @@
         let menuOpen = false;
         mobileMenuBtn.addEventListener('click', () => { menuOpen = !menuOpen; mobileMenu.classList.toggle('hidden'); if (menuOpen) { navbar.style.backgroundColor = 'rgba(255,255,255,0.98)'; navbar.style.backdropFilter = 'blur(20px)'; } });
 
-        const thumbImages = ['szerszamtarolo/tarolo%201.png','szerszamtarolo/tarolo%202.png','szerszamtarolo/tarolo%203.png','szerszamtarolo/tarolo%204.png'];
+        const thumbImages = ['szerszamtarolo/szerszam%201.jpg','szerszamtarolo/szerszam%203.jpg','szerszamtarolo/szerszam%204.jpg','szerszamtarolo/szerszam%205.jpg','szerszamtarolo/szerszam%206.jpg','szerszamtarolo/szerszam%208.jpg','szerszamtarolo/szerszam%2010.jpg'];
         function selectThumb(index, el) {
             document.querySelectorAll('.thumb-btn').forEach(btn => { btn.style.borderColor = 'rgba(44,24,16,0.1)'; });
             el.style.borderColor = '#2D5016';
