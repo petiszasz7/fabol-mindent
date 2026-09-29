@@ -174,7 +174,7 @@
                     <!-- SIZE SELECTOR -->
                     <div class="mb-6">
                         <p class="text-sm font-semibold mb-3" style="color: #2C1810;">Méret</p>
-                        <div class="grid grid-cols-3 gap-3">
+                        <div class="grid grid-cols-2 gap-3">
                             <button id="size2x2" onclick="selectSize('2x2', this)" class="size-btn active-size relative px-3 py-3.5 rounded-xl text-left transition-all" style="border: 2px solid #2D5016; background: rgba(45,80,22,0.04);">
                                 <span class="block text-sm font-semibold" style="color: #2D5016;">2×2 m</span>
                                 <div class="absolute top-2.5 right-2.5 w-5 h-5 rounded-full flex items-center justify-center" style="background: #2D5016;">
@@ -183,9 +183,6 @@
                             </button>
                             <button id="size2_5x2" onclick="selectSize('2.5x2', this)" class="size-btn relative px-3 py-3.5 rounded-xl text-left transition-all" style="border: 2px solid rgba(44,24,16,0.1); background: white;">
                                 <span class="block text-sm font-semibold" style="color: #2C1810;">2,5×2 m</span>
-                            </button>
-                            <button id="size3x2" onclick="selectSize('3x2', this)" class="size-btn relative px-3 py-3.5 rounded-xl text-left transition-all" style="border: 2px solid rgba(44,24,16,0.1); background: white;">
-                                <span class="block text-sm font-semibold" style="color: #2C1810;">3×2 m</span>
                             </button>
                         </div>
                     </div>
@@ -347,9 +344,9 @@
         mainImg.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
 
         let selectedSize = '2x2';
-        const basePrices = { '2x2': 351000, '2.5x2': 409500, '3x2': 490500 };
-        const originalBasePrices = { '2x2': 390000, '2.5x2': 455000, '3x2': 545000 };
-        const sizeLabels = { '2x2': '2 x 2 m', '2.5x2': '2,5 x 2 m', '3x2': '3 x 2 m' };
+        const basePrices = { '2x2': 351000, '2.5x2': 409500 };
+        const originalBasePrices = { '2x2': 390000, '2.5x2': 455000 };
+        const sizeLabels = { '2x2': '2 x 2 m', '2.5x2': '2,5 x 2 m' };
 
         function formatPrice(n) {
             return n.toLocaleString('hu-HU').replace(/\s/g, '.') + ' Ft';
