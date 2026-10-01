@@ -162,8 +162,16 @@
                     <!-- PRICE -->
                     <div class="mb-6">
                         <div class="flex items-baseline gap-3 mb-2">
-                            <span style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">215.000 Ft</span>
+                            <span id="currentPrice" style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">215.000 Ft</span>
                         </div>
+                        <label for="assemblyCheckbox" id="assemblyOption" class="flex items-center gap-3 px-4 py-3 rounded-xl cursor-pointer transition-all mb-3" style="border: 1.5px solid rgba(44,24,16,0.1); background: white;">
+                            <input type="checkbox" id="assemblyCheckbox" onchange="updatePrice()" class="w-5 h-5 flex-shrink-0 cursor-pointer" style="accent-color: #2D5016;">
+                            <div class="flex-1">
+                                <p class="text-sm font-semibold" style="color: #2C1810;">Helyszíni összeszerelés</p>
+                                <p class="text-xs" style="color: rgba(44,24,16,0.5);">Mi szereljük össze a helyszínen</p>
+                            </div>
+                            <span class="text-sm font-semibold flex-shrink-0" style="color: #2D5016;">+15.000 Ft</span>
+                        </label>
                         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg" style="background: linear-gradient(135deg, rgba(196,101,42,0.08), rgba(139,105,20,0.08));">
                             <iconify-icon icon="solar:tag-price-linear" width="14" height="14" style="color: #C4652A;"></iconify-icon>
                             <span class="text-xs font-semibold" style="color: #C4652A;">Ingyenes szállítás</span>
@@ -172,7 +180,7 @@
 
                     <!-- ORDER BUTTON -->
                     <div class="mb-5">
-                        <a href="kapcsolat.html" class="w-full flex items-center justify-center gap-2.5 text-base font-semibold py-4 rounded-xl transition-all" style="background-color: #2D5016; color: white; box-shadow: 0 4px 14px rgba(45,80,22,0.25); display: flex;" onmouseover="this.style.backgroundColor='#1e3a0e'; this.style.boxShadow='0 8px 25px rgba(45,80,22,0.35)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.backgroundColor='#2D5016'; this.style.boxShadow='0 4px 14px rgba(45,80,22,0.25)'; this.style.transform='translateY(0)'">
+                        <a href="kapcsolat.html" onclick="navigateToOrder(event)" class="w-full flex items-center justify-center gap-2.5 text-base font-semibold py-4 rounded-xl transition-all" style="background-color: #2D5016; color: white; box-shadow: 0 4px 14px rgba(45,80,22,0.25); display: flex;" onmouseover="this.style.backgroundColor='#1e3a0e'; this.style.boxShadow='0 8px 25px rgba(45,80,22,0.35)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.backgroundColor='#2D5016'; this.style.boxShadow='0 4px 14px rgba(45,80,22,0.25)'; this.style.transform='translateY(0)'">
                             <iconify-icon icon="solar:cart-large-2-linear" width="22" height="22"></iconify-icon>
                             MEGRENDELEM
                         </a>
@@ -314,6 +322,37 @@
         <img id="lightboxImg" src="" alt="" style="max-width:90vw; max-height:88vh; object-fit:contain; border-radius:12px; box-shadow:0 24px 80px rgba(0,0,0,0.5);">
     </div>
     <script>
+        const assemblyPrice = 15000;
+        function assemblyCost() {
+            const on = document.getElementById('assemblyCheckbox').checked;
+            const opt = document.getElementById('assemblyOption');
+            opt.style.borderColor = on ? '#2D5016' : 'rgba(44,24,16,0.1)';
+            opt.style.background = on ? 'rgba(45,80,22,0.04)' : 'white';
+            return on ? assemblyPrice : 0;
+        }
+        function addAssemblyParam(params) {
+            if (!document.getElementById('assemblyCheckbox').checked) return;
+            const k = params.get('kiegeszitok') || params.get('kiegeszito');
+            params.delete('kiegeszito');
+            params.set('kiegeszitok', (k ? k + ', ' : '') + 'Helyszíni összeszerelés (15.000 Ft)');
+        }
+
+        const basePrice = 215000;
+        function updatePrice() {
+            const a = assemblyCost();
+            document.getElementById('currentPrice').textContent = fmtPrice(basePrice + a);
+        }
+        function fmtPrice(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' Ft'; }
+
+        function navigateToOrder(e) {
+            e.preventDefault();
+            const params = new URLSearchParams();
+            params.set('termek', 'Kerti Nagy Kút');
+            params.set('ar', document.getElementById('currentPrice').textContent);
+            addAssemblyParam(params);
+            window.location.href = 'kapcsolat.html?' + params.toString();
+        }
+
         function openLightbox() {
             const imgEl = document.getElementById('mainImgEl');
             const lb = document.getElementById('lightbox');

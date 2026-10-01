@@ -149,6 +149,14 @@
                             <span id="currentPrice" style="font-family: 'Playfair Display', serif; color: #1E7B34; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">229.500 Ft</span>
                             <span class="text-xs font-bold px-2 py-1 rounded-md" style="background: #C4652A; color: white; letter-spacing: 0.03em;">AKCIÓ -10%</span>
                         </div>
+                        <label for="assemblyCheckbox" id="assemblyOption" class="flex items-center gap-3 px-4 py-3 rounded-xl cursor-pointer transition-all mb-3" style="border: 1.5px solid rgba(44,24,16,0.1); background: white;">
+                            <input type="checkbox" id="assemblyCheckbox" onchange="updateTotal()" class="w-5 h-5 flex-shrink-0 cursor-pointer" style="accent-color: #2D5016;">
+                            <div class="flex-1">
+                                <p class="text-sm font-semibold" style="color: #2C1810;">Helyszíni összeszerelés</p>
+                                <p class="text-xs" style="color: rgba(44,24,16,0.5);">Mi szereljük össze a helyszínen</p>
+                            </div>
+                            <span class="text-sm font-semibold flex-shrink-0" style="color: #2D5016;">+20.000 Ft</span>
+                        </label>
                         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg" style="background: linear-gradient(135deg, rgba(196,101,42,0.08), rgba(139,105,20,0.08));">
                             <iconify-icon icon="solar:tag-price-linear" width="14" height="14" style="color: #C4652A;"></iconify-icon>
                             <span class="text-xs font-semibold" style="color: #C4652A;">Ingyenes szállítás</span>
@@ -366,7 +374,7 @@
         const extraNames = ['Párna szett'];
         const extraStates = [false];
         function updateTotal() {
-            const extrasSum = extraStates.reduce((sum, on, i) => sum + (on ? extraPrices[i] : 0), 0);
+            const extrasSum = extraStates.reduce((sum, on, i) => sum + (on ? extraPrices[i] : 0), 0) + assemblyCost();
             const total = basePrice + extrasSum;
             document.getElementById('currentPrice').textContent = total.toLocaleString('hu-HU').replace(/\s/g, '.') + ' Ft';
             document.getElementById('originalPrice').textContent = (originalBasePrice + extrasSum).toLocaleString('hu-HU').replace(/\s/g, '.') + ' Ft';
@@ -394,6 +402,21 @@
             updateTotal();
         }
 
+        const assemblyPrice = 20000;
+        function assemblyCost() {
+            const on = document.getElementById('assemblyCheckbox').checked;
+            const opt = document.getElementById('assemblyOption');
+            opt.style.borderColor = on ? '#2D5016' : 'rgba(44,24,16,0.1)';
+            opt.style.background = on ? 'rgba(45,80,22,0.04)' : 'white';
+            return on ? assemblyPrice : 0;
+        }
+        function addAssemblyParam(params) {
+            if (!document.getElementById('assemblyCheckbox').checked) return;
+            const k = params.get('kiegeszitok') || params.get('kiegeszito');
+            params.delete('kiegeszito');
+            params.set('kiegeszitok', (k ? k + ', ' : '') + 'Helyszíni összeszerelés (20.000 Ft)');
+        }
+
         function navigateToOrder(e) {
             e.preventDefault();
             const params = new URLSearchParams();
@@ -402,6 +425,7 @@
             const kiegeszitok = extraStates.map((on, i) => on ? extraNames[i] : null).filter(Boolean).join(', ');
             if (kiegeszitok) params.set('kiegeszitok', kiegeszitok);
             params.set('ar', document.getElementById('currentPrice').textContent);
+            addAssemblyParam(params);
             window.location.href = 'kapcsolat.html?' + params.toString();
         }
     </script>
