@@ -165,7 +165,7 @@
                             <span id="currentPrice" style="font-family: 'Playfair Display', serif; color: #2D5016; font-size: clamp(1.5rem, 3vw, 2rem);" class="tracking-tight font-semibold">215.000 Ft</span>
                         </div>
                         <label for="assemblyCheckbox" id="assemblyOption" class="flex items-center gap-3 px-4 py-3 rounded-xl cursor-pointer transition-all mb-3" style="border: 1.5px solid rgba(44,24,16,0.1); background: white;">
-                            <input type="checkbox" id="assemblyCheckbox" onchange="updatePrice()" class="w-5 h-5 flex-shrink-0 cursor-pointer" style="accent-color: #2D5016;">
+                            <input type="checkbox" id="assemblyCheckbox" checked onchange="updatePrice()" class="w-5 h-5 flex-shrink-0 cursor-pointer" style="accent-color: #2D5016;">
                             <div class="flex-1">
                                 <p class="text-sm font-semibold" style="color: #2C1810;">Helyszíni összeszerelés</p>
                                 <p class="text-xs" style="color: rgba(44,24,16,0.5);">Mi szereljük össze a helyszínen</p>
@@ -322,13 +322,12 @@
         <img id="lightboxImg" src="" alt="" style="max-width:90vw; max-height:88vh; object-fit:contain; border-radius:12px; box-shadow:0 24px 80px rgba(0,0,0,0.5);">
     </div>
     <script>
-        const assemblyPrice = 15000;
         function assemblyCost() {
             const on = document.getElementById('assemblyCheckbox').checked;
             const opt = document.getElementById('assemblyOption');
             opt.style.borderColor = on ? '#2D5016' : 'rgba(44,24,16,0.1)';
             opt.style.background = on ? 'rgba(45,80,22,0.04)' : 'white';
-            return on ? assemblyPrice : 0;
+            return on ? 15000 : 0; // összeszerelés ára
         }
         function addAssemblyParam(params) {
             if (!document.getElementById('assemblyCheckbox').checked) return;
@@ -370,4 +369,5 @@
         }
         document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightboxBtn(); });
     </script>
+    <script>document.getElementById('assemblyCheckbox').dispatchEvent(new Event('change'));</script>
 </body></html>
