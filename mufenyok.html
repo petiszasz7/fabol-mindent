@@ -76,17 +76,16 @@
                 <!-- LEFT COLUMN -->
                 <div class="w-full lg:w-[55%]">
                     <div id="mainImage" class="relative overflow-hidden rounded-2xl mb-4" style="aspect-ratio: 4/3; border: 1px solid rgba(44,24,16,0.06); transition: opacity 0.3s ease, transform 0.3s ease;">
-                        <div id="mainGradEl" class="w-full h-full flex flex-col items-center justify-center gap-3" style="background: linear-gradient(160deg, #3d6b22 0%, #2D5016 50%, #1a3310 100%);">
+                        <img src="mufenyok/arany-bogyos.png" alt="Prémium Műfenyő – Havas arany bogyós" id="mainImgEl" style="width:100%;height:100%;object-fit:cover;display:block;">
+                        <div id="mainGradEl" class="w-full h-full flex-col items-center justify-center gap-3" style="display: none; background: linear-gradient(160deg, #3d6b22 0%, #2D5016 50%, #1a3310 100%);">
                             <iconify-icon icon="solar:tree-linear" width="96" height="96" style="color: rgba(255,255,255,0.55);"></iconify-icon>
                             <span id="mainVariantLabel" class="text-sm font-semibold tracking-wide uppercase" style="color: rgba(255,255,255,0.75); letter-spacing: 0.08em;">Natúr fenyő</span>
                         </div>
                         <div class="absolute top-4 left-4 px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide" style="background-color: #2D5016; color: white;">INGYENES SZÁLLÍTÁS</div>
                     </div>
                     <div class="grid grid-cols-4 gap-3">
-                        <button onclick="selectVariant(0)" class="thumb-btn relative overflow-hidden rounded-xl flex items-center justify-center" style="aspect-ratio: 1/1; border: 2px solid #2D5016; transition: all 0.3s ease;" aria-label="Natúr fenyő"><div class="thumb-grad w-full h-full flex items-center justify-center"><iconify-icon icon="solar:tree-linear" width="32" height="32" style="color: rgba(255,255,255,0.6);"></iconify-icon></div></button>
-                        <button onclick="selectVariant(1)" class="thumb-btn relative overflow-hidden rounded-xl flex items-center justify-center" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;" aria-label="Havas topozos"><div class="thumb-grad w-full h-full flex items-center justify-center"><iconify-icon icon="solar:tree-linear" width="32" height="32" style="color: rgba(255,255,255,0.6);"></iconify-icon></div></button>
-                        <button onclick="selectVariant(2)" class="thumb-btn relative overflow-hidden rounded-xl flex items-center justify-center" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;" aria-label="Havas piros bogyós"><div class="thumb-grad w-full h-full flex items-center justify-center"><iconify-icon icon="solar:tree-linear" width="32" height="32" style="color: rgba(255,255,255,0.6);"></iconify-icon></div></button>
-                        <button onclick="selectVariant(3)" class="thumb-btn relative overflow-hidden rounded-xl flex items-center justify-center" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;" aria-label="Havas arany bogyós"><div class="thumb-grad w-full h-full flex items-center justify-center"><iconify-icon icon="solar:tree-linear" width="32" height="32" style="color: rgba(255,255,255,0.6);"></iconify-icon></div></button>
+                        <button onclick="selectVariant(3)" data-variant="3" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid #2D5016; transition: all 0.3s ease;" aria-label="Havas arany bogyós"><img src="mufenyok/arany-bogyos.png" alt="Havas arany bogyós" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
+                        <button onclick="selectVariant(2)" data-variant="2" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;" aria-label="Havas piros bogyós"><img src="mufenyok/piros-bogyos.png" alt="Havas piros bogyós" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
                     </div>
                 </div>
 
@@ -247,18 +246,17 @@
         let menuOpen = false;
         mobileMenuBtn.addEventListener('click', () => { menuOpen = !menuOpen; mobileMenu.classList.toggle('hidden'); if (menuOpen) { navbar.style.backgroundColor = 'rgba(255,255,255,0.98)'; navbar.style.backdropFilter = 'blur(20px)'; } });
 
-        // Változatok – képek helyett egyelőre gradient helyőrzők
+        // Változatok – ahol még nincs kép, ott gradient helyőrző
         const variants = [
             { name: 'Natúr fenyő',        dot: '#2D5016', grad: 'linear-gradient(160deg, #3d6b22 0%, #2D5016 50%, #1a3310 100%)' },
             { name: 'Havas topozos',      dot: '#dfe8e2', grad: 'linear-gradient(160deg, #e9efeb 0%, #a9c0ae 45%, #4f7552 100%)' },
-            { name: 'Havas piros bogyós', dot: '#B3261E', grad: 'radial-gradient(circle at 30% 30%, rgba(179,38,30,0.55) 0 6%, transparent 7%), radial-gradient(circle at 70% 60%, rgba(179,38,30,0.55) 0 5%, transparent 6%), linear-gradient(160deg, #dfe8e2 0%, #6f8f6f 45%, #2D5016 100%)' },
-            { name: 'Havas arany bogyós', dot: '#C9A227', grad: 'radial-gradient(circle at 30% 30%, rgba(201,162,39,0.6) 0 6%, transparent 7%), radial-gradient(circle at 70% 60%, rgba(201,162,39,0.6) 0 5%, transparent 6%), linear-gradient(160deg, #dfe8e2 0%, #6f8f6f 45%, #2D5016 100%)' }
+            { name: 'Havas piros bogyós', dot: '#B3261E', img: 'mufenyok/piros-bogyos.png', grad:'radial-gradient(circle at 30% 30%, rgba(179,38,30,0.55) 0 6%, transparent 7%), radial-gradient(circle at 70% 60%, rgba(179,38,30,0.55) 0 5%, transparent 6%), linear-gradient(160deg, #dfe8e2 0%, #6f8f6f 45%, #2D5016 100%)' },
+            { name: 'Havas arany bogyós', dot: '#C9A227', img: 'mufenyok/arany-bogyos.png', grad:'radial-gradient(circle at 30% 30%, rgba(201,162,39,0.6) 0 6%, transparent 7%), radial-gradient(circle at 70% 60%, rgba(201,162,39,0.6) 0 5%, transparent 6%), linear-gradient(160deg, #dfe8e2 0%, #6f8f6f 45%, #2D5016 100%)' }
         ];
         const prices = { '120': 18000, '150': 25000, '180': 33000, '220': 45000, '240': 55000 };
-        let selectedVariant = 0;
+        let selectedVariant = 3;
         let selectedSize = '150';
 
-        document.querySelectorAll('.thumb-grad').forEach((el, i) => { el.style.background = variants[i].grad; });
         document.querySelectorAll('.variant-dot').forEach((el, i) => { el.style.background = variants[i].dot; el.style.boxShadow = '0 0 0 1px rgba(44,24,16,0.15)'; });
 
         function formatPrice(num) {
@@ -292,13 +290,22 @@
         function selectVariant(index) {
             selectedVariant = index;
             document.querySelectorAll('.variant-btn').forEach((btn, i) => setActive(btn, i === index));
-            document.querySelectorAll('.thumb-btn').forEach((btn, i) => { btn.style.borderColor = i === index ? '#2D5016' : 'rgba(44,24,16,0.1)'; });
+            document.querySelectorAll('.thumb-btn').forEach(btn => { btn.style.borderColor = Number(btn.dataset.variant) === index ? '#2D5016' : 'rgba(44,24,16,0.1)'; });
             document.getElementById('variantLabel').textContent = variants[index].name;
             const mainImg = document.getElementById('mainImage');
             mainImg.style.opacity = '0'; mainImg.style.transform = 'scale(0.98)';
             setTimeout(() => {
-                document.getElementById('mainGradEl').style.background = variants[index].grad;
-                document.getElementById('mainVariantLabel').textContent = variants[index].name;
+                const v = variants[index];
+                const imgEl = document.getElementById('mainImgEl');
+                const gradEl = document.getElementById('mainGradEl');
+                if (v.img) {
+                    imgEl.src = v.img; imgEl.alt = 'Prémium Műfenyő – ' + v.name;
+                    imgEl.style.display = 'block'; gradEl.style.display = 'none';
+                } else {
+                    gradEl.style.background = v.grad;
+                    document.getElementById('mainVariantLabel').textContent = v.name;
+                    imgEl.style.display = 'none'; gradEl.style.display = 'flex';
+                }
                 mainImg.style.opacity = '1'; mainImg.style.transform = 'scale(1)';
             }, 200);
         }
@@ -321,7 +328,7 @@
             window.location.href = 'kapcsolat.html?' + params.toString();
         }
 
-        selectVariant(0);
+        selectVariant(3);
         selectSize('150');
     </script>
 </body></html>
