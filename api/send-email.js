@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, phone, city, street, product, color, size, roofType, extras, finalPrice, message } = req.body;
+  const { name, email, phone, city, street, product, color, size, roofType, extras, finalPrice, deliveryDate, message } = req.body;
 
   if (!name || !email || !phone || !product) {
     return res.status(400).json({ error: 'Hiányzó kötelező mezők' });
@@ -46,6 +46,7 @@ export default async function handler(req, res) {
     color ? `<tr><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="color:rgba(44,24,16,0.55); font-size:13px;">Szín</span></td><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="font-size:14px;">${color}</span></td></tr>` : '',
     roofType ? `<tr><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="color:rgba(44,24,16,0.55); font-size:13px;">Tetőtípus</span></td><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="font-size:14px;">${roofType}</span></td></tr>` : '',
     extras ? `<tr><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="color:rgba(44,24,16,0.55); font-size:13px;">Kiegészítők</span></td><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="font-size:14px;">${extras}</span></td></tr>` : '',
+    deliveryDate ? `<tr><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="color:rgba(44,24,16,0.55); font-size:13px;">Szállítási időpont</span></td><td style="padding:7px 0; border-bottom:1px solid rgba(45,80,22,0.1);"><span style="font-size:14px;">${deliveryDate}</span></td></tr>` : '',
   ].filter(Boolean).join('');
 
   const htmlBody = `
@@ -55,7 +56,7 @@ export default async function handler(req, res) {
       </div>
       <div style="background: #F5F0EB; padding: 32px; border-radius: 0 0 12px 12px; border: 1px solid rgba(44,24,16,0.1); border-top: none;">
 
-        ${(size || color || roofType || extras || finalPrice) ? `
+        ${(size || color || roofType || extras || deliveryDate || finalPrice) ? `
         <div style="background: #f0f7ea; border: 2px solid #2D5016; border-radius: 10px; padding: 20px 24px; margin-bottom: 28px;">
           <h2 style="margin: 0 0 14px 0; font-size: 15px; color: #2D5016;">🛒 Rendelés összefoglalója</h2>
           <table style="width: 100%; border-collapse: collapse;">
@@ -162,6 +163,16 @@ export default async function handler(req, res) {
             </td>
           </tr>
           ` : ''}
+          ${deliveryDate ? `
+          <tr>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <strong style="color: rgba(44,24,16,0.5); font-size: 13px;">Szállítási időpont</strong>
+            </td>
+            <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
+              <span style="font-size: 15px;">${deliveryDate}</span>
+            </td>
+          </tr>
+          ` : ''}
           ${finalPrice ? `
           <tr>
             <td style="padding: 10px 0; border-bottom: 1px solid rgba(44,24,16,0.08);">
@@ -196,7 +207,7 @@ export default async function handler(req, res) {
         <p style="font-size: 16px; margin: 0 0 12px 0;">Kedves <strong>${name}</strong>!</p>
         <p style="font-size: 15px; margin: 0 0 24px 0;">Köszönjük a rendelését! <strong>24 órán belül felvesszük Önnel a kapcsolatot</strong> a szállítás egyeztetése céljából.</p>
 
-        ${(size || color || roofType || extras || finalPrice) ? `
+        ${(size || color || roofType || extras || deliveryDate || finalPrice) ? `
         <div style="background: #f0f7ea; border: 2px solid #2D5016; border-radius: 10px; padding: 20px 24px; margin-bottom: 28px;">
           <h2 style="margin: 0 0 14px 0; font-size: 15px; color: #2D5016;">Rendelés összefoglalója</h2>
           <table style="width: 100%; border-collapse: collapse;">
