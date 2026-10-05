@@ -135,6 +135,15 @@
                         <p class="flex items-center gap-1.5 text-xs mt-3" style="color: rgba(44,24,16,0.5);"><iconify-icon icon="solar:check-circle-linear" width="14" height="14" style="color: #2D5016;"></iconify-icon>Minden mérethez talp jár</p>
                     </div>
 
+                    <!-- DELIVERY SELECTOR -->
+                    <div class="mb-6">
+                        <p class="text-sm font-semibold mb-3" style="color: #2C1810;">Szállítási időpont</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button onclick="selectDelivery('December 1-10.')" data-delivery="December 1-10." class="delivery-btn relative px-3 py-3.5 rounded-xl text-center transition-all"><span class="block text-sm font-semibold">December 1-10.</span></button>
+                            <button onclick="selectDelivery('December 11-20.')" data-delivery="December 11-20." class="delivery-btn relative px-3 py-3.5 rounded-xl text-center transition-all"><span class="block text-sm font-semibold">December 11-20.</span></button>
+                        </div>
+                    </div>
+
                     <div class="mb-6" style="border-top: 1px solid rgba(44,24,16,0.08);"></div>
 
                     <!-- PRICE -->
@@ -262,6 +271,7 @@
         const prices = { '120': 18000, '150': 25000, '180': 33000, '220': 45000, '240': 55000 };
         let selectedVariant = 3;
         let selectedSize = '150';
+        let selectedDelivery = 'December 1-10.';
 
         document.querySelectorAll('.variant-dot').forEach((el, i) => { el.style.background = variants[i].dot; el.style.boxShadow = '0 0 0 1px rgba(44,24,16,0.15)'; });
 
@@ -292,6 +302,10 @@
             selectedSize = size;
             document.querySelectorAll('.size-btn').forEach(btn => setActive(btn, btn.dataset.size === size));
             updatePrice();
+        }
+        function selectDelivery(delivery) {
+            selectedDelivery = delivery;
+            document.querySelectorAll('.delivery-btn').forEach(btn => setActive(btn, btn.dataset.delivery === delivery));
         }
         function showExtraImage(btn) {
             document.querySelectorAll('.thumb-btn').forEach(b => { b.style.borderColor = b === btn ? '#2D5016' : 'rgba(44,24,16,0.1)'; });
@@ -342,11 +356,13 @@
             params.set('meret', selectedSize + ' cm');
             params.set('szin', variants[selectedVariant].name);
             params.set('ar', formatPrice(prices[selectedSize]));
+            params.set('szallitas', selectedDelivery);
             window.location.href = 'kapcsolat.html?' + params.toString();
         }
 
         selectVariant(3);
         selectSize('150');
+        selectDelivery('December 1-10.');
     </script>
 
     <!-- LIGHTBOX -->
