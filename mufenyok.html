@@ -88,6 +88,10 @@
                         <button onclick="selectVariant(1)" data-variant="1" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;" aria-label="Havas tobozos"><img src="mufenyok/havas-tobozos.png" alt="Havas tobozos" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
                         <button onclick="selectVariant(2)" data-variant="2" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;" aria-label="Havas piros bogyós"><img src="mufenyok/piros-bogyos.png" alt="Havas piros bogyós" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
                         <button onclick="selectVariant(3)" data-variant="3" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid #2D5016; transition: all 0.3s ease;" aria-label="Havas arany bogyós"><img src="mufenyok/arany-bogyos.png" alt="Havas arany bogyós" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
+                        <button onclick="showExtraImage(this)" data-img="mufenyok/egyeb-1.png" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;" aria-label="Prémium műfenyő – 1. kép"><img src="mufenyok/egyeb-1.png" alt="Prémium műfenyő – 1. kép" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
+                        <button onclick="showExtraImage(this)" data-img="mufenyok/egyeb-2.png" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;" aria-label="Prémium műfenyő – 2. kép"><img src="mufenyok/egyeb-2.png" alt="Prémium műfenyő – 2. kép" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
+                        <button onclick="showExtraImage(this)" data-img="mufenyok/egyeb-3.png" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;" aria-label="Prémium műfenyő – 3. kép"><img src="mufenyok/egyeb-3.png" alt="Prémium műfenyő – 3. kép" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
+                        <button onclick="showExtraImage(this)" data-img="mufenyok/egyeb-4.png" class="thumb-btn relative overflow-hidden rounded-xl" style="aspect-ratio: 1/1; border: 2px solid rgba(44,24,16,0.1); transition: all 0.3s ease;" aria-label="Prémium műfenyő – 4. kép"><img src="mufenyok/egyeb-4.png" alt="Prémium műfenyő – 4. kép" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
                     </div>
                 </div>
 
@@ -288,6 +292,17 @@
             selectedSize = size;
             document.querySelectorAll('.size-btn').forEach(btn => setActive(btn, btn.dataset.size === size));
             updatePrice();
+        }
+        function showExtraImage(btn) {
+            document.querySelectorAll('.thumb-btn').forEach(b => { b.style.borderColor = b === btn ? '#2D5016' : 'rgba(44,24,16,0.1)'; });
+            const mainImg = document.getElementById('mainImage');
+            mainImg.style.opacity = '0'; mainImg.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                const imgEl = document.getElementById('mainImgEl');
+                imgEl.src = btn.dataset.img; imgEl.alt = btn.getAttribute('aria-label');
+                imgEl.style.display = 'block'; document.getElementById('mainGradEl').style.display = 'none';
+                mainImg.style.opacity = '1'; mainImg.style.transform = 'scale(1)';
+            }, 200);
         }
         function selectVariant(index) {
             selectedVariant = index;
